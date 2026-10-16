@@ -3,24 +3,75 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="description"
           content="Apply for job opportunities at Digital Health and Wellness.">
+
     <meta name="keywords"
           content="Digital Health, Wellness, Healthcare, Jobs, Application">
+
     <meta name="author" content="Group 1">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Job Application - Digital Health and Wellness</title>
 
-<!-- Global CSS -->
-<link rel="stylesheet" href="styles.css">
+    <!-- External CSS: shared website styling -->
+    <link rel="stylesheet" href="styles.css">
 
-<!-- Individual Application Page CSS -->
-<link rel="stylesheet" href="apply.css">
+    <!-- External CSS: job application page styling -->
+    <link rel="stylesheet" href="apply.css">
 
+    <!--
+        Embedded CSS example:
+        CSS Grid organises the application form into a clear,
+        responsive layout without changing the shared stylesheets.
+    -->
+    <style>
+        #application-form {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 1.25rem;
+        }
+
+        #application-form > fieldset {
+            min-width: 0;
+        }
+
+        #application-form > .form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .form-error {
+            color: #a61b1b;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .form-error:empty {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            #application-form {
+                gap: 1rem;
+            }
+
+            #application-form > .form-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- Accessibility: allows keyboard users to skip navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Website header and navigation -->
     <header>
@@ -37,11 +88,11 @@
     </header>
 
     <!-- Main content -->
-    <main>
+    <main id="main-content">
 
         <!-- Introduction to the application page -->
-        <section>
-            <h2>Join Our Team</h2>
+        <section aria-labelledby="join-heading">
+            <h2 id="join-heading">Join Our Team</h2>
 
             <p>
                 Are you interested in technology and healthcare?
@@ -61,22 +112,30 @@
         </section>
 
         <!-- Job application form -->
-        <section>
-            <h2>Job Application Form</h2>
+        <section aria-labelledby="application-heading">
 
-            <form action="https://mercury.swin.edu.au/it000000/formtest.php"
+            <!-- Inline CSS example -->
+            <h2 id="application-heading"
+                style="letter-spacing: 0.3px;">
+                Job Application Form
+            </h2>
+
+            <form id="application-form"
+                  action="https://mercury.swin.edu.au/it000000/formtest.php"
                   method="post">
 
                 <!-- Job reference number -->
                 <fieldset>
                     <legend>Job Information</legend>
 
-                    <p>
+                    <p id="jobref-help">
                         Enter the five-character job reference
                         from the job advertisement.
                     </p>
 
-                    <label for="jobref">Job Reference Number: *</label>
+                    <label for="jobref">
+                        Job Reference Number: *
+                    </label>
 
                     <input type="text"
                            id="jobref"
@@ -85,6 +144,8 @@
                            minlength="5"
                            maxlength="5"
                            title="Enter exactly five letters or numbers."
+                           aria-describedby="jobref-help"
+                           autocomplete="off"
                            required>
                 </fieldset>
 
@@ -97,7 +158,9 @@
                     </p>
 
                     <p>
-                        <label for="firstname">First Name: *</label>
+                        <label for="firstname">
+                            First Name: *
+                        </label>
 
                         <input type="text"
                                id="firstname"
@@ -105,11 +168,14 @@
                                pattern="[A-Za-z]{1,20}"
                                maxlength="20"
                                title="Enter up to 20 letters."
+                               autocomplete="given-name"
                                required>
                     </p>
 
                     <p>
-                        <label for="lastname">Last Name: *</label>
+                        <label for="lastname">
+                            Last Name: *
+                        </label>
 
                         <input type="text"
                                id="lastname"
@@ -117,19 +183,33 @@
                                pattern="[A-Za-z]{1,20}"
                                maxlength="20"
                                title="Enter up to 20 letters."
+                               autocomplete="family-name"
                                required>
                     </p>
 
                     <p>
-                        <label for="dob">Date of Birth: *</label>
+                        <label for="dob">
+                            Date of Birth: *
+                        </label>
 
                         <input type="text"
                                id="dob"
                                name="dob"
                                placeholder="dd/mm/yyyy"
                                pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
-                               title="Enter your date of birth in dd/mm/yyyy format."
+                               title="Enter a valid date in dd/mm/yyyy format."
+                               aria-describedby="dob-help dob-error"
+                               inputmode="numeric"
+                               autocomplete="bday"
                                required>
+
+                        <small id="dob-help">
+                            Format: dd/mm/yyyy
+                        </small>
+
+                        <span id="dob-error"
+                              class="form-error"
+                              role="alert"></span>
                     </p>
 
                     <!-- Gender radio buttons -->
@@ -176,29 +256,40 @@
                     <legend>Address Information</legend>
 
                     <p>
-                        <label for="street">Street Address: *</label>
+                        <label for="street">
+                            Street Address: *
+                        </label>
 
                         <input type="text"
                                id="street"
                                name="street"
                                maxlength="40"
+                               autocomplete="street-address"
                                required>
                     </p>
 
                     <p>
-                        <label for="suburb">Suburb/Town: *</label>
+                        <label for="suburb">
+                            Suburb/Town: *
+                        </label>
 
                         <input type="text"
                                id="suburb"
                                name="suburb"
                                maxlength="40"
+                               autocomplete="address-level2"
                                required>
                     </p>
 
                     <p>
-                        <label for="state">State: *</label>
+                        <label for="state">
+                            State: *
+                        </label>
 
-                        <select id="state" name="state" required>
+                        <select id="state"
+                                name="state"
+                                autocomplete="address-level1"
+                                required>
                             <option value="">Select State</option>
                             <option value="VIC">VIC</option>
                             <option value="NSW">NSW</option>
@@ -212,7 +303,9 @@
                     </p>
 
                     <p>
-                        <label for="postcode">Postcode: *</label>
+                        <label for="postcode">
+                            Postcode: *
+                        </label>
 
                         <input type="text"
                                id="postcode"
@@ -221,6 +314,7 @@
                                minlength="4"
                                maxlength="4"
                                inputmode="numeric"
+                               autocomplete="postal-code"
                                title="Enter exactly four digits."
                                required>
                     </p>
@@ -231,16 +325,21 @@
                     <legend>Contact Information</legend>
 
                     <p>
-                        <label for="email">Email Address: *</label>
+                        <label for="email">
+                            Email Address: *
+                        </label>
 
                         <input type="email"
                                id="email"
                                name="email"
+                               autocomplete="email"
                                required>
                     </p>
 
                     <p>
-                        <label for="phone">Phone Number: *</label>
+                        <label for="phone">
+                            Phone Number: *
+                        </label>
 
                         <input type="tel"
                                id="phone"
@@ -249,18 +348,21 @@
                                minlength="8"
                                maxlength="12"
                                inputmode="numeric"
+                               autocomplete="tel"
                                title="Enter 8 to 12 digits without spaces."
                                required>
                     </p>
                 </fieldset>
 
                 <!-- Skills and experience -->
-                <fieldset>
-                    <legend>Skills and Experience</legend>
+                <fieldset id="skills-fieldset"
+                          aria-describedby="skills-help skills-error">
 
-                    <p>
-                        Select the skills relevant to the position
-                        you are applying for.
+                    <legend>Skills and Experience: *</legend>
+
+                    <p id="skills-help">
+                        Select at least one skill relevant to
+                        the position you are applying for.
                     </p>
 
                     <p>
@@ -284,7 +386,9 @@
                                id="accessibility"
                                name="skills[]"
                                value="Web Accessibility">
-                        <label for="accessibility">Web Accessibility</label>
+                        <label for="accessibility">
+                            Web Accessibility
+                        </label>
                     </p>
 
                     <p>
@@ -292,7 +396,9 @@
                                id="healthcare"
                                name="skills[]"
                                value="Healthcare Technology">
-                        <label for="healthcare">Healthcare Technology</label>
+                        <label for="healthcare">
+                            Healthcare Technology
+                        </label>
                     </p>
 
                     <p>
@@ -300,8 +406,14 @@
                                id="design"
                                name="skills[]"
                                value="UI/UX Design">
-                        <label for="design">UI/UX Design</label>
+                        <label for="design">
+                            UI/UX Design
+                        </label>
                     </p>
+
+                    <p id="skills-error"
+                       class="form-error"
+                       role="alert"></p>
 
                     <p>
                         <label for="otherskills">
@@ -319,7 +431,7 @@
                 </fieldset>
 
                 <!-- Form submission -->
-                <p>
+                <p class="form-actions">
                     <input type="submit" value="Submit Application">
                     <input type="reset" value="Clear Form">
                 </p>
@@ -336,6 +448,119 @@
             All rights reserved.
         </p>
     </footer>
+
+    <!--
+        Client-side validation:
+        Ensures the date is valid and at least one skill is selected.
+        Native HTML validation handles the remaining required fields.
+    -->
+    <script>
+        const applicationForm = document.getElementById("application-form");
+        const dobInput = document.getElementById("dob");
+        const dobError = document.getElementById("dob-error");
+        const skillsFieldset = document.getElementById("skills-fieldset");
+        const skillsError = document.getElementById("skills-error");
+
+        const skillCheckboxes = applicationForm.querySelectorAll(
+            'input[name="skills[]"]'
+        );
+
+        // Check that the date exists on the calendar.
+        function isValidDate(value) {
+            const match = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(value);
+
+            if (!match) {
+                return false;
+            }
+
+            const day = Number(match[1]);
+            const month = Number(match[2]);
+            const year = Number(match[3]);
+
+            if (year < 1900 || year > new Date().getFullYear()) {
+                return false;
+            }
+
+            const date = new Date(year, month - 1, day);
+
+            return (
+                date.getFullYear() === year &&
+                date.getMonth() === month - 1 &&
+                date.getDate() === day &&
+                date <= new Date()
+            );
+        }
+
+        // Check the date of birth and display an accessible error.
+        function validateDateOfBirth() {
+            dobInput.setCustomValidity("");
+            dobError.textContent = "";
+
+            if (dobInput.value !== "" && !isValidDate(dobInput.value)) {
+                const message = "Enter a valid date of birth in dd/mm/yyyy format.";
+
+                dobInput.setCustomValidity(message);
+                dobError.textContent = message;
+
+                return false;
+            }
+
+            return true;
+        }
+
+        // Check that at least one skill has been selected.
+        function validateSkills() {
+            const selected = Array.from(skillCheckboxes).some(
+                checkbox => checkbox.checked
+            );
+
+            skillsError.textContent = selected
+                ? ""
+                : "Please select at least one skill.";
+
+            skillsFieldset.setAttribute(
+                "aria-invalid",
+                selected ? "false" : "true"
+            );
+
+            return selected;
+        }
+
+        dobInput.addEventListener("input", validateDateOfBirth);
+
+        skillCheckboxes.forEach(function (checkbox) {
+            checkbox.addEventListener("change", function () {
+                if (skillsError.textContent !== "") {
+                    validateSkills();
+                }
+            });
+        });
+
+        // Prevent submission if custom validation fails.
+        applicationForm.addEventListener("submit", function (event) {
+            const validDate = validateDateOfBirth();
+            const validSkills = validateSkills();
+
+            if (!validDate || !validSkills) {
+                event.preventDefault();
+
+                if (!validDate) {
+                    dobInput.reportValidity();
+                    dobInput.focus();
+                } else {
+                    skillCheckboxes[0].focus();
+                }
+            }
+        });
+
+        // Reset custom validation messages when the form is cleared.
+        applicationForm.addEventListener("reset", function () {
+            dobInput.setCustomValidity("");
+            dobError.textContent = "";
+            skillsError.textContent = "";
+            skillsFieldset.removeAttribute("aria-invalid");
+        });
+    </script>
 
 </body>
 </html>

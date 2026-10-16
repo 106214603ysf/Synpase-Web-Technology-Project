@@ -7,12 +7,15 @@ Developer: Amani Aly
 Page: apply.html
 
 CSS Concepts:
-- Box Model
+- CSS Box Model
 - Block and Inline Layout
-- Flexbox (used in global navigation)
+- CSS Grid (embedded in apply.html)
+- Flexbox
 - Relative Measurement Units
 - Responsive Design
 - Media Queries
+- CSS Variables
+- Pseudo-classes and Attribute Selectors
 - Accessibility
 =========================================================
 */
@@ -24,9 +27,7 @@ CSS Concepts:
 
 main {
     width: 90%;
-
     max-width: 1000px;
-
     margin: 2.5rem auto;
 }
 
@@ -39,7 +40,6 @@ main > section {
     background-color: var(--white);
 
     padding: 2.5rem;
-
     margin-bottom: 2rem;
 
     border: 1px solid var(--border-colour);
@@ -85,7 +85,6 @@ main > section:first-child p {
     max-width: 75ch;
 
     font-size: 1rem;
-
     line-height: 1.8;
 }
 
@@ -96,9 +95,19 @@ main > section:first-child p {
 
 main form {
     width: 100%;
+    max-width: 100%;
 
     margin: 0 auto;
+    min-width: 0;
 }
+
+/*
+The application form uses CSS Grid in the
+embedded stylesheet inside apply.html.
+
+This stylesheet provides the detailed
+appearance of the form and its controls.
+*/
 
 
 /* ==========================================
@@ -107,15 +116,17 @@ main form {
 
 main form fieldset {
     min-width: 0;
+    max-width: 100%;
 
     margin: 0 0 1.8rem;
-
     padding: 1.8rem;
 
     border: 1px solid #c9dedb;
     border-radius: 12px;
 
     background-color: #fbfefd;
+
+    transition: border-color 0.2s ease;
 }
 
 
@@ -134,7 +145,6 @@ main form legend {
     color: var(--primary-blue);
 
     font-size: 1.2rem;
-
     font-weight: bold;
 
     padding: 0 0.6rem;
@@ -161,7 +171,6 @@ main form label {
     color: var(--text-dark);
 
     font-size: 1rem;
-
     font-weight: 600;
 }
 
@@ -178,8 +187,11 @@ main form textarea {
 
     display: block;
 
+    box-sizing: border-box;
+
     width: 100%;
     max-width: 100%;
+    min-width: 0;
 
     margin-top: 0.5rem;
 
@@ -189,15 +201,14 @@ main form textarea {
     border-radius: 8px;
 
     background-color: var(--white);
-
     color: var(--text-dark);
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
 
     transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
@@ -235,10 +246,45 @@ main form textarea:focus {
    13. FORM VALIDATION
 ========================================== */
 
-/* Highlight invalid fields after user interaction */
+/*
+Highlight invalid fields after interaction.
+The :user-invalid pseudo-class avoids
+showing errors immediately on page load.
+*/
 
-main form input:user-invalid {
+main form input:user-invalid,
+main form select:user-invalid {
+
     border-color: #b54747;
+}
+
+
+/* Accessible validation messages */
+
+main form .form-error {
+    display: block;
+
+    color: #a61b1b;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+
+
+/* Hide empty validation messages */
+
+main form .form-error:empty {
+    display: none;
+}
+
+
+/* Highlight skills section when invalid */
+
+main form #skills-fieldset[aria-invalid="true"] {
+    border: 2px solid #b54747;
 }
 
 
@@ -279,6 +325,16 @@ main form input[type="checkbox"] + label {
 }
 
 
+/* Improve readability when an option is selected */
+
+main form input[type="radio"]:checked + label,
+main form input[type="checkbox"]:checked + label {
+
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+
 /* ==========================================
    16. GENDER FIELDSET
 ========================================== */
@@ -291,7 +347,6 @@ main form fieldset fieldset {
     border: 1px solid #c9dedb;
 
     padding: 1.3rem;
-
     margin-top: 1.5rem;
 }
 
@@ -344,7 +399,6 @@ main form input[type="submit"] {
     display: inline-block;
 
     background-color: var(--primary-green);
-
     color: var(--white);
 
     padding: 0.9rem 1.8rem;
@@ -358,7 +412,7 @@ main form input[type="submit"] {
     cursor: pointer;
 
     transition:
-        background-color 0.3s ease,
+        background-color 0.2s ease,
         transform 0.2s ease;
 }
 
@@ -381,7 +435,6 @@ main form input[type="reset"] {
     display: inline-block;
 
     background-color: #e8f1f5;
-
     color: var(--primary-blue);
 
     padding: 0.9rem 1.8rem;
@@ -394,10 +447,14 @@ main form input[type="reset"] {
 
     cursor: pointer;
 
-    margin-left: 0.6rem;
+    /*
+    Flexbox in apply.html provides spacing,
+    so no additional left margin is needed.
+    */
+    margin-left: 0;
 
     transition:
-        background-color 0.3s ease,
+        background-color 0.2s ease,
         transform 0.2s ease;
 }
 
@@ -412,7 +469,22 @@ main form input[type="reset"]:hover {
 
 
 /* ==========================================
-   22. ACCESSIBILITY
+   22. FORM ACTIONS
+========================================== */
+
+/*
+The embedded stylesheet uses Flexbox
+to position the submit and reset buttons.
+*/
+
+main form .form-actions {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   23. ACCESSIBILITY
 ========================================== */
 
 /* Visible keyboard focus for form controls */
@@ -422,13 +494,52 @@ main form select:focus-visible,
 main form textarea:focus-visible {
 
     outline: 3px solid #e5a800;
-
     outline-offset: 3px;
 }
 
 
+/* Skip navigation link for keyboard users */
+
+.skip-link {
+    position: absolute;
+
+    top: -100px;
+    left: 1rem;
+
+    z-index: 1000;
+
+    padding: 0.75rem 1rem;
+
+    background-color: var(--primary-blue);
+    color: var(--white);
+
+    border-radius: 6px;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Show skip link when keyboard-focused */
+
+.skip-link:focus {
+    top: 1rem;
+
+    outline: 3px solid #e5a800;
+    outline-offset: 3px;
+}
+
+
+/* Improve touch target size for buttons */
+
+main form input[type="submit"],
+main form input[type="reset"] {
+    min-height: 44px;
+}
+
+
 /* ==========================================
-   23. RESPONSIVE DESIGN - TABLETS
+   24. RESPONSIVE DESIGN - TABLETS
 ========================================== */
 
 @media only screen and (max-width: 768px) {
@@ -458,7 +569,7 @@ main form textarea:focus-visible {
 
 
 /* ==========================================
-   24. RESPONSIVE DESIGN - MOBILE
+   25. RESPONSIVE DESIGN - MOBILE
 ========================================== */
 
 @media only screen and (max-width: 480px) {
@@ -514,9 +625,36 @@ main form textarea:focus-visible {
 
         width: 100%;
 
-        margin: 0 0 0.8rem 0;
+        margin: 0;
 
         padding: 0.9rem;
     }
 
-}c  
+}
+
+
+/* ==========================================
+   26. REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+/*
+Respect users who prefer reduced animation.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    main form input,
+    main form select,
+    main form textarea,
+    main form fieldset {
+
+        transition: none;
+    }
+
+    main form input[type="submit"]:hover,
+    main form input[type="reset"]:hover {
+
+        transform: none;
+    }
+
+}
