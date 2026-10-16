@@ -9,10 +9,11 @@ Page: apply.html
 CSS Concepts:
 - Box Model
 - Block and Inline Layout
-- Flexbox
+- Flexbox (used in global navigation)
 - Relative Measurement Units
 - Responsive Design
 - Media Queries
+- Accessibility
 =========================================================
 */
 
@@ -23,7 +24,9 @@ CSS Concepts:
 
 main {
     width: 90%;
+
     max-width: 1000px;
+
     margin: 2.5rem auto;
 }
 
@@ -93,6 +96,7 @@ main > section:first-child p {
 
 main form {
     width: 100%;
+
     margin: 0 auto;
 }
 
@@ -228,39 +232,23 @@ main form textarea:focus {
 
 
 /* ==========================================
-   13. REQUIRED FIELD VALIDATION
+   13. FORM VALIDATION
 ========================================== */
 
-/* Highlight invalid fields only after user input */
+/* Highlight invalid fields after user interaction */
 
-main form input:not(:placeholder-shown):invalid {
+main form input:user-invalid {
     border-color: #b54747;
 }
 
 
 /* ==========================================
-   14. RADIO BUTTONS
+   14. RADIO BUTTONS AND CHECKBOXES
 ========================================== */
 
-main form input[type="radio"] {
-    width: 1.1rem;
-    height: 1.1rem;
-
-    margin-right: 0.5rem;
-
-    accent-color: var(--primary-green);
-
-    cursor: pointer;
-
-    vertical-align: middle;
-}
-
-
-/* ==========================================
-   15. CHECKBOXES
-========================================== */
-
+main form input[type="radio"],
 main form input[type="checkbox"] {
+
     width: 1.1rem;
     height: 1.1rem;
 
@@ -275,7 +263,7 @@ main form input[type="checkbox"] {
 
 
 /* ==========================================
-   16. RADIO AND CHECKBOX LABELS
+   15. RADIO AND CHECKBOX LABELS
 ========================================== */
 
 main form input[type="radio"] + label,
@@ -292,11 +280,10 @@ main form input[type="checkbox"] + label {
 
 
 /* ==========================================
-   17. GENDER FIELDSET
+   16. GENDER FIELDSET
 ========================================== */
 
-/* The Gender fieldset is nested inside
-   the Personal Information fieldset. */
+/* Gender fieldset is inside Personal Information */
 
 main form fieldset fieldset {
     background-color: var(--light-green);
@@ -309,7 +296,7 @@ main form fieldset fieldset {
 }
 
 
-/* Gender options */
+/* Gender option spacing */
 
 main form fieldset fieldset p {
     margin: 0.8rem 0;
@@ -317,7 +304,7 @@ main form fieldset fieldset p {
 
 
 /* ==========================================
-   18. SKILLS CHECKBOX SPACING
+   17. SKILLS CHECKBOX SPACING
 ========================================== */
 
 main form input[type="checkbox"] {
@@ -326,7 +313,7 @@ main form input[type="checkbox"] {
 
 
 /* ==========================================
-   19. TEXTAREA
+   18. TEXTAREA
 ========================================== */
 
 main form textarea {
@@ -339,7 +326,7 @@ main form textarea {
 
 
 /* ==========================================
-   20. PLACEHOLDER TEXT
+   19. PLACEHOLDER TEXT
 ========================================== */
 
 main form input::placeholder,
@@ -349,7 +336,7 @@ main form textarea::placeholder {
 
 
 /* ==========================================
-   21. SUBMIT BUTTON
+   20. SUBMIT BUTTON
 ========================================== */
 
 main form input[type="submit"] {
@@ -376,7 +363,7 @@ main form input[type="submit"] {
 }
 
 
-/* Submit hover */
+/* Submit button hover */
 
 main form input[type="submit"]:hover {
     background-color: #065846;
@@ -386,7 +373,7 @@ main form input[type="submit"]:hover {
 
 
 /* ==========================================
-   22. RESET BUTTON
+   21. RESET BUTTON
 ========================================== */
 
 main form input[type="reset"] {
@@ -415,7 +402,7 @@ main form input[type="reset"] {
 }
 
 
-/* Reset hover */
+/* Reset button hover */
 
 main form input[type="reset"]:hover {
     background-color: #d5e7ed;
@@ -425,8 +412,10 @@ main form input[type="reset"]:hover {
 
 
 /* ==========================================
-   23. ACCESSIBILITY
+   22. ACCESSIBILITY
 ========================================== */
+
+/* Visible keyboard focus for form controls */
 
 main form input:focus-visible,
 main form select:focus-visible,
@@ -439,7 +428,7 @@ main form textarea:focus-visible {
 
 
 /* ==========================================
-   24. RESPONSIVE DESIGN - TABLETS
+   23. RESPONSIVE DESIGN - TABLETS
 ========================================== */
 
 @media only screen and (max-width: 768px) {
@@ -469,7 +458,7 @@ main form textarea:focus-visible {
 
 
 /* ==========================================
-   25. RESPONSIVE DESIGN - MOBILE
+   24. RESPONSIVE DESIGN - MOBILE
 ========================================== */
 
 @media only screen and (max-width: 480px) {
@@ -501,6 +490,8 @@ main form textarea:focus-visible {
         font-size: 0.95rem;
     }
 
+    /* Mobile form inputs */
+
     main form input[type="text"],
     main form input[type="email"],
     main form input[type="tel"],
@@ -514,6 +505,8 @@ main form textarea:focus-visible {
         font-size: 1rem;
     }
 
+    /* Mobile submit and reset buttons */
+
     main form input[type="submit"],
     main form input[type="reset"] {
 
@@ -526,4 +519,4 @@ main form textarea:focus-visible {
         padding: 0.9rem;
     }
 
-}
+}c  
