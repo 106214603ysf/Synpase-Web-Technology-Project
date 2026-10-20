@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VitaLink Digital Health is hiring for online patient platforms, appointment systems and health information websites.">
+  <meta name="keywords" content="digital health, wellness, careers, patient platforms, appointment systems, health information websites">
+  <meta name="author" content="YOUR NAME">
+  <title>VitaLink Digital Health | Careers in Digital Health and Wellness</title>
+
+  <!-- External stylesheet is switched off until the group agrees on a style.
+       When ready, delete the comment markers around the line below to turn it back on. -->
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+<link rel="stylesheet" href="styles.css">
+  <!-- Embedded CSS example: this rule is only used on the home page -->
+  <style>
+    .page-note { font-size: 0.9em; border-left: 4px solid #0e6e6e; padding-left: 10px; }
+  </style>
+</head>
+<body>
+  <!-- Skip link: lets keyboard and screen reader users jump past the menu to the main content -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header: company logo, name and slogan, repeated on every page so visitors always know where they are -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="images/logo.svg" alt="VitaLink logo: a heartbeat line inside a teal circle" width="64" height="64">
+      <div>
+        <h1 id="site-name">VitaLink Digital Health</h1>
+        <p class="slogan">Healthcare that fits in your pocket.</p>
+      </div>
+    </div>
+
+    <!-- Main navigation: links to all four pages. Copy this block to every page and move aria-current to the page you are on -->
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="apply.html">Apply</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content: everything unique to the home page sits inside this one element -->
+  <main id="main">
+
+    <!-- Hero section: company description and image, the first thing visitors see -->
+    <section class="panel hero" aria-labelledby="about-heading">
+      <div class="hero-text">
+        <h2 id="about-heading">Build the tools patients use every day</h2>
+        <p>VitaLink is a private healthcare technology company. We run online patient platforms, appointment booking systems and health information websites.</p>
+        <p>We are growing our digital services team. Join us to make healthcare simple to find, book and understand.</p>
+        <!-- Inline CSS example: a one-off spacing adjustment for this single paragraph -->
+        <p class="page-note" style="margin-top: 20px;">All our roles support <strong>flexible and remote work</strong>.</p>
+      </div>
+      <!-- Figure keeps the image and its caption together as one unit -->
+      <figure class="hero-figure">
+        <img src="images/hero.svg" alt="Illustration of a phone showing a heartbeat line, beside a calendar and a pulse chart" width="480" height="300">
+        <figcaption>Our patient app, appointment calendar and health tracking tools.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Search section: uses GET because a search only retrieves data, and the word appears in the URL as ?q= -->
+    <section class="panel" aria-labelledby="search-heading">
+      <h2 id="search-heading">Search for a job</h2>
+      <form class="search-form" action="jobs.html" method="get" role="search">
+        <label for="job-search">Job title or keyword</label>
+        <div class="search-row">
+          <!-- required stops an empty search from being sent -->
+          <input type="search" id="job-search" name="q" placeholder="For example: developer" autocomplete="off" required>
+          <button type="submit">Search jobs</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Hiring table: uses rowspan and colspan to merge cells. The scope attributes tell screen readers which headers belong to which cells -->
+    <section class="panel" aria-labelledby="hiring-heading">
+      <h2 id="hiring-heading">Where we are hiring</h2>
+      <div class="table-wrap">
+        <table class="hiring-table" border="1">
+          <caption>Open roles by team, with work type and number of openings</caption>
+          <thead>
+            <tr>
+              <!-- rowspan="2": this cell stretches down across both header rows -->
+              <th scope="col" rowspan="2">Team</th>
+              <!-- colspan="2": this cell stretches across the Role and Work type columns -->
+              <th scope="colgroup" colspan="2">Role details</th>
+              <th scope="col" rowspan="2">Openings</th>
+            </tr>
+            <tr>
+              <th scope="col">Role</th>
+              <th scope="col">Work type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- Team name covers two rows because the team has two open roles -->
+              <th scope="rowgroup" rowspan="2">Patient platforms</th>
+              <td>Front-end developer</td>
+              <td>Full-time</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Accessibility tester</td>
+              <td>Contract</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th scope="rowgroup" rowspan="2">Appointment systems</th>
+              <td>Back-end developer</td>
+              <td>Full-time</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>QA analyst</td>
+              <td>Part-time</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th scope="row">Health information sites</th>
+              <td>Web content editor</td>
+              <td>Part-time</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <!-- colspan="3": the label stretches across the first three columns, so the total sits under Openings -->
+              <th scope="row" colspan="3">Total open roles</th>
+              <td>6</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: project links the assessment requires, plus contact details and the GenAI credit -->
+  <footer class="site-footer">
+    <h2 class="footer-title">Project and contact links</h2>
+    <ul class="footer-links">
+      <!-- External links open in a new tab; rel="noopener noreferrer" stops the new tab from controlling this page -->
+      <li><a href="https://YOUR-SITE.atlassian.net/jira/software/projects/G01/boards" target="_blank" rel="noopener noreferrer">Jira project</a></li>
+      <li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank" rel="noopener noreferrer">GitHub repository</a></li>
+      <li><a href="https://YOUR-USERNAME.github.io/YOUR-REPO/" target="_blank" rel="noopener noreferrer">Live website</a></li>
+      <!-- mailto: opens the visitor's email program -->
+      <li><a href="mailto:info@vitalink-health.example">info@vitalink-health.example</a></li>
+    </ul>
+    <p class="credit">&copy; 2026 VitaLink Digital Health. All rights reserved.</p>
+    <!-- GenAI credit required by the assessment brief -->
+    <p class="credit">University project.</p>
+  </footer>
+</body>
+</html>
