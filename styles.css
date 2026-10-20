@@ -1,565 +1,204 @@
 /*
 =========================================================
-DIGITAL HEALTH & WELLNESS WEBSITE
-GLOBAL STYLESHEET
+DIGITAL HEALTH & WELLNESS WEBSITE - GLOBAL STYLESHEET
+Group 1 | Developer: Amani Aly
 
-Group 1 - Web Technology Project
-Developer: Amani Aly
-
-CSS Concepts:
-- CSS Box Model
-- Flexbox
-- Relative Measurement Units
-- Responsive Design
-- Media Queries
-- CSS Variables
-- Pseudo-classes and Attribute Selectors
-- Accessibility
+CSS Concepts: Box Model, Flexbox, Relative Units,
+Responsive Design, Media Queries, CSS Variables,
+Pseudo-classes, Attribute Selectors and Accessibility.
 =========================================================
 */
 
-
-/* ==========================================
-   1. GLOBAL COLOUR VARIABLES
-========================================== */
-
+/* 1. GLOBAL COLOUR VARIABLES */
 :root {
-    --primary-blue: #123b5d;
-    --secondary-blue: #1c6285;
-    --primary-green: #08745e;
-
-    --light-green: #e8f7f4;
-    --light-blue: #eaf3fc;
-
-    --background: #f4f9fb;
-    --white: #ffffff;
-
-    --text-dark: #243b4a;
-    --border-colour: #d9e8e5;
-
-    --focus-colour: #e5a800;
+    --primary-blue: #123b5d; --secondary-blue: #1c6285;
+    --primary-green: #08745e; --light-green: #e8f7f4;
+    --light-blue: #eaf3fc; --background: #f4f9fb;
+    --white: #ffffff; --text-dark: #243b4a;
+    --border-colour: #d9e8e5; --focus-colour: #e5a800;
 }
 
-
-/* ==========================================
-   2. RESET AND BOX MODEL
-========================================== */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+/* 2. RESET AND BOX MODEL */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-    margin: 0;
-    padding: 0;
-
+    margin: 0; padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-dark);
-
-    background: linear-gradient(
-        135deg,
-        #f4f9fb,
-        #e8f7f4,
-        #edf5fc
-    );
-
+    background: linear-gradient(135deg, #f4f9fb, #e8f7f4, #edf5fc);
     line-height: 1.6;
 }
 
-
-/* ==========================================
-   3. WEBSITE HEADER
-========================================== */
-
+/* 3. WEBSITE HEADER */
 body > header {
-    background: linear-gradient(
-        to right,
-        var(--primary-blue),
-        var(--primary-green)
-    );
-
-    color: var(--white);
-
-    padding: 2rem 5%;
-    text-align: center;
-
+    background: linear-gradient(to right, var(--primary-blue), var(--primary-green));
+    color: var(--white); padding: 2rem 5%; text-align: center;
     border-bottom: 4px solid #27a98a;
 }
 
-
-/* Website title */
-
 body > header h1 {
-    color: var(--white);
-
-    font-size: 2rem;
-    margin: 0 0 1.25rem;
-
-    letter-spacing: 0.5px;
+    color: var(--white); font-size: 2rem;
+    margin: 0 0 1.25rem; letter-spacing: 0.5px;
 }
 
-
-/* ==========================================
-   4. WEBSITE NAVIGATION
-========================================== */
-
-/* Supports navigation with or without a list */
-
+/* 4. WEBSITE NAVIGATION - FLEXBOX */
 body > header nav {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 1rem;
+    display: flex; justify-content: center;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
 }
-
-
-/* Navigation list */
 
 body > header nav ul {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 1rem;
-
-    list-style: none;
-
-    margin: 0;
-    padding: 0;
+    display: flex; justify-content: center; align-items: center;
+    flex-wrap: wrap; gap: 1rem; list-style: none;
+    margin: 0; padding: 0;
 }
-
-
-/* Navigation links */
 
 body > header nav a {
-    display: inline-block;
-
-    color: var(--white);
-    text-decoration: none;
-
-    font-size: 1rem;
-    font-weight: bold;
-
-    padding: 0.65rem 1.2rem;
-    border-radius: 8px;
-
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
+    display: inline-block; color: var(--white);
+    text-decoration: none; font-size: 1rem; font-weight: bold;
+    padding: 0.65rem 1.2rem; border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-/* Navigation hover effect */
-
-body > header nav a:hover {
-    background-color: #16856f;
-    color: var(--white);
-}
-
-
-/* Active navigation link */
+/* Navigation hover and active page */
+body > header nav a:hover { background-color: #16856f; color: var(--white); }
 
 body > header nav a[aria-current="page"] {
-    background-color: var(--white);
-    color: var(--primary-blue);
+    background-color: var(--white); color: var(--primary-blue);
 }
-
-
-/* Keep active link readable on hover */
 
 body > header nav a[aria-current="page"]:hover {
-    background-color: var(--light-green);
-    color: var(--primary-blue);
+    background-color: var(--light-green); color: var(--primary-blue);
 }
 
-
-/* ==========================================
-   5. SKIP NAVIGATION LINK
-========================================== */
-
-/*
-The skip link is hidden until keyboard-focused.
-It allows users to jump directly to the main content.
-*/
-
+/* 5. ACCESSIBLE SKIP NAVIGATION */
+/* Hidden until keyboard-focused; skips directly to main content. */
 .skip-link {
-    position: absolute;
-
-    top: -100px;
-    left: 1rem;
-
-    z-index: 1000;
-
-    padding: 0.75rem 1rem;
-
-    background-color: var(--primary-blue);
-    color: var(--white);
-
-    border-radius: 6px;
-
-    font-weight: bold;
-    text-decoration: none;
+    position: absolute; top: -100px; left: 1rem; z-index: 1000;
+    padding: 0.75rem 1rem; background-color: var(--primary-blue);
+    color: var(--white); border-radius: 6px;
+    font-weight: bold; text-decoration: none;
 }
 
 .skip-link:focus {
-    top: 1rem;
-
-    outline: 3px solid var(--focus-colour);
+    top: 1rem; outline: 3px solid var(--focus-colour);
     outline-offset: 3px;
 }
 
-
-/* ==========================================
-   6. MAIN CONTENT
-========================================== */
-
+/* 6. MAIN CONTENT */
 main {
-    width: 90%;
-    max-width: 1200px;
-
-    margin: 2.5rem auto;
-
-    min-height: 55vh;
+    width: 90%; max-width: 1200px;
+    margin: 2.5rem auto; min-height: 55vh;
 }
 
+/* 7. TYPOGRAPHY */
+h1, h2, h3, h4 { line-height: 1.3; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.7rem; color: var(--primary-blue); }
+h3 { font-size: 1.3rem; color: var(--primary-green); }
+p { font-size: 1rem; line-height: 1.7; }
 
-/* ==========================================
-   7. TYPOGRAPHY
-========================================== */
+/* 8. CONTENT LINKS */
+main a { color: var(--primary-green); font-weight: bold; }
+main a:hover { color: var(--primary-blue); }
 
-h1,
-h2,
-h3,
-h4 {
-    line-height: 1.3;
-}
-
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    font-size: 1.7rem;
-    color: var(--primary-blue);
-}
-
-h3 {
-    font-size: 1.3rem;
-    color: var(--primary-green);
-}
-
-p {
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-
-/* ==========================================
-   8. CONTENT LINKS
-========================================== */
-
-main a {
-    color: var(--primary-green);
-    font-weight: bold;
-}
-
-main a:hover {
-    color: var(--primary-blue);
-}
-
-
-/* ==========================================
-   9. GENERAL CONTENT SECTIONS
-========================================== */
-
+/* 9. GENERAL CONTENT SECTIONS */
 main > section {
-    background-color: var(--white);
-
-    padding: 2rem;
-    margin-bottom: 2rem;
-
-    border: 1px solid var(--border-colour);
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px rgba(18, 59, 93, 0.06);
+    background-color: var(--white); padding: 2rem;
+    margin-bottom: 2rem; border: 1px solid var(--border-colour);
+    border-radius: 12px; box-shadow: 0 4px 15px rgba(18, 59, 93, 0.06);
 }
 
+/* 10. IMAGES AND FIGURES */
+img { display: block; max-width: 100%; height: auto; }
+figure { max-width: 100%; margin: 1.5rem 0; }
+figcaption { font-size: 0.95rem; line-height: 1.5; }
 
-/* ==========================================
-   10. IMAGES AND FIGURES
-========================================== */
+/* 11. GENERAL TABLE STYLING */
+/* Page-specific CSS may customise colours, borders and hover effects. */
+table { width: 100%; border-collapse: collapse; }
 
-img {
-    display: block;
-
-    max-width: 100%;
-    height: auto;
-}
-
-/*
-Figure styling can be customised further
-in the page-specific CSS file.
-*/
-
-figure {
-    max-width: 100%;
-    margin: 1.5rem 0;
-}
-
-figcaption {
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-
-/* ==========================================
-   11. GENERAL TABLE STYLING
-========================================== */
-
-/*
-Provides a readable base for tables.
-Page-specific CSS can customise colours,
-borders and hover effects.
-*/
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    padding: 0.75rem;
-    text-align: left;
+th, td {
+    padding: 0.75rem; text-align: left;
     border: 1px solid var(--border-colour);
 }
 
-th {
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
+th { background-color: var(--primary-blue); color: var(--white); }
 
-
-/* ==========================================
-   12. GENERAL BUTTONS
-========================================== */
-
-button,
-input[type="submit"] {
-    background-color: var(--primary-green);
-    color: var(--white);
-
-    border: none;
-    border-radius: 8px;
-
-    padding: 0.8rem 1.5rem;
-
-    font-size: 1rem;
-    font-weight: bold;
-
-    cursor: pointer;
-
+/* 12. GENERAL BUTTONS */
+button, input[type="submit"] {
+    background-color: var(--primary-green); color: var(--white);
+    border: none; border-radius: 8px; padding: 0.8rem 1.5rem;
+    font-size: 1rem; font-weight: bold; cursor: pointer;
     min-height: 44px;
 }
 
+button:hover, input[type="submit"]:hover { background-color: #065846; }
 
-/* Button hover effect */
-
-button:hover,
-input[type="submit"]:hover {
-    background-color: #065846;
+/* 13. ACCESSIBILITY - KEYBOARD FOCUS */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--focus-colour); outline-offset: 3px;
 }
 
-
-/* ==========================================
-   13. ACCESSIBILITY
-========================================== */
-
-/* Visible keyboard focus */
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid var(--focus-colour);
-    outline-offset: 3px;
-}
-
-
-/* ==========================================
-   14. WEBSITE FOOTER
-========================================== */
-
+/* 14. WEBSITE FOOTER */
 body > footer {
-    background-color: var(--primary-blue);
-    color: var(--white);
-
-    text-align: center;
-
-    padding: 2rem 5%;
-    margin-top: 3rem;
+    background-color: var(--primary-blue); color: var(--white);
+    text-align: center; padding: 2rem 5%; margin-top: 3rem;
 }
 
+body > footer p { margin: 0.5rem 0; font-size: 0.95rem; }
+body > footer a { color: #b8f2df; text-decoration: underline; }
+body > footer a:hover { color: var(--white); }
 
-/* Footer paragraphs */
-
-body > footer p {
-    margin: 0.5rem 0;
-    font-size: 0.95rem;
-}
-
-
-/* Footer links */
-
-body > footer a {
-    color: #b8f2df;
-    text-decoration: underline;
-}
-
-body > footer a:hover {
-    color: var(--white);
-}
-
-
-/* ==========================================
-   15. RESPONSIVE DESIGN - TABLETS
-========================================== */
-
+/* 15. RESPONSIVE DESIGN - TABLETS */
 @media only screen and (max-width: 768px) {
+    body > header { padding: 1.5rem 3%; }
+    body > header h1 { font-size: 1.6rem; }
 
-    body > header {
-        padding: 1.5rem 3%;
-    }
-
-    body > header h1 {
-        font-size: 1.6rem;
-    }
-
-    body > header nav,
-    body > header nav ul {
-        gap: 0.5rem;
-    }
+    body > header nav, body > header nav ul { gap: 0.5rem; }
 
     body > header nav a {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem; font-size: 0.9rem;
     }
 
-    main {
-        width: 95%;
-        margin: 1.5rem auto;
-    }
-
-    main > section {
-        padding: 1.25rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
+    main { width: 95%; margin: 1.5rem auto; }
+    main > section { padding: 1.25rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
 }
 
-
-/* ==========================================
-   16. RESPONSIVE DESIGN - MOBILE
-========================================== */
-
+/* 16. RESPONSIVE DESIGN - MOBILE */
 @media only screen and (max-width: 480px) {
-
-    body > header {
-        padding: 1.5rem 3%;
-    }
-
-    body > header h1 {
-        font-size: 1.4rem;
-    }
+    body > header { padding: 1.5rem 3%; }
+    body > header h1 { font-size: 1.4rem; }
 
     /* Mobile navigation */
-
-    body > header nav {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
+    body > header nav { flex-direction: column; gap: 0.5rem; }
     body > header nav ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.3rem;
+        flex-direction: column; width: 100%; gap: 0.3rem;
     }
 
-    body > header nav li {
-        width: 100%;
-    }
+    body > header nav li { width: 100%; }
 
     body > header nav a {
-        display: block;
-        width: 100%;
-
-        text-align: center;
-        padding: 0.75rem 1rem;
+        display: block; width: 100%;
+        text-align: center; padding: 0.75rem 1rem;
     }
 
-    /* Mobile main content */
-
-    main {
-        width: 95%;
-        margin: 1rem auto;
-    }
-
-    main > section {
-        padding: 1rem;
-    }
-
-    /* Mobile tables */
-
-    table {
-        display: block;
-        max-width: 100%;
-        overflow-x: auto;
-    }
+    /* Mobile content and tables */
+    main { width: 95%; margin: 1rem auto; }
+    main > section { padding: 1rem; }
+    table { display: block; max-width: 100%; overflow-x: auto; }
 
     /* Mobile footer */
-
-    body > footer {
-        padding: 1.5rem 5%;
-    }
-
+    body > footer { padding: 1.5rem 5%; }
 }
 
-
-/* ==========================================
-   17. REDUCED MOTION ACCESSIBILITY
-========================================== */
-
-/*
-Respect the user's reduced-motion preference.
-*/
-
+/* 17. REDUCED MOTION ACCESSIBILITY */
+/* Respect users who prefer reduced animation. */
 @media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    body > header nav a {
-        transition: none;
-    }
-
+    html { scroll-behavior: auto; }
+    body > header nav a { transition: none; }
 }
