@@ -8,23 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application - Digital Health and Wellness</title>
 
-    <!-- External stylesheets: shared and page-specific -->
+    <!-- Global CSS shared by all pages -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="apply.css">
 
-    <!-- Embedded CSS: responsive Grid form and Flexbox buttons -->
+    <!-- Embedded CSS: application-specific design, Grid and Flexbox -->
     <style>
         #application-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
-        #application-form > fieldset { min-width: 0; margin-bottom: 0; }
+        #application-form > fieldset { min-width: 0; margin: 0; padding: 1.5rem; background: #fbfefd; border: 1px solid #c9dedb; border-left: 4px solid #08745e; border-radius: 12px; }
+        #application-form legend { color: #123b5d; font-size: 1.2rem; font-weight: bold; padding: 0 0.5rem; }
+        #application-form label { color: #243b4a; font-weight: 600; }
+        #application-form input[type="text"], #application-form input[type="email"], #application-form input[type="tel"], #application-form select, #application-form textarea { display: block; width: 100%; max-width: 100%; box-sizing: border-box; margin-top: 0.5rem; padding: 0.85rem 1rem; border: 1px solid #b7d3ce; border-radius: 8px; background: white; color: #243b4a; font: inherit; }
+        #application-form input:focus-visible, #application-form select:focus-visible, #application-form textarea:focus-visible { outline: 3px solid #e5a800; outline-offset: 3px; }
+        #application-form input[type="radio"], #application-form input[type="checkbox"] { width: 1.1rem; height: 1.1rem; margin-right: 0.5rem; accent-color: #08745e; cursor: pointer; }
+        #application-form input[type="radio"] + label, #application-form input[type="checkbox"] + label { font-weight: normal; cursor: pointer; }
+        #application-form fieldset fieldset { min-width: 0; margin-top: 1.5rem; padding: 1rem; background: #e8f7f4; border: 1px solid #c9dedb; border-radius: 8px; }
+        #application-form textarea { min-height: 9rem; resize: vertical; }
         #application-form > .form-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0; }
-        @media (max-width: 480px) { #application-form > .form-actions { flex-direction: column; } }
+        #application-form input[type="submit"], #application-form input[type="reset"] { padding: 0.9rem 1.8rem; border-radius: 8px; font: inherit; font-weight: bold; cursor: pointer; }
+        #application-form input[type="submit"] { background: #08745e; color: white; border: 1px solid #08745e; }
+        #application-form input[type="reset"] { background: #e8f1f5; color: #123b5d; border: 1px solid #b7d3ce; }
+        #application-form input[type="submit"]:hover { background: #065846; }
+        #application-form input[type="reset"]:hover { background: #d5e7ed; }
+        @media (max-width: 480px) { #application-form > fieldset { padding: 0.9rem; } #application-form > .form-actions { flex-direction: column; } #application-form > .form-actions input { width: 100%; margin: 0; } }
     </style>
 </head>
 
 <body>
     <!-- Header and accessible navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
     <header>
         <h1>Digital Health and Wellness</h1>
         <nav aria-label="Main navigation">
@@ -47,9 +58,8 @@
         </section>
 
         <section>
-            <!-- Inline CSS example on the heading -->
-            <h2 style="letter-spacing: 0.3px;">Job Application Form</h2>
-
+            <!-- Inline CSS: distinctive form heading -->
+            <h2 style="letter-spacing: 0.3px; border-bottom: 3px solid #08745e; padding-bottom: 10px;">Job Application Form</h2>
             <form id="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
 
                 <!-- Job reference -->
@@ -70,7 +80,6 @@
                         <input type="text" id="lastname" name="lastname" pattern="[A-Za-z]{1,20}" maxlength="20" autocomplete="family-name" title="Enter up to 20 letters." required></p>
                     <p><label for="dob">Date of Birth: *</label>
                         <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" inputmode="numeric" title="Enter your date of birth in dd/mm/yyyy format." required></p>
-
                     <fieldset>
                         <legend>Gender: *</legend>
                         <p><input type="radio" id="male" name="gender" value="male" required> <label for="male">Male</label></p>
@@ -108,7 +117,7 @@
                         <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" minlength="8" maxlength="12" inputmode="numeric" autocomplete="tel" title="Enter 8 to 12 digits without spaces." required></p>
                 </fieldset>
 
-                <!-- Skills: multiple selections permitted -->
+                <!-- Skills and experience -->
                 <fieldset>
                     <legend>Skills and Experience</legend>
                     <p>Select the skills relevant to the position you are applying for.</p>
