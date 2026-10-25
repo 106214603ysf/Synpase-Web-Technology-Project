@@ -1,45 +1,126 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <!-- About Us page for Digital Health and Wellness -->
     <html lang="en">
 
+        <!-- page info -->
         <head>
         <title>About Us</title>
         <meta charset="UTF-8">
         <meta name="description" content="Web Technology Project - About Page for Synapse Group">
         <meta name="keywords" content="COS10026, Web Technology Project, About Page, Synapse, Swinburne, HTML">
         <meta name="author" content="The Synapse Team">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- global stylesheet -->
+        <link rel="stylesheet" href="styles.css">
 
-<!-- Global Website CSS -->
-<link rel="stylesheet" href="styles.css">
+<style>
 
-<!-- About Us Page CSS -->
-<link rel="stylesheet" href="about.css">
+dt{
+   font-size: 20px; 
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-</head>
+dd {
+    margin-left: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        border: 1px solid var(--border-colour);
+    }
+
+    caption {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin-bottom: 0.8rem;
+    }
+
+    th {
+        background-color: var(--primary-blue);
+        color: var(--white);
+        text-align: left;
+        padding: 0.7rem 1rem;
+        border: 1px solid var(--border-colour);
+    }
+
+    td {
+        padding: 0.7rem 1rem;
+        border: 1px solid var(--border-colour);
+    }
+
+</style>
+
+
+        </head>
 
 
     <body>
         
+        <!-- header with menu -->
         <header>
+            <h1>About Synapse</h1>
         <nav>
-        <a href="index.html">Home</a>|
-        <a href="jobs.html">Jobs</a>|
-        <a href="Apply.html">Apply</a>|
-        <a href="about.html" aria-current="page">About Us</a>
+         <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li aria-hidden="true">|</li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li aria-hidden="true">|</li>
+        <li><a href="apply.html">Apply</a></li>
+        <li aria-hidden="true">|</li>
+        <li><a href="about.html">About Us</a></li>
+        </ul>
         </nav>
             </header>
 
+    <!-- main content -->
     <main>
             
 
-            <h1>About Synapse</h1>
+            
 
-        <!-- classes schedule & name of group -->
+
+
+    <!-- contributions (to be filled) -->
+    <section align="center">
+        <h2>Project Contributions</h2>
+    <dl>
+        <dt>Amani Aly</dt>
+        <dd>Creation of the application page and implemented the responsive design. The leader of Synapse.</dd>
+
+        <dt>Abdullah Maithalouni</dt>
+        <dd>Creation of the about page and review of all pages and the CSS code.</dd>
+
+        <dt>Youssof Hussein</dt>
+        <dd>Creation of Synapse's job page and the mention of Aboriginal and Torres Strait Islander peoples inclusion.</dd>
+
+        <dt>Abrar Salahuddin</dt>
+        <dd>Creation of the home/contact page and implementation of the search functionality.</dd>
+    </dl>
+    </section>
+
+            <!-- classes schedule & name of group -->
+    <section>
     <h2>About Our Group</h2>
     <ul>
         <li>Group Name: Synapse</li>
         <li>Class Schedule
+            <!-- class days -->
             <ul>
                 <li>
                     Sunday
@@ -56,66 +137,63 @@
             </ul>
         </li>
     </ul>
-
-    <!-- contributions (to be filled) -->
-        <h2>Project Contributions</h2>
-    <dl>
-        <dt>Member 1</dt>
-        <dd>Contribution 1</dd>
-
-        <dt>Member 2</dt>
-        <dd>Contribution 2</dd>
-
-        <dt>Member 3</dt>
-        <dd>Contribution 3</dd>
-
-        <dt>Member 4</dt>
-        <dd>Contribution 4</dd>
-    </dl>
-
+    </section>
 
     <!-- quotes -->
+    <section>
         <h2>Group Quotations!</h2>
     <dl>
+        <!-- Amani's quote -->
         <dt>Amani Aly</dt>
         <dd>“Be loud, stand tall, leave a mark.”</dd>
         <dd lang="ar" dir="auto">«ارفع صوتك، قف بثبات، واترك أثرًا.»</dd>
         
+        <!-- Abdullah's quote -->
         <dt>Abdullah Maithalouni</dt>
         <dd>“The ruling class fears education because it makes obedience impossible.”</dd>
         <dd lang="ar" dir="auto">«تخشى الطبقة الحاكمة التعليم لأنه يجعل الطاعة مستحيلة.»</dd>
 
+        <!-- Youssof's quote -->
         <dt>Youssof Hussein</dt>
         <dd>“You don't have to see the whole staircase, just take the first step.”</dd>
         <dd lang="ar" dir="auto">«ليس عليك أن ترى السُّلَّم كله، فقط خذ الخطوة الأولى.»</dd>
 
+        <!-- Abrar's quote -->
         <dt>Abrar Salahuddin</dt>
         <dd>“Those who keep trying are never truly defeated.”</dd>
         <dd lang="ur" dir="auto">ہمت کرنے والوں کی کبھی ہار نہیں ہوتی۔</dd>
     </dl>
+    </section>
 
 
     <!-- group photo -->
+    <section>
     <figure>
         
-        <img src="grouphoto.png" alt="The Synapse Team" width="500" height="300">
+        <img src="Images/group-photo.jpeg" alt="The Synapse Team" width="500" height="300">
 
+        <!-- photo caption -->
         <figcaption>The Synapse Work Team</figcaption>
 
     </figure>
+    </section>
 
+    <!-- spacing -->
     <br>
     <br>
 
 
 
     <!-- table of facts -->
+    <section>
     <table>
         <caption>Fun facts about our members!</caption> 
+        <!-- table headings -->
         <tr>
             <th>Member Name</th>
             <th>Member Fact!</th>
         </tr>
+        <!-- one row per member -->
         <tr>
             <td>Amani</td>
             <td>Enjoys playing table tennis</td>
@@ -133,13 +211,13 @@
             <td>Aspires to become a cybersecurity analyst.</td>
         </tr>
 
-       </table>
-</main>
+    </table>
+    </section>
+    </main>
+    </body>
 
-<!-- Website Footer -->
-<footer>
-    <p>&copy; 2026 Digital Health and Wellness. All rights reserved.</p>
-</footer>
 
-</body>
-</html>
+
+
+
+    </html>
