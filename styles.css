@@ -163,9 +163,16 @@ main {
 
 
 /* ==============================================
-   6. TYPOGRAPHY
+   6. TYPOGRAPHY + TAB;E
 ============================================== */
 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        border: 1px solid var(--border-colour);
+    }
+    
 h1,
 h2,
 h3,
