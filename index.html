@@ -9,7 +9,6 @@
   <title>Synapse | Careers in Digital Health and Wellness</title>
 
 <link rel="stylesheet" href="styles.css">
-  <!-- Embedded CSS example: this rule is only used on the home page -->
   <style>
     .page-note { font-size: 0.9em; border-left: 4px solid #0e6e6e; padding-left: 10px; }
   
@@ -17,7 +16,7 @@
 </head>
 <body>
 
-  <!-- Header: company logo, name and slogan, repeated on every page so visitors always know where they are -->
+  
   <header>
     <div>
       <img src="images/logo.svg" alt="Synapse logo: a heartbeat line inside a teal circle" width="64" height="64">
@@ -27,7 +26,7 @@
       </div>
     </div>
 
-    <!-- Main navigation: links to all four pages. Copy this block to every page and move aria-current to the page you are on -->
+
     <nav aria-label="Main navigation">
       <ul>
          <li><a href="index.html" aria-current="page">Home</a></li>
@@ -41,13 +40,13 @@
     </nav>
   </header>
 
-  <!-- Main content: everything unique to the home page sits inside this one element -->
-  <main id="main">
+
+  <main>
 
     <!-- Hero section: company description and image, the first thing visitors see -->
     <section aria-labelledby="about-heading">
       <div>
-        <h2 id="about-heading">Build the tools patients use every day</h2>
+        <h2>Build the tools patients use every day</h2>
         <p>Synapse is a private healthcare technology company. We run online patient platforms, appointment booking systems and health information websites.</p>
         <p>We are growing our digital services team. Join us to make healthcare simple to find, book and understand.</p>
         <!-- Inline CSS example: a one-off spacing adjustment for this single paragraph -->
@@ -62,7 +61,7 @@
 
     <!-- Search section: uses GET because a search only retrieves data, and the word appears in the URL as ?q= -->
     <section aria-labelledby="search-heading">
-      <h2 id="search-heading">Search for a job</h2>
+      <h2>Search for a job</h2>
       <form action="jobs.html" method="get" role="search">
         <label for="job-search">Job title or keyword</label>
         <div>
@@ -75,7 +74,7 @@
 
     <!-- Hiring table: uses rowspan and colspan to merge cells. The scope attributes tell screen readers which headers belong to which cells -->
     <section aria-labelledby="hiring-heading">
-      <h2 id="hiring-heading">Where we are hiring</h2>
+      <h2>Where we are hiring</h2>
       <div>
         <table>
           <caption>Open roles by team, with work type and number of openings</caption>

@@ -9,6 +9,12 @@ Global CSS: Amani
 */
 
 
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('fonts/google-sans.woff2') format('woff2');
+}
+
 /* ==============================================
    1. GLOBAL COLOUR VARIABLES
 ============================================== */
