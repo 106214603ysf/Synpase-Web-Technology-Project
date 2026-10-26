@@ -1,144 +1,174 @@
 <!DOCTYPE html>
-<!--
-  Page: jobs.html (Position Descriptions)
-  Unit: COS10026 Web Technology Project - Applied Web Project Part 1
-  Industry: G01 - Digital Health & Wellness Provider (company: Synapse)
-  Author: [Youssof Hussein] ([106214603])
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Job vacancies at Synapse: Front-End Web Developer and UX Designer positions for online patient platforms.">
-    <meta name="keywords" content="Synapse, jobs, careers, front-end developer, UX designer, digital health">
-    <meta name="author" content="[Youssof Hussein]">
-    <title>Job Vacancies - Synapse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Front-End Web Developer and UX Designer job opportunities at Synapse Digital Health.">
+    <meta name="keywords" content="Synapse, digital health, careers, front-end developer, UX designer">
+    <meta name="author" content="The Synapse Team">
+    <title>Job Vacancies | Synapse Digital Health</title>
+
+    <!-- External CSS: shared website design -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Embedded CSS example -->
+    <!-- Embedded CSS: job-page layout and responsive vacancy information -->
     <style>
-        .job-ref {
-            font-family: "Courier New", monospace;
+        .jobs-page { max-width: 1100px; }
+        .jobs-page::after { content: ""; display: block; clear: both; }
+        .jobs-page .intro::after { content: ""; display: block; clear: both; }
+        .jobs-page .intro p { margin: 0.6rem 0; }
+        .jobs-page .intro h3 { margin-bottom: 0.5rem; }
+        .jobs-page aside {
+            float: right;
+            width: 25%;
+            margin: 0 0 0.5rem 1.25rem;
+            padding: 0.85rem;
+            background: #e8f7f4;
+            border-left: 4px solid #08745e;
+            border-radius: 8px;
+        }
+        .jobs-page aside h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+        .jobs-page aside p { font-size: 0.9rem; line-height: 1.45; margin: 0.5rem 0; }
+        .jobs-page .vacancy-summary { margin: 0.8rem 0; padding-left: 1.25rem; }
+        .jobs-page .vacancy-summary li { margin-bottom: 0.3rem; }
+        .jobs-page .job-card { margin-bottom: 2rem; }
+        .jobs-page .job-ref { font-family: "Courier New", monospace; font-weight: bold; }
+        .jobs-page dl { display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 0.5rem 1rem; }
+        .jobs-page dt { font-weight: bold; color: #123b5d; }
+        .jobs-page dd { margin: 0; }
+        .jobs-page .apply-link {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background: #08745e;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        .jobs-page .apply-link:hover,
+        .jobs-page .apply-link:focus-visible { background: #065846; color: white; }
+        @media (max-width: 768px) {
+            .jobs-page aside { float: none; width: 100%; margin: 1rem 0; }
+        }
+        @media (max-width: 480px) {
+            .jobs-page dl { grid-template-columns: 1fr; gap: 0.2rem; }
+            .jobs-page dd { margin-bottom: 0.8rem; }
         }
     </style>
 </head>
-
 <body>
     <header>
-        <h1>Applicable Jobs</h1>
-        <!-- Common navigation menu used on every page -->
-        <nav>
+        <h1>Careers at Synapse Digital Health</h1>
+        <nav aria-label="Main navigation">
             <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li aria-hidden="true">|</li>
-        <li><a href="jobs.html">Jobs</a></li>
-        <li aria-hidden="true">|</li>
-        <li><a href="apply.html">Apply</a></li>
-        <li aria-hidden="true">|</li>
-        <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html" aria-current="page">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
-        <h2 align="center">Job Vacancies</h2>
-
-        <!-- Aside: floated right, 25% width (styled in styles.css) -->
-        <aside align="center">
-            <h3>Our Commitment to Inclusion</h3>
-            <p style="background-color: #F2F8F8; border: 1px solid #B7D6D6; border-left: 5px solid #0F5C5C; border-radius: 8px; padding: 12px 16px; margin: 12px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);">Synapse acknowledges the Traditional Custodians of the lands where we work and pays respect to Elders past and present.</p>
-            <p style="background-color: #F2F8F8; border: 1px solid #B7D6D6; border-left: 5px solid #0F5C5C; border-radius: 8px; padding: 12px 16px; margin: 12px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);">We strongly encourage applications from <strong>Aboriginal and Torres Strait Islander peoples</strong>, because culturally safe health services start with a team that reflects the communities we serve.</p>
-        </aside>
+    <main class="jobs-page">
+        <!-- Introduction and inclusion statement -->
+        <section class="intro">
+            <h2>Job Vacancies</h2>
+            <aside aria-labelledby="inclusion-heading">
+                <h3 id="inclusion-heading">Our Commitment to Inclusion</h3>
+                <p>Synapse acknowledges the Traditional Custodians of the lands where we work and pays respect to Elders past and present.</p>
+                <p>We welcome applications from <strong>Aboriginal and Torres Strait Islander peoples</strong> and value culturally safe digital health services.</p>
+            </aside>
+            <h3>Why Work With Us?</h3>
+            <p>Synapse develops online patient platforms, appointment booking systems and health information websites. We value accessible, reliable and easy-to-use healthcare technology.</p>
+            <!-- Inline CSS: highlights the application deadline -->
+            <p style="border-left: 4px solid #08745e; padding: 0.75rem 1rem; background: #e8f7f4;">
+                <strong>Two positions available. Applications close on 30 November 2026.</strong>
+            </p>
+            <p>Current opportunities:</p>
+            <ul class="vacancy-summary">
+                <li><a href="#frontend-heading">Front-End Web Developer (FE001)</a></li>
+                <li><a href="#ux-heading">UX Designer – Patient Experience (UX002)</a></li>
+            </ul>
+            <p>Select a position below to review the responsibilities and requirements. Use its five-character reference number when applying.</p>
         </section>
-        <section>
-            <h3>Why Work With Us</h3>
-            <p style="background-color: #F2F8F8; border: 1px solid #B7D6D6; border-left: 5px solid #0F5C5C; border-radius: 8px; padding: 12px 16px; margin: 12px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);">Synapse builds online patient platforms, appointment systems and health information websites. We are growing our web team and want people who care about <em>clear, accessible and trustworthy</em> healthcare technology.</p>
-            <!-- Inline CSS example -->
-            <p style="color: #0F5C5C; background-color: #E3F1F1; border: 1px solid #B7D6D6; border-left: 5px solid #0F5C5C; border-radius: 8px; padding: 12px 16px; margin: 12px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);"><strong>Two positions are open. Applications close on 30 November 2026.</strong></p>
-        </section>
 
-        <!-- ===== Job 1 ===== -->
-        <section>
-            <h3>Front-End Web Developer</h3>
-            <p style="background-color: #F2F8F8; border: 1px solid #B7D6D6; border-left: 5px solid #0F5C5C; border-radius: 8px; padding: 12px 16px; margin: 12px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);">Build and maintain the patient-facing pages of our booking and health information platforms using HTML5 and CSS3.</p>
-
+        <!-- Position 1: Front-End Web Developer -->
+        <section class="job-card" aria-labelledby="frontend-heading">
+            <h2 id="frontend-heading">Front-End Web Developer</h2>
+            <p>Develop and maintain responsive, accessible pages for patient booking and health information platforms using HTML5 and CSS3.</p>
             <dl>
                 <dt>Reference number</dt>
                 <dd class="job-ref">FE001</dd>
                 <dt>Salary</dt>
-                <dd>$85,000 - $100,000 per year plus superannuation</dd>
+                <dd>$85,000–$100,000 per year plus superannuation</dd>
                 <dt>Reports to</dt>
                 <dd>Head of Digital Engineering</dd>
+                <dt>Employment type</dt>
+                <dd>Full-time</dd>
             </dl>
-
-            <h4>Key Responsibilities</h4>
+            <h3>Key Responsibilities</h3>
             <ol>
                 <li>Develop responsive web pages from approved designs.</li>
-                <li>Test pages with screen readers and keyboard navigation.</li>
-                <li>Validate all code and fix accessibility issues.</li>
-                <li>Follow secure practices to protect patient privacy.</li>
+                <li>Test pages using keyboard navigation and screen readers.</li>
+                <li>Validate HTML and CSS and address accessibility issues.</li>
+                <li>Follow secure practices to help protect patient privacy.</li>
             </ol>
-
-            <h4>Essential Requirements</h4>
+            <h3>Essential Requirements</h3>
             <ul>
                 <li>Strong knowledge of HTML5 and CSS3.</li>
                 <li>Understanding of web accessibility principles.</li>
                 <li>Experience using Git and GitHub.</li>
             </ul>
-
-            <h4>Preferable Requirements</h4>
+            <h3>Preferable Requirements</h3>
             <ul>
-                <li>Experience working in healthcare.</li>
+                <li>Experience working in healthcare technology.</li>
                 <li>Familiarity with Jira and Agile sprints.</li>
             </ul>
+            <p><a class="apply-link" href="apply.html">Apply for FE001</a></p>
         </section>
 
-        <!-- ===== Job 2 ===== -->
-        <section>
-            <h3>UX Designer - Patient Experience</h3>
-            <p style="background-color: #F2F8F8; border: 1px solid #B7D6D6; border-left: 5px solid #0F5C5C; border-radius: 8px; padding: 12px 16px; margin: 12px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);">Design simple, inclusive journeys for booking appointments and accessing health information online.</p>
-
+        <!-- Position 2: UX Designer -->
+        <section class="job-card" aria-labelledby="ux-heading">
+            <h2 id="ux-heading">UX Designer – Patient Experience</h2>
+            <p>Design clear and inclusive experiences for patients booking appointments and accessing health information online.</p>
             <dl>
                 <dt>Reference number</dt>
                 <dd class="job-ref">UX002</dd>
                 <dt>Salary</dt>
-                <dd>$90,000 - $105,000 per year plus superannuation</dd>
+                <dd>$90,000–$105,000 per year plus superannuation</dd>
                 <dt>Reports to</dt>
                 <dd>Design Lead, Patient Platforms</dd>
+                <dt>Employment type</dt>
+                <dd>Full-time</dd>
             </dl>
-
-            <h4>Key Responsibilities</h4>
+            <h3>Key Responsibilities</h3>
             <ol>
                 <li>Research patient needs through interviews and usability testing.</li>
                 <li>Create wireframes and prototypes for new features.</li>
-                <li>Write plain-language labels and error messages.</li>
-                <li>Check finished pages for colour contrast and readability.</li>
+                <li>Write clear labels and helpful error messages.</li>
+                <li>Check page designs for colour contrast and readability.</li>
             </ol>
-
-            <h4>Essential Requirements</h4>
+            <h3>Essential Requirements</h3>
             <ul>
-                <li>Proficiency in wireframing and prototyping tools (e.g., Figma).</li>
-                <li>Solid understanding of accessibility standards (WCAG).</li>
-                <li>Experience conducting user research and usability testing.</li>
+                <li>Ability to use wireframing and prototyping tools such as Figma.</li>
+                <li>Understanding of Web Content Accessibility Guidelines (WCAG).</li>
+                <li>Experience with user research and usability testing.</li>
             </ul>
-
-            <h4>Preferable Requirements</h4>
+            <h3>Preferable Requirements</h3>
             <ul>
                 <li>Background in healthcare or digital health platforms.</li>
-                <li>Experience working alongside front-end developers in Agile teams.</li>
+                <li>Experience collaborating with front-end developers in Agile teams.</li>
             </ul>
+            <p><a class="apply-link" href="apply.html">Apply for UX002</a></p>
         </section>
     </main>
-      <footer>
-<a href="https://YOUR-SITE.atlassian.net/jira/software/projects/G01/boards" target="_blank" rel="noopener noreferrer">Our Jira Project</a>
-<br>
-<a href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a>
-<br>
-<a href="mailto:info@synapse-health.example">Contact us at: info@synapse-health.example</a>
-    <p align="center">&copy; 2026 Synapse Digital Health. All rights reserved.</p>
-    <!-- GenAI credit required by the assessment brief -->
-    <p>Project of Swinburne University Students for Web</p>
-  </footer>
+
+    <footer>
+        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog" target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
+        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
+        <p>Contact email (example): <a href="mailto:info@synapse-health.example">info@synapse-health.example</a></p>
+        <p>&copy; 2026 Synapse Digital Health. All rights reserved.</p>
+        <p>A project by Swinburne University students.</p>
+        <p>Acknowledgement: ChatGPT was used as a supporting tool for code review, organization and refinement. The student team reviewed and tested the work.</p>
+    </footer>
 </body>
 </html>

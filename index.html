@@ -1,149 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="VitaLink Digital Health is hiring for online patient platforms, appointment systems and health information websites.">
-  <meta name="keywords" content="digital health, wellness, careers, patient platforms, appointment systems, health information websites">
-  <meta name="author" content="YOUR NAME">
-  <title>Synapse | Careers in Digital Health and Wellness</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore careers at Synapse Digital Health, a provider of patient platforms, appointment systems and health information websites.">
+    <meta name="keywords" content="Synapse, digital health, wellness, careers, jobs, patient platforms">
+    <meta name="author" content="The Synapse Team">
+    <title>Synapse | Careers in Digital Health and Wellness</title>
 
-<link rel="stylesheet" href="styles.css">
-  <style>
-    .page-note { font-size: 0.9em; border-left: 4px solid #0e6e6e; padding-left: 10px; }
-  
-  </style>
+    <!-- Shared website styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Home-page styles: responsive introduction, job search and table -->
+    <style>
+        .home-page main {
+            max-width: 1050px;
+        }
+
+        .home-page .brand-logo {
+            display: block;
+            margin: 0 auto 0.75rem;
+        }
+
+        .home-page .tagline {
+            margin: 0 0 1rem;
+            color: #ffffff;
+        }
+
+        .home-page .intro-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .home-page .intro-layout figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        .home-page .intro-layout img {
+            display: block;
+            margin: auto;
+        }
+
+        .home-page .search-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .home-page .search-row input {
+            flex: 1 1 240px;
+            min-width: 0;
+            padding: 0.8rem;
+            border: 1px solid #b7d3ce;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        .home-page .search-row button {
+            flex: 0 0 auto;
+        }
+
+        .home-page .table-scroll {
+            overflow-x: auto;
+        }
+
+        .home-page .table-scroll table {
+            min-width: 540px;
+        }
+
+        .home-page .table-scroll th,
+        .home-page .table-scroll td {
+            vertical-align: middle;
+        }
+
+        @media (max-width: 650px) {
+            .home-page .intro-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .home-page .search-row {
+                flex-direction: column;
+            }
+
+            .home-page .search-row button {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    </style>
 </head>
-<body>
 
-  
-  <header>
-    <div>
-      <img src="images/logo.svg" alt="Synapse logo: a heartbeat line inside a teal circle" width="64" height="64">
-      <div>
+<body class="home-page">
+    <!-- Company identity and site navigation -->
+    <header>
+        <!-- Logo image will be added when the group finalizes it. -->
+        <img class="brand-logo" src="images/logo.svg"
+             alt="Synapse Digital Health logo" width="64" height="64">
         <h1>Synapse Digital Health</h1>
-        <p>Healthcare that fits in your pocket.</p>
-      </div>
-    </div>
+        <p class="tagline">Healthcare that fits in your pocket.</p>
 
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav aria-label="Main navigation">
-      <ul>
-         <li><a href="index.html" aria-current="page">Home</a></li>
-        <li aria-hidden="true">|</li>
-        <li><a href="jobs.html">Jobs</a></li>
-        <li aria-hidden="true">|</li>
-        <li><a href="apply.html">Apply</a></li>
-        <li aria-hidden="true">|</li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main>
+        <!-- Introduction to Synapse and its services -->
+        <section aria-labelledby="intro-heading">
+            <div class="intro-layout">
+                <div>
+                    <h2 id="intro-heading">Build the tools patients use every day</h2>
+                    <p>
+                        Synapse is a private healthcare technology company.
+                        We develop online patient platforms, appointment booking
+                        systems and health information websites.
+                    </p>
+                    <p>
+                        We are expanding our digital services team. Join us to make
+                        healthcare easier to find, book and understand.
+                    </p>
+                    <!-- Inline CSS: highlights flexible working arrangements. -->
+                    <p style="border-left: 4px solid #08745e; padding-left: 12px; margin-top: 1rem;">
+                        Our roles support <strong>flexible and remote work</strong>.
+                    </p>
+                </div>
 
+                <figure>
+                    <!-- Replace this image path when the illustration is added. -->
+                    <img src="images/hero.svg"
+                         alt="Illustration of a phone, appointment calendar and health chart"
+                         width="480" height="300">
+                    <figcaption>Digital tools supporting patients and healthcare teams.</figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <main>
+        <!-- Job keyword form: navigates to the vacancies page. -->
+        <section aria-labelledby="search-heading">
+            <h2 id="search-heading">Find a job</h2>
+            <p>
+                Explore our current vacancies. You can enter a job keyword
+                and continue to the Jobs page to review the available positions.
+            </p>
 
-    <!-- Hero section: company description and image, the first thing visitors see -->
-    <section aria-labelledby="about-heading">
-      <div>
-        <h2>Build the tools patients use every day</h2>
-        <p>Synapse is a private healthcare technology company. We run online patient platforms, appointment booking systems and health information websites.</p>
-        <p>We are growing our digital services team. Join us to make healthcare simple to find, book and understand.</p>
-        <!-- Inline CSS example: a one-off spacing adjustment for this single paragraph -->
-        <p class="page-note" style="margin-top: 20px;">All our roles support <strong>flexible and remote work</strong>.</p>
-      </div>
-      <!-- Figure keeps the image and its caption together as one unit -->
-      <figure>
-        <img src="images/hero.svg" alt="Illustration of a phone showing a heartbeat line, beside a calendar and a pulse chart" width="480" height="300">
-        <figcaption>Our patient app, appointment calendar and health tracking tools.</figcaption>
-      </figure>
-    </section>
+            <form action="jobs.html" method="get" role="search">
+                <label for="job-search">Job title or keyword</label>
+                <div class="search-row">
+                    <input type="search" id="job-search" name="q"
+                           placeholder="For example: developer" required>
+                    <button type="submit">Search jobs</button>
+                </div>
+            </form>
+        </section>
 
-    <!-- Search section: uses GET because a search only retrieves data, and the word appears in the URL as ?q= -->
-    <section aria-labelledby="search-heading">
-      <h2>Search for a job</h2>
-      <form action="jobs.html" method="get" role="search">
-        <label for="job-search">Job title or keyword</label>
-        <div>
-          <!-- required stops an empty search from being sent -->
-          <input type="search" id="job-search" name="q" placeholder="For example: developer" autocomplete="off" required>
-          <button type="submit">Search jobs</button>
-        </div>
-      </form>
-    </section>
+        <!-- Vacancy summary table demonstrates rowspan and colspan. -->
+        <section aria-labelledby="vacancies-heading">
+            <h2 id="vacancies-heading">Current vacancies</h2>
 
-    <!-- Hiring table: uses rowspan and colspan to merge cells. The scope attributes tell screen readers which headers belong to which cells -->
-    <section aria-labelledby="hiring-heading">
-      <h2>Where we are hiring</h2>
-      <div>
-        <table>
-          <caption>Open roles by team, with work type and number of openings</caption>
-          <thead>
-            <tr>
-              <!-- rowspan="2": this cell stretches down across both header rows -->
-              <th scope="col" rowspan="2">Team</th>
-              <!-- colspan="2": this cell stretches across the Role and Work type columns -->
-              <th scope="colgroup" colspan="2">Role details</th>
-              <th scope="col" rowspan="2">Openings</th>
-            </tr>
-            <tr>
-              <th scope="col">Role</th>
-              <th scope="col">Work type</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <!-- Team name covers two rows because the team has two open roles -->
-              <th scope="rowgroup" rowspan="2">Patient platforms</th>
-              <td>Front-end developer</td>
-              <td>Full-time</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>Accessibility tester</td>
-              <td>Contract</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="rowgroup" rowspan="2">Appointment systems</th>
-              <td>Back-end developer</td>
-              <td>Full-time</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>QA analyst</td>
-              <td>Part-time</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">Health information sites</th>
-              <td>Web content editor</td>
-              <td>Part-time</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <!-- colspan="3": the label stretches across the first three columns, so the total sits under Openings -->
-              <th scope="row" colspan="3">Total open roles</th>
-              <td>6</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </section>
-  </main>
+            <div class="table-scroll" role="region" aria-label="Current vacancies table" tabindex="0">
+                <table>
+                    <caption>Open positions at Synapse</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2">Team</th>
+                            <th scope="colgroup" colspan="2">Position details</th>
+                            <th scope="col" rowspan="2">Openings</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Position</th>
+                            <th scope="col">Work type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="rowgroup" rowspan="2">Patient platforms</th>
+                            <td>Front-End Web Developer</td>
+                            <td>Full-time</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>UX Designer - Patient Experience</td>
+                            <td>Full-time</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="3">Total openings</th>
+                            <td>2</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
 
-  <!-- Footer: project links the assessment requires, plus contact details and the GenAI credit -->
-  <footer>
-<a href="https://YOUR-SITE.atlassian.net/jira/software/projects/G01/boards" target="_blank" rel="noopener noreferrer">Our Jira Project</a>
-<br>
-<a href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a>
-<br>
-<a href="mailto:info@synapse-health.example">Contact us at: info@synapse-health.example</a>
-    <p align="center">&copy; 2026 Synapse Digital Health. All rights reserved.</p>
-    <!-- GenAI credit required by the assessment brief -->
-    <p>Project of Swinburne University Students for Web</p>
-  </footer>
+            <p>
+                Read the <a href="jobs.html">full job descriptions</a> and use
+                the listed reference number when applying.
+            </p>
+        </section>
+    </main>
+
+    <!-- Project links, contact information and acknowledgement -->
+    <footer>
+        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog"
+              target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
+        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project"
+              target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
+        <p><a href="mailto:info@synapse-health.example">Contact email (example): info@synapse-health.example</a></p>
+        <p>&copy; 2026 Synapse Digital Health. All rights reserved.</p>
+        <p>A project by Swinburne University students.</p>
+        <p>Acknowledgement: ChatGPT was used as a supporting tool for code review, organization and refinement. The student team reviewed and tested the work.</p>
+    </footer>
 </body>
 </html>
