@@ -48,15 +48,21 @@ body::after {
 
 body::before {
     bottom: 8%;
-    background: linear-gradient(110deg, transparent 5%,
-            #053b67 35%, #0874a9 65%, #031d39 95%);
+    background: linear-gradient(110deg,
+            transparent 5%,
+            #053b67 35%,
+            #0874a9 65%,
+            #031d39 95%);
     transform: rotate(-9deg);
     opacity: 0.8;
 }
 
 body::after {
     bottom: -20%;
-    background: linear-gradient(100deg, #02192d, #07588c 45%, #031a31 90%);
+    background: linear-gradient(100deg,
+            #02192d,
+            #07588c 45%,
+            #031a31 90%);
     transform: rotate(8deg);
     opacity: 0.9;
 }
@@ -88,17 +94,18 @@ h3 {
 header {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     padding: 14px 5%;
     background: #020c16;
     border-bottom: 3px solid var(--cyan);
 }
 
+/* Larger Synapse logo */
 .brand-logo {
     display: block;
-    width: 150px;
-    height: 60px;
-    flex: 0 0 150px;
+    width: 350px;
+    height: auto;
+    flex: 0 0 350px;
     object-fit: contain;
 }
 
@@ -116,6 +123,7 @@ header h1 {
     color: var(--light-blue);
 }
 
+/* Navigation */
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -156,7 +164,10 @@ main>section,
 .feature-strip {
     margin: 0 0 28px;
     padding: 30px;
-    background: linear-gradient(135deg, #073653, #092d49 60%, #06476c);
+    background: linear-gradient(135deg,
+            #073653,
+            #092d49 60%,
+            #06476c);
     border: 1px solid var(--border);
     border-top: 3px solid var(--cyan);
     border-radius: 14px;
@@ -166,7 +177,7 @@ main>section,
 .inner {
     display: flow-root;
     padding: 22px;
-    background: #E3F3FC;
+    background: #e3f3fc;
     color: var(--dark-text);
     border-radius: 10px;
 }
@@ -301,7 +312,9 @@ figcaption {
 /* Home */
 .home-page .hero {
     background:
-        radial-gradient(circle at 92% 20%, #0b85b533, transparent 43%),
+        radial-gradient(circle at 92% 20%,
+            #0b85b533,
+            transparent 43%),
         linear-gradient(130deg, #073653, #092d49);
 }
 
@@ -374,7 +387,7 @@ figcaption {
 
 /* Apply */
 .apply-page fieldset {
-    background: #E3F3FC;
+    background: #e3f3fc;
     color: #17344b;
     border-left: 4px solid #159dd1;
 }
@@ -513,9 +526,9 @@ textarea:focus-visible {
     }
 
     .brand-logo {
-        width: 130px;
-        height: 52px;
-        flex-basis: 130px;
+        width: 250px;
+        height: auto;
+        flex-basis: 250px;
     }
 
     .search-row,
@@ -531,5 +544,11 @@ textarea:focus-visible {
     .fields-grid,
     .choice-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
