@@ -8,109 +8,46 @@
     <meta name="author" content="The Synapse Team">
     <title>Synapse | Careers in Digital Health and Wellness</title>
 
-    <!-- Shared website styles -->
+
+    <!-- main css -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Home-page styles: responsive introduction, job search and table -->
+    <!-- page css -->
     <style>
-        .home-page main {
-            max-width: 1050px;
-        }
-
-        .home-page .brand-logo {
-            display: block;
-            margin: 0;
-        }
-
-        .home-page .tagline {
-            margin: 4px 0 0;
-            color: #ff9fc5;
-        }
-
-        .home-page .intro-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .home-page .intro-layout figure {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            width: 100%;
-            text-align: center;
-        }
-
-        .home-page .intro-layout img {
-            display: block;
-            margin: auto;
-        }
-
-        .home-page .search-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .home-page .search-row input {
-            flex: 1 1 240px;
-            min-width: 0;
-            padding: 0.8rem;
-            border: 1px solid #8b3659;
-            border-radius: 8px;
-            font: inherit;
-        }
-
-        .home-page .search-row button {
-            flex: 0 0 auto;
-        }
-
-        .home-page .table-scroll {
-            overflow-x: auto;
-        }
-
+        /* table min width */
         .home-page .table-scroll table {
             min-width: 540px;
         }
 
-        .home-page .table-scroll th,
-        .home-page .table-scroll td {
-            vertical-align: middle;
+
+        /* round pic */
+        .home-page .hero img {
+            border-radius: 12px;
         }
 
-        @media (max-width: 650px) {
-            .home-page .intro-layout {
-                grid-template-columns: 1fr;
-            }
+        /* search focus glow */
+        .home-page #job-search:focus {
+            box-shadow: 0 0 0 3px #b2ece6;
+        }
 
-            .home-page .search-row {
-                flex-direction: column;
-            }
-
-            .home-page .search-row button {
-                width: 100%;
-                margin: 0;
-            }
+        /* services hover */
+        .home-page .feature-strip li:hover {
+            color: #7fe3d8;
         }
     </style>
 </head>
 
 <body class="home-page">
-    <!-- Company identity and site navigation -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+
+
+    <!-- header + nav -->
     <header>
-        <!-- Synapse logo -->
-        <img class="brand-logo" src="images/synapse-logo.png"
-             alt="Synapse Digital Health logo" width="64" height="64">
+        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="64" height="64">
         <div class="header-title">
             <h1>Synapse Digital Health</h1>
             <p class="tagline">Healthcare that fits in your pocket.</p>
         </div>
-
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html" aria-current="page">Home</a></li>
@@ -122,116 +59,124 @@
     </header>
 
     <main id="main-content">
-        <!-- Introduction to Synapse and its services -->
+        <!-- top bit -->
         <section class="hero" aria-labelledby="intro-heading">
             <div class="intro-layout">
                 <div>
-                    <p class="eyebrow">✦ DIGITAL HEALTH, REIMAGINED</p>
-                    <h2 id="intro-heading">Build the tools patients use <span class="accent">every day.</span></h2>
+                    <h2 id="intro-heading">Build the tools patients use every day.</h2>
                     <p>
-                        Synapse is a private healthcare technology company.
-                        We develop online patient platforms, appointment booking
-                        systems and health information websites.
+                        Synapse is a private healthcare technology company. We develop
+                        online patient platforms, appointment booking systems and
+                        health information websites.
                     </p>
                     <p>
                         We are expanding our digital services team. Join us to make
                         healthcare easier to find, book and understand.
                     </p>
-                    <!-- Inline CSS: highlight for flexible working arrangements. -->
-                    <p style="border-left: 4px solid #ff176b; padding-left: 12px; margin-top: 1rem;">
+
+                    <!-- inline css -->
+                    <p style="border-left: 4px solid #00b3a6; padding-left: 12px;">
                         Our roles support <strong>flexible and remote work</strong>.
                     </p>
+                    <p><a class="button-link" href="jobs.html">View open roles</a></p>
                 </div>
 
+                <!-- put our pic here -->
                 <figure>
-                    <!-- Synapse logo -->
-                    <img class="hero-logo" src="images/synapse-logo.png"
-                         alt="Synapse Digital Health neon-pink logo"
-                         width="340" height="340">
-                    <figcaption>Synapse Digital Health — technology designed around people.</figcaption>
+                    <img src="images/hero-photo.jpg"
+                         alt="A patient booking a doctor's appointment on a mobile phone"
+                         width="480" height="320">
+                    <figcaption style="font-style: italic;">Technology designed around patients.</figcaption>
                 </figure>
             </div>
         </section>
 
-        <div class="feature-strip" aria-label="Our services">
-            <span>✦ Patient Platforms</span><span>✦ Appointment Booking</span><span>✦ Accessible Design</span>
-        </div>
 
-        <!-- Job search: navigates to vacancies; no keyword filtering. -->
-        <section class="search-section" aria-labelledby="search-heading">
+
+        <!-- services -->
+        <ul class="feature-strip" aria-label="Our services">
+            <li>Patient Platforms</li>
+            <li>Appointment Booking</li>
+            <li>Accessible Design</li>
+        </ul>
+
+        <!-- search box -->
+        <section aria-labelledby="search-heading">
             <h2 id="search-heading">Find a job</h2>
-            <p>
-                Explore our current vacancies. You can enter a job keyword
-                and continue to the Jobs page to review the available positions.
-            </p>
+            <div class="inner">
+                <p>Enter a job keyword, then continue to the Jobs page to review our open positions.</p>
 
-            <form action="jobs.html" method="get" role="search">
-                <label for="job-search">Job title or keyword</label>
-                <div class="search-row">
-                    <input type="search" id="job-search" name="q"
-                           placeholder="For example: developer" required>
-                    <button type="submit">Search jobs</button>
-                </div>
-            </form>
-        </section>
-
-        <!-- Vacancy summary table demonstrates rowspan and colspan. -->
-        <section class="vacancies-section" aria-labelledby="vacancies-heading">
-            <h2 id="vacancies-heading">Current vacancies</h2>
-
-            <div class="table-scroll" role="region" aria-label="Current vacancies table" tabindex="0">
-                <table>
-                    <caption>Open positions at Synapse</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col" rowspan="2">Team</th>
-                            <th scope="colgroup" colspan="2">Position details</th>
-                            <th scope="col" rowspan="2">Openings</th>
-                        </tr>
-                        <tr>
-                            <th scope="col">Position</th>
-                            <th scope="col">Work type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">Patient platforms</th>
-                            <td>Front-End Web Developer</td>
-                            <td>Full-time</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>UX Designer - Patient Experience</td>
-                            <td>Full-time</td>
-                            <td>1</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row" colspan="3">Total openings</th>
-                            <td>2</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                <form action="jobs.html" method="get" role="search">
+                    <label for="job-search">Job title or keyword</label>
+                    <div class="search-row">
+                        <input type="search" id="job-search" name="q" placeholder="For example: developer" required>
+                        <button type="submit">Search jobs</button>
+                    </div>
+                </form>
             </div>
-
-            <p>
-                Read the <a href="jobs.html">full job descriptions</a> and use
-                the listed reference number when applying.
-            </p>
         </section>
+
+
+        <!-- jobs table, merged cells -->
+        <section aria-labelledby="vacancies-heading">
+            <h2 id="vacancies-heading">Current vacancies</h2>
+            <div class="inner">
+                <div class="table-scroll" role="region" aria-label="Current vacancies table" tabindex="0">
+                    <table>
+                        <caption>Open positions at Synapse</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2">Team</th>
+                                <th scope="colgroup" colspan="2">Position details</th>
+                                <th scope="col" rowspan="2">Openings</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Position</th>
+                                <th scope="col">Work type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="rowgroup" rowspan="2">Patient platforms</th>
+                                <td>Front-End Web Developer (FE001)</td>
+                                <td>Full-time</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>UX Designer – Patient Experience (UX002)</td>
+                                <td>Full-time</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="3">Total openings</th>
+                                <td>2</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <p>Read the <a href="jobs.html">full job descriptions</a> and use the reference number when applying.</p>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Project links, contact information and acknowledgement -->
+
+
+    <!-- footer stuff -->
     <footer>
-        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog"
-              target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
-        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project"
-              target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
-        <p><a href="mailto:info@synapse-health.example">Contact email (example): info@synapse-health.example</a></p>
-        <p>&copy; 2026 Synapse Digital Health. All rights reserved.</p>
-        <p>A project by Swinburne University students.</p>
-        <p>Acknowledgement: ChatGPT was used as a supporting tool for code review, organization and refinement. The student team reviewed and tested the work.</p>
+        <p class="country">
+            Synapse acknowledges the Traditional Custodians of the lands on which we work
+            and pays respect to Elders past and present.
+            <a href="jobs.html#inclusion-heading">Read our inclusion commitment</a>.
+        </p>
+        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog" target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
+        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
+        <p>Email: <a href="mailto:info@synapse-health.com">info@synapse-health.com</a></p>
+        <p>&copy; 2026 Synapse Digital Health. A project by Swinburne University students.</p>
+        <p><small>Acknowledgement: ChatGPT and Claude were used as supporting tools for code review and styling. The student team reviewed and tested all work.</small></p>
     </footer>
 </body>
 </html>

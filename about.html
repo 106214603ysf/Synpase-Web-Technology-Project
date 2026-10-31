@@ -1,386 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Meet the Synapse Digital Health team and learn about our group and project contributions.">
-    <meta name="keywords"
-          content="Synapse, Digital Health, About Us, Student Team">
-    <meta name="author" content="Synapse Team">
-
+    <meta name="description" content="Meet the Synapse Digital Health student team, our class details, contributions and quotes.">
+    <meta name="keywords" content="Synapse, digital health, about us, student team, Swinburne">
+    <meta name="author" content="The Synapse Team">
     <title>About Us | Synapse Digital Health</title>
 
+    <!-- main css -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Page-specific CSS -->
+
+
+    <!-- page css -->
     <style>
-        /* Main layout */
-        .about-page main {
-            width: 90%;
-            max-width: 1050px;
-            margin: 25px auto;
-            padding: 0 15px;
-        }
-
-        .about-page main > section {
-            width: 100%;
-            max-width: none;
-            margin-bottom: 24px;
-        }
-
-        /* Project contributions */
-        .contributions dt {
-            font-weight: bold;
-            margin-top: 12px;
-        }
-
-        .contributions dd {
-            margin: 4px 0 12px 15px;
-            font-style: italic;
-        }
-
-        /* Group quotations */
-        .group-quote {
-            margin-bottom: 18px;
-        }
-
-        .group-quote h3 {
-            margin: 0 0 5px;
-            color: #ff176b;
-        }
-
-        .group-quote p {
-            margin: 5px 0;
-        }
-
-        .group-quote .translation {
-            direction: rtl;
+        /* rtl text */
+        .about-page .quotes dd[dir="rtl"] {
+            margin-right: 18px;
             text-align: right;
-            margin-top: 6px;
-            padding-right: 12px;
+            color: #0a5c55;
         }
 
-        /* Team photograph */
-        .team-photo {
-            margin: 20px auto;
-            text-align: center;
-        }
 
-        .team-photo img {
-            display: block;
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            margin: 0 auto;
-            border-radius: 6px;
-        }
 
-        .team-photo figcaption {
-            margin-top: 10px;
+        /* italic quotes */
+        .about-page .quotes q {
             font-style: italic;
         }
 
-        /* Fun facts table */
-        .fun-facts table {
-            width: 100%;
-            border-collapse: collapse;
+        /* teal line on roles */
+        #contrib-heading + .inner dd {
+            padding-left: 10px;
+            border-left: 3px solid #00b3a6;
         }
 
-        .fun-facts caption {
-            caption-side: top;
-            font-weight: bold;
-            padding: 12px 0;
-        }
-
-        .fun-facts th,
-        .fun-facts td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        /* Responsive layout */
-        @media (max-width: 600px) {
-            .about-page main {
-                width: 95%;
-                padding: 0 10px;
-            }
-
-            .contributions dd {
-                margin-left: 10px;
-            }
-
-            .group-quote .translation {
-                padding-right: 0;
-            }
-
-            .team-photo img {
-                max-width: 100%;
-            }
-
-            .fun-facts th,
-            .fun-facts td {
-                padding: 8px;
-            }
+        /* id badge hover */
+        .about-page .student-id:hover {
+            background-color: #00796f;
+            color: #ffffff;
         }
     </style>
 </head>
 
 <body class="about-page">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Header and navigation -->
+
+    <!-- header + nav -->
     <header>
-        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="85" height="85">
-        <h1 style="letter-spacing: 0.5px;">About Synapse</h1>
-
+        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="64" height="64">
+        <div class="header-title">
+            <!-- inline css -->
+            <h1 style="letter-spacing: 0.5px;">About Synapse</h1>
+            <p class="tagline">Healthcare that fits in your pocket.</p>
+        </div>
         <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="jobs.html">Jobs</a>
-            <a href="apply.html">Apply</a>
-            <a href="about.html" class="active" aria-current="page">
-                About Us
-            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html" aria-current="page">About Us</a></li>
+            </ul>
         </nav>
     </header>
 
     <main id="main-content">
-
-        <!-- Project contributions -->
-        <section>
-            <h2>Project Contributions</h2>
-
-            <dl class="contributions">
-
-                <dt>Amani Aly</dt>
-                <dd>
-                    <span class="student-id">
-                        Student ID: [106212283]
-                    </span>
-                    <br>
-                    Created the application page, implemented responsive
-                    styling, and served as the Synapse group leader.
-                </dd>
-
-                <dt>Abdullah Maithalouni</dt>
-                <dd>
-                    <span class="student-id">
-                        Student ID: [106194323]
-                    </span>
-                    <br>
-                    Created the About Us page and reviewed the website's
-                    HTML and CSS.
-                </dd>
-
-                <dt>Youssof Hussein</dt>
-                <dd>
-                    <span class="student-id">
-                        Student ID: [106214603]
-                    </span>
-                    <br>
-                    Created the Jobs page and included information about
-                    Aboriginal and Torres Strait Islander peoples.
-                </dd>
-
-                <dt>Abrar Salahuddin</dt>
-                <dd>
-                    <span class="student-id">
-                        Student ID: [106716811]
-                    </span>
-                    <br>
-                    Created the Home page and implemented the job search
-                    feature.
-                </dd>
-
-            </dl>
-        </section>
-
-        <!-- Group information -->
-        <section>
-            <h2>About Our Group</h2>
-
-            <ul>
-                <li>Group Name: Synapse</li>
-
-                <li>
-                    Class Schedule
-                    <ul>
-                        <li>
-                            Sunday
-                            <ul>
-                                <li>9:00 - 10:00 AM</li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            Tuesday
-                            <ul>
-                                <li>9:00 - 11:00 AM</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Group quotations -->
-        <section>
-            <h2>Group Quotations!</h2>
-
-            <div class="group-quote">
-                <h3>Amani Aly</h3>
-
-                <p>
-                    <em>"Be loud, stand tall, leave a mark."</em>
-                </p>
-
-                <p class="translation" lang="ar" dir="rtl">
-                    فارفع صوتك، قف بثبات، واترك أثراً.
-                </p>
-            </div>
-
-            <div class="group-quote">
-                <h3>Abdullah Maithalouni</h3>
-
-                <p>
-                    <em>
-                        "The ruling class fears education because it
-                        makes obedience impossible."
-                    </em>
-                </p>
-
-                <p class="translation" lang="ar" dir="rtl">
-                    وتخشى الطبقة الحاكمة التعليم لأنه يجعل الطاعة مستحيلة.
-                </p>
-            </div>
-
-            <div class="group-quote">
-                <h3>Youssof Hussein</h3>
-
-                <p>
-                    <em>
-                        "You don't have to see the whole staircase,
-                        just take the first step."
-                    </em>
-                </p>
-
-                <p class="translation" lang="ar" dir="rtl">
-                    ليس عليك أن ترى السلم كله، فقط خذ الخطوة الأولى.
-                </p>
-            </div>
-
-            <div class="group-quote">
-                <h3>Abrar Salahuddin</h3>
-
-                <p>
-                    <em>
-                        "Those who keep trying are never truly defeated."
-                    </em>
-                </p>
-
-                <p class="translation" lang="ur" dir="rtl">
-                    جو لوگ کوشش کرتے رہتے ہیں وہ کبھی واقعی ہارتے نہیں۔
-                </p>
+        <!-- group + class times -->
+        <section aria-labelledby="group-heading">
+            <h2 id="group-heading">About Our Group</h2>
+            <div class="inner">
+                <ul>
+                    <li>Group name: <strong>Synapse</strong></li>
+                    <li>Class times
+                        <ul>
+                            <li>Sunday
+                                <ul>
+                                    <li>9:00 – 10:00 AM</li>
+                                </ul>
+                            </li>
+                            <li>Tuesday
+                                <ul>
+                                    <li>9:00 – 11:00 AM</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- Team photograph -->
-        <section>
-            <h2>Our Team</h2>
+        <!-- who did what -->
+        <section aria-labelledby="contrib-heading">
+            <h2 id="contrib-heading">Member Contributions</h2>
+            <div class="inner">
+                <dl>
+                    <dt>Amani Aly <span class="student-id">ID 106212283</span></dt>
+                    <dd>Group leader. Built the Apply page and the responsive styling.</dd>
 
-            <figure class="team-photo">
-                <img src="Images/group-photo.jpeg"
-                     alt="Four members of the Synapse student project team"
-                     width="500">
+                    <dt>Abdullah Maithalouni <span class="student-id">ID 106194323</span></dt>
+                    <dd>Built the About Us page and reviewed the site's HTML and CSS.</dd>
 
-                <figcaption>
-                    The Synapse Work Team
-                </figcaption>
-            </figure>
+                    <dt>Youssof Hussein <span class="student-id">ID 106214603</span></dt>
+                    <dd>Built the Jobs page and wrote the Aboriginal and Torres Strait Islander inclusion statement.</dd>
+
+                    <dt>Abrar Salahuddin <span class="student-id">ID 106716811</span></dt>
+                    <dd>Built the Home page and the job search feature.</dd>
+                </dl>
+            </div>
         </section>
 
-        <!-- Fun facts -->
-        <section class="fun-facts">
-            <h2>Fun Facts About Our Members!</h2>
+        <!-- quotes + translations -->
+        <section aria-labelledby="quotes-heading">
+            <h2 id="quotes-heading">Member Quotes</h2>
+            <div class="inner">
+                <dl class="quotes">
+                    <dt>Amani Aly (Arabic)</dt>
+                    <dd lang="ar" dir="rtl">ارفع صوتك، قف بثبات، واترك أثراً.</dd>
+                    <dd><q>Be loud, stand tall, leave a mark.</q></dd>
 
-            <table>
-                <caption>Member Interests and Hobbies</caption>
+                    <dt>Abdullah Maithalouni (Arabic)</dt>
+                    <dd lang="ar" dir="rtl">تخشى الطبقة الحاكمة التعليم لأنه يجعل الطاعة مستحيلة.</dd>
+                    <dd><q>The ruling class fears education because it makes obedience impossible.</q></dd>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Member Name</th>
-                        <th scope="col">Member Fact!</th>
-                    </tr>
-                </thead>
+                    <dt>Youssof Hussein (Arabic)</dt>
+                    <dd lang="ar" dir="rtl">ليس عليك أن ترى السلم كله، فقط خذ الخطوة الأولى.</dd>
+                    <dd><q>You don't have to see the whole staircase, just take the first step.</q></dd>
 
-                <tbody>
-                    <tr>
-                        <td>Amani</td>
-                        <td>Enjoys playing table tennis.</td>
-                    </tr>
+                    <dt>Abrar Salahuddin (Urdu)</dt>
+                    <dd lang="ur" dir="rtl">جو لوگ کوشش کرتے رہتے ہیں وہ کبھی واقعی ہارتے نہیں۔</dd>
+                    <dd><q>Those who keep trying are never truly defeated.</q></dd>
+                </dl>
+            </div>
+        </section>
 
-                    <tr>
-                        <td>Abdullah</td>
-                        <td>Enjoys playing indie games.</td>
-                    </tr>
+        <!-- group pic -->
+        <section aria-labelledby="team-heading">
+            <h2 id="team-heading">Our Team</h2>
+            <div class="inner">
+                <figure>
+                    <img src="images/group-photo.jpeg"
+                         alt="The four members of the Synapse team standing together"
+                         width="500" height="333">
+                    <figcaption style="font-weight: bold;">The Synapse team: Amani, Abdullah, Youssof and Abrar.</figcaption>
+                </figure>
+            </div>
+        </section>
 
-                    <tr>
-                        <td>Youssof</td>
-                        <td>Is a professional swimmer.</td>
-                    </tr>
 
-                    <tr>
-                        <td>Abrar</td>
-                        <td>Aspires to become a cybersecurity analyst.</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <!-- fun facts -->
+        <section class="fun-facts" aria-labelledby="facts-heading">
+            <h2 id="facts-heading">Fun Facts</h2>
+            <div class="inner">
+                <table>
+                    <caption>Member interests and goals</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Member</th>
+                            <th scope="col">Fun fact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Amani</th>
+                            <td>Enjoys playing table tennis.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Abdullah</th>
+                            <td>Enjoys playing indie games.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Youssof</th>
+                            <td>Is a professional swimmer.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Abrar</th>
+                            <td>Aspires to become a cybersecurity analyst.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
+    <!-- footer stuff -->
     <footer>
-        <p>
-            <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog"
-               target="_blank"
-               rel="noopener noreferrer">
-                Our Jira Project
-            </a>
+        <p class="country">
+            Synapse acknowledges the Traditional Custodians of the lands on which we work
+            and pays respect to Elders past and present.
+            <a href="jobs.html#inclusion-heading">Read our inclusion commitment</a>.
         </p>
-
-        <p>
-            <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">
-                Synapse GitHub Repository
-            </a>
-        </p>
-
-        <p>
-            Contact email (example):
-            <a href="mailto:info@synapse-health.example">
-                info@synapse-health.example
-            </a>
-        </p>
-
-        <p>
-            &copy; 2026 Synapse Digital Health.
-            All rights reserved.
-        </p>
-
-        <p>
-            A project by Swinburne University students.
-        </p>
-
-        <p>
-            <small>
-                Acknowledgement: ChatGPT was used as a supporting tool
-                for code review, organization and refinement.
-                The student team reviewed and tested the work.
-            </small>
-        </p>
+        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog" target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
+        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
+        <p>Email: <a href="mailto:info@synapse-health.com">info@synapse-health.com</a></p>
+        <p>&copy; 2026 Synapse Digital Health. A project by Swinburne University students.</p>
+        <p><small>Acknowledgement: ChatGPT and Claude were used as supporting tools for code review and styling. The student team reviewed and tested all work.</small></p>
     </footer>
-
 </body>
 </html>

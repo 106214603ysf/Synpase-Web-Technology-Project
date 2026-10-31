@@ -1,415 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Apply for digital health and wellness careers at Synapse." name="description"/>
-  <meta content="Synapse, digital health, wellness, healthcare, jobs, application" name="keywords"/>
-  <meta content="Synapse Team" name="author"/>
-  <title>
-   Apply for a Job | Synapse Digital Health
-  </title>
-  <link href="styles.css" rel="stylesheet"/>
-  <!-- Embedded CSS: Form layout, input styling, and responsive design -->
-  <style>
-   
-    .apply-page main {
-        max-width: 1050px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for digital health careers at Synapse Digital Health.">
+    <meta name="keywords" content="Synapse, digital health, jobs, application form">
+    <meta name="author" content="The Synapse Team">
+    <title>Apply for a Job | Synapse Digital Health</title>
 
-    #application-form {
-        display: grid;
-        gap: 1.4rem;
-    }
+    <!-- main css -->
+    <link rel="stylesheet" href="styles.css">
 
-    #application-form > fieldset {
-        min-width: 0;
-        margin: 0;
-        padding: 1.5rem;
-        border: 1px solid var(--border-colour, #E8E5FF);
-        border-left: 4px solid var(--primary-green, #ff176b);
-        border-radius: 10px;
-    }
-
-    #application-form legend {
-        font-weight: bold;
-        color: var(--primary-blue, #ffb4cf);
-        padding: 0 0.5rem;
-        font-size: 1.1rem;
-    }
-
-    #application-form .fields-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem 1.5rem;
-    }
-
-    #application-form .field {
-        margin: 0;
-    }
-
-    #application-form .field label {
-        display: block;
-        font-weight: bold;
-    }
-
-    #application-form .field input, #application-form .field select, #application-form .field textarea {
-        display: block;
-        width: 100%;
-        min-width: 0;
-        padding: 0.8rem;
-        margin-top: 0.4rem;
-        border: 1px solid var(--border-colour, #E8E5FF);
-        border-radius: 6px;
-        font: inherit;
-    }
-
-    #application-form .field-wide {
-        grid-column: 1 / -1;
-    }
-
-    #application-form fieldset fieldset {
-        margin-top: 1rem;
-        padding: 1rem;
-        border: 1px solid var(--border-colour, #E8E5FF);
-        border-radius: 8px;
-    }
-
-    #application-form .choice-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.6rem 1rem;
-    }
-
-    #application-form .choice-grid p {
-        margin: 0;
-    }
-
-    #application-form .form-actions {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin: 0;
-    }
-
-    #application-form input[type="reset"] {
-        padding: 0.8rem 1.5rem;
-        border: 1px solid var(--border-colour, #E8E5FF);
-        border-radius: 8px;
-        cursor: pointer;
-    }
-
-    .form-help {
-        font-size: 0.95rem;
-    }
-
-    @media (max-width: 650px) {
-        #application-form .fields-grid,
-        #application-form .choice-grid {
-            grid-template-columns: 1fr;
+    <!-- page css -->
+    <style>
+        /* full width field */
+        .apply-page .field-wide {
+            grid-column: 1 / -1;
         }
 
-        #application-form > fieldset {
-            padding: 1rem;
+        /* help text */
+        .apply-page .form-help {
+            margin-top: 0;
+            color: #4a6070;
+            font-size: 0.95rem;
         }
-    }
-    
-  </style>
- </head>
- <body class="apply-page">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header>
-        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="85" height="85">
-   <h1>
-    Apply at Synapse Digital Health
-   </h1>
-   <nav aria-label="Main navigation">
-    <ul>
-     <li>
-      <a href="index.html">
-       Home
-      </a>
-     </li>
-     <li>
-      <a href="jobs.html">
-       Jobs
-      </a>
-     </li>
-     <li>
-      <a aria-current="page" href="apply.html">
-       Apply
-      </a>
-     </li>
-     <li>
-      <a href="about.html">
-       About Us
-      </a>
-     </li>
-    </ul>
-   </nav>
-  </header>
-  <main id="main-content">
-   <section aria-labelledby="join-heading" class="apply-intro">
-    <h2 id="join-heading">
-     Join Our Team
-    </h2>
-    <p>
-     Help us build accessible online patient platforms, appointment systems and health information websites.
-    </p>
-    <p class="required-note">
-     Fields marked with an asterisk (*) are required.
-    </p>
-    <p>
-     Read the
-     <a href="jobs.html">
-      job descriptions
-     </a>
-     before applying. Use the five-character reference shown in the advertisement.
-    </p>
-   </section>
-   <section aria-labelledby="form-heading">
-    <!-- Inline CSS: pink underline for the form heading -->
-    <h2 id="form-heading" style="border-bottom: 3px solid var(--primary-green, #ff176b);">
-     Job Application Form
-    </h2>
-    <form action="https://mercury.swin.edu.au/it000000/formtest.php" id="application-form" method="post">
-     <fieldset>
-      <legend>
-       1. Job Information
-      </legend>
-      <p class="form-help" id="jobref-help">
-       Enter the exact five-character reference from the Jobs page (for example, FE001 or UX002).
-      </p>
-      <div class="fields-grid">
-       <p class="field">
-        <label for="jobref">
-         Job Reference Number: *
-        </label>
-        <input aria-describedby="jobref-help" id="jobref" maxlength="5" minlength="5" name="jobref" pattern="[A-Za-z0-9]{5}" required="" title="Enter exactly five letters or numbers." type="text"/>
-       </p>
-      </div>
-     </fieldset>
-     <fieldset>
-      <legend>
-       2. Personal Information
-      </legend>
-      <div class="fields-grid">
-       <p class="field">
-        <label for="firstname">
-         First Name: *
-        </label>
-        <input autocomplete="given-name" id="firstname" maxlength="20" name="firstname" pattern="[A-Za-z]{1,20}" required="" title="Use 1 to 20 letters (A–Z)." type="text"/>
-       </p>
-       <p class="field">
-        <label for="lastname">
-         Last Name: *
-        </label>
-        <input autocomplete="family-name" id="lastname" maxlength="20" name="lastname" pattern="[A-Za-z]{1,20}" required="" title="Use 1 to 20 letters (A–Z)." type="text"/>
-       </p>
-       <p class="form-help field-wide" id="dob-help">
-        Format: dd/mm/yyyy (for example, 05/09/2004).
-       </p>
-       <p class="field field-wide">
-        <label for="dob">
-         Date of Birth: *
-        </label>
-        <input aria-describedby="dob-help" id="dob" inputmode="numeric" maxlength="10" name="dob" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" placeholder="dd/mm/yyyy" required="" title="Enter a date in dd/mm/yyyy format, for example 05/09/2004." type="text"/>
-       </p>
-      </div>
-      <fieldset>
-       <legend>
-        Gender: *
-       </legend>
-       <div class="choice-grid">
-        <p>
-         <input id="male" name="gender" required="" type="radio" value="male"/>
-         <label for="male">
-          Male
-         </label>
+
+        /* field focus glow */
+        #application-form input:focus,
+        #application-form select:focus,
+        #application-form textarea:focus {
+            box-shadow: 0 0 0 3px #b2ece6;
+        }
+    </style>
+</head>
+
+<body class="apply-page">
+
+
+
+    <!-- header + nav -->
+    <header>
+        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="64" height="64">
+        <div class="header-title">
+            <h1>Apply at Synapse</h1>
+            <p class="tagline">Healthcare that fits in your pocket.</p>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html" aria-current="page">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- intro -->
+        <section aria-labelledby="join-heading">
+            <h2 id="join-heading">Join Our Team</h2>
+            <div class="inner">
+                <p>Help us build accessible patient platforms, appointment systems and health information websites.</p>
+                <p>
+                    Read the <a href="jobs.html">job descriptions</a> first and use the
+                    five-character reference number from the advertisement.
+                    Fields marked with an asterisk (*) are required.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- the form -->
+        <section aria-labelledby="form-heading">
+            <!-- inline css -->
+            <h2 id="form-heading" style="border-bottom: 3px solid #00b3a6; padding-bottom: 6px;">Job Application Form</h2>
+            <div class="inner">
+                <form id="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+
+                    <!-- job ref, 5 chars -->
+                    <fieldset>
+                        <legend>1. Job Information</legend>
+                        <div class="fields-grid">
+                            <p class="field">
+                                <label for="jobref">Job Reference Number *</label>
+                                <input type="text" id="jobref" name="jobref" required
+                                       pattern="[A-Za-z0-9]{5}" maxlength="5"
+                                       placeholder="e.g. FE001" aria-describedby="jobref-help"
+                                       title="Exactly 5 letters or numbers, for example FE001">
+                            </p>
+                            <p class="form-help field-wide" id="jobref-help">Use FE001 or UX002 from the Jobs page.</p>
+                        </div>
+                    </fieldset>
+
+
+
+                    <!-- name + dob -->
+                    <fieldset>
+                        <legend>2. Personal Information</legend>
+                        <div class="fields-grid">
+                            <p class="field">
+                                <label for="firstname">First Name *</label>
+                                <input type="text" id="firstname" name="firstname" required
+                                       pattern="[A-Za-z]{1,20}" maxlength="20" autocomplete="given-name"
+                                       title="Up to 20 letters only">
+                            </p>
+                            <p class="field">
+                                <label for="lastname">Last Name *</label>
+                                <input type="text" id="lastname" name="lastname" required
+                                       pattern="[A-Za-z]{1,20}" maxlength="20" autocomplete="family-name"
+                                       title="Up to 20 letters only">
+                            </p>
+                            <p class="field field-wide">
+                                <label for="dob">Date of Birth *</label>
+                                <input type="text" id="dob" name="dob" required
+                                       pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
+                                       placeholder="dd/mm/yyyy" inputmode="numeric" maxlength="10"
+                                       title="Use the format dd/mm/yyyy, for example 05/09/2004">
+                            </p>
+                        </div>
+
+                        <!-- gender radios -->
+                        <fieldset>
+                            <legend>Gender *</legend>
+                            <div class="choice-grid">
+                                <p><input type="radio" id="male" name="gender" value="male" required> <label for="male">Male</label></p>
+                                <p><input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label></p>
+                                <p><input type="radio" id="other" name="gender" value="other"> <label for="other">Other</label></p>
+                                <p><input type="radio" id="prefer" name="gender" value="prefer_not_to_say"> <label for="prefer">Prefer not to say</label></p>
+                            </div>
+                        </fieldset>
+                    </fieldset>
+
+                    <!-- address stuff -->
+                    <fieldset>
+                        <legend>3. Address Information</legend>
+                        <div class="fields-grid">
+                            <p class="field field-wide">
+                                <label for="street">Street Address *</label>
+                                <input type="text" id="street" name="street" required maxlength="40" autocomplete="address-line1">
+                            </p>
+                            <p class="field">
+                                <label for="suburb">Suburb/Town *</label>
+                                <input type="text" id="suburb" name="suburb" required maxlength="40" autocomplete="address-level2">
+                            </p>
+                            <p class="field">
+                                <label for="state">State *</label>
+                                <select id="state" name="state" required>
+                                    <option value="">Please select</option>
+                                    <option value="VIC">VIC</option>
+                                    <option value="NSW">NSW</option>
+                                    <option value="QLD">QLD</option>
+                                    <option value="NT">NT</option>
+                                    <option value="WA">WA</option>
+                                    <option value="SA">SA</option>
+                                    <option value="TAS">TAS</option>
+                                    <option value="ACT">ACT</option>
+                                </select>
+                            </p>
+                            <p class="field">
+                                <label for="postcode">Postcode *</label>
+                                <input type="text" id="postcode" name="postcode" required
+                                       pattern="[0-9]{4}" maxlength="4" inputmode="numeric" autocomplete="postal-code"
+                                       title="Exactly 4 digits">
+                            </p>
+                        </div>
+                    </fieldset>
+
+
+
+                    <!-- contact, phone 8-12 -->
+                    <fieldset>
+                        <legend>4. Contact Information</legend>
+                        <div class="fields-grid">
+                            <p class="field">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email"
+                                       placeholder="name@example.com">
+                            </p>
+                            <p class="field">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required
+                                       pattern="[0-9]{8,12}" maxlength="12" inputmode="numeric" autocomplete="tel"
+                                       title="8 to 12 digits, no spaces">
+                            </p>
+                        </div>
+                    </fieldset>
+
+
+
+                    <!-- skills -->
+                    <fieldset>
+                        <legend>5. Skills and Experience</legend>
+
+                        <fieldset>
+                            <legend>Skill List (select all that apply)</legend>
+                            <div class="choice-grid">
+                                <p><input type="checkbox" id="html" name="skills[]" value="HTML5"> <label for="html">HTML5</label></p>
+                                <p><input type="checkbox" id="css" name="skills[]" value="CSS3"> <label for="css">CSS3</label></p>
+                                <p><input type="checkbox" id="accessibility" name="skills[]" value="Web Accessibility"> <label for="accessibility">Web Accessibility</label></p>
+                                <p><input type="checkbox" id="healthcare" name="skills[]" value="Healthcare Technology"> <label for="healthcare">Healthcare Technology</label></p>
+                                <p><input type="checkbox" id="design" name="skills[]" value="UI/UX Design"> <label for="design">UI/UX Design</label></p>
+                            </div>
+                        </fieldset>
+
+                        <p class="field">
+                            <label for="otherskills">Other Skills (optional)</label>
+                            <textarea id="otherskills" name="otherskills" rows="5" cols="40"
+                                      placeholder="List any other skills or experience."></textarea>
+                        </p>
+                    </fieldset>
+
+                    <p class="form-actions">
+                        <input type="submit" value="Submit Application">
+                        <input type="reset" value="Clear Form" style="border: 1px solid #b9cdd6;">
+                    </p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- footer stuff -->
+    <footer>
+        <p class="country">
+            Synapse acknowledges the Traditional Custodians of the lands on which we work
+            and pays respect to Elders past and present.
+            <a href="jobs.html#inclusion-heading">Read our inclusion commitment</a>.
         </p>
-        <p>
-         <input id="female" name="gender" type="radio" value="female"/>
-         <label for="female">
-          Female
-         </label>
-        </p>
-        <p>
-         <input id="other" name="gender" type="radio" value="other"/>
-         <label for="other">
-          Other
-         </label>
-        </p>
-        <p>
-         <input id="prefer" name="gender" type="radio" value="prefer_not_to_say"/>
-         <label for="prefer">
-          Prefer not to say
-         </label>
-        </p>
-       </div>
-      </fieldset>
-     </fieldset>
-     <fieldset>
-      <legend>
-       3. Address Information
-      </legend>
-      <div class="fields-grid">
-       <p class="field field-wide">
-        <label for="street">
-         Street Address: *
-        </label>
-        <input autocomplete="address-line1" id="street" maxlength="40" name="street" required="" type="text"/>
-       </p>
-       <p class="field">
-        <label for="suburb">
-         Suburb/Town: *
-        </label>
-        <input autocomplete="address-level2" id="suburb" maxlength="40" name="suburb" required="" type="text"/>
-       </p>
-       <p class="field">
-        <label for="state">
-         State/Territory: *
-        </label>
-        <select autocomplete="address-level1" id="state" name="state" required="">
-         <option value="">
-          Select a state or territory
-         </option>
-         <option value="VIC">
-          VIC
-         </option>
-         <option value="NSW">
-          NSW
-         </option>
-         <option value="QLD">
-          QLD
-         </option>
-         <option value="NT">
-          NT
-         </option>
-         <option value="WA">
-          WA
-         </option>
-         <option value="SA">
-          SA
-         </option>
-         <option value="TAS">
-          TAS
-         </option>
-         <option value="ACT">
-          ACT
-         </option>
-        </select>
-       </p>
-       <p class="field">
-        <label for="postcode">
-         Postcode: *
-        </label>
-        <input autocomplete="postal-code" id="postcode" inputmode="numeric" maxlength="4" minlength="4" name="postcode" pattern="[0-9]{4}" required="" title="Enter exactly four digits." type="text"/>
-       </p>
-      </div>
-     </fieldset>
-     <fieldset>
-      <legend>
-       4. Contact Information
-      </legend>
-      <div class="fields-grid">
-       <p class="field">
-        <label for="email">
-         Email Address: *
-        </label>
-        <input autocomplete="email" id="email" name="email" required="" type="email"/>
-       </p>
-       <p class="field">
-        <label for="phone">
-         Phone Number: *
-        </label>
-        <input autocomplete="tel" id="phone" inputmode="numeric" maxlength="12" minlength="8" name="phone" pattern="[0-9]{8,12}" required="" title="Enter 8 to 12 digits, without spaces." type="tel"/>
-       </p>
-      </div>
-     </fieldset>
-     <fieldset class="full-width">
-      <legend>
-       5. Skills and Experience
-      </legend>
-      <p class="form-help" id="skills-help">
-       Select the skills that apply to you.
-      </p>
-      <fieldset aria-describedby="skills-help">
-       <legend>
-        Relevant Skills (select all that apply)
-       </legend>
-       <div class="choice-grid">
-        <p>
-         <input id="html" name="skills[]" type="checkbox" value="HTML5"/>
-         <label for="html">
-          HTML5
-         </label>
-        </p>
-        <p>
-         <input id="css" name="skills[]" type="checkbox" value="CSS3"/>
-         <label for="css">
-          CSS3
-         </label>
-        </p>
-        <p>
-         <input id="accessibility" name="skills[]" type="checkbox" value="Web Accessibility"/>
-         <label for="accessibility">
-          Web Accessibility
-         </label>
-        </p>
-        <p>
-         <input id="healthcare" name="skills[]" type="checkbox" value="Healthcare Technology"/>
-         <label for="healthcare">
-          Healthcare Technology
-         </label>
-        </p>
-        <p>
-         <input id="design" name="skills[]" type="checkbox" value="UI/UX Design"/>
-         <label for="design">
-          UI/UX Design
-         </label>
-        </p>
-       </div>
-      </fieldset>
-      <p class="field">
-       <label for="otherskills">
-        Other Skills (Optional):
-       </label>
-       <textarea cols="40" id="otherskills" name="otherskills" placeholder="Enter any additional skills." rows="5"></textarea>
-      </p>
-     </fieldset>
-     <p class="form-actions">
-      <input type="submit" value="Submit Application"/>
-      <input type="reset" value="Clear Form"/>
-     </p>
-    </form>
-   </section>
-  </main>
-  <footer>
-   <p>
-    <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog" rel="noopener noreferrer" target="_blank">
-     Our Jira Project
-    </a>
-   </p>
-   <p>
-    <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project" rel="noopener noreferrer" target="_blank">
-     Synapse GitHub Repository
-    </a>
-   </p>
-   <p>
-    <a href="mailto:info@synapse-health.example">
-     Contact email (example): info@synapse-health.example
-    </a>
-   </p>
-   <p>
-    © 2026 Synapse Digital Health. All rights reserved.
-   </p>
-   <!-- Project acknowledgement -->
-   <p>
-    A project by Swinburne University students.
-   </p>
-   <p>
-    Acknowledgement: ChatGPT was used as a supporting tool to help review, organize, and improve the code and its presentation. The student team remains responsible for the project and its testing.
-   </p>
-  </footer>
- </body>
+        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog" target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
+        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
+        <p>Email: <a href="mailto:info@synapse-health.com">info@synapse-health.com</a></p>
+        <p>&copy; 2026 Synapse Digital Health. A project by Swinburne University students.</p>
+        <p><small>Acknowledgement: ChatGPT and Claude were used as supporting tools for code review and styling. The student team reviewed and tested all work.</small></p>
+    </footer>
+</body>
 </html>
