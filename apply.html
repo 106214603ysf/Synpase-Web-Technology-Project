@@ -3,48 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apply for digital health careers at Synapse Digital Health.">
-    <meta name="keywords" content="Synapse, digital health, jobs, application form">
-    <meta name="author" content="The Synapse Team">
-    <title>Apply for a Job | Synapse Digital Health</title>
-
-    <!-- main css -->
+    <title>Apply | Synapse Digital Health</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- page css -->
+    <!-- Internal CSS -->
     <style>
-        /* full width field */
-        .apply-page .field-wide {
-            grid-column: 1 / -1;
-        }
-
-        /* help text */
-        .apply-page .form-help {
-            margin-top: 0;
-            color: #4a6070;
-            font-size: 0.95rem;
-        }
-
-        /* field focus glow */
-        #application-form input:focus,
-        #application-form select:focus,
-        #application-form textarea:focus {
-            box-shadow: 0 0 0 3px #b2ece6;
-        }
+        .apply-page .field { margin-bottom: 15px; }
+        .apply-page .field label { display: block; font-weight: bold; }
     </style>
 </head>
 
 <body class="apply-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-
-
-    <!-- header + nav -->
     <header>
-        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="64" height="64">
+        <img src="images/synapse-logo.png" alt="Synapse Digital Health logo"
+             class="brand-logo" width="110" height="100">
+
         <div class="header-title">
             <h1>Apply at Synapse</h1>
             <p class="tagline">Healthcare that fits in your pocket.</p>
         </div>
+
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -56,184 +36,161 @@
     </header>
 
     <main id="main-content">
-        <!-- intro -->
-        <section aria-labelledby="join-heading">
-            <h2 id="join-heading">Join Our Team</h2>
+
+        <section>
+            <h2>Join Our Team</h2>
             <div class="inner">
-                <p>Help us build accessible patient platforms, appointment systems and health information websites.</p>
-                <p>
-                    Read the <a href="jobs.html">job descriptions</a> first and use the
-                    five-character reference number from the advertisement.
-                    Fields marked with an asterisk (*) are required.
-                </p>
+                <p>Read the <a href="jobs.html">job descriptions</a>
+                   and enter the five-character reference number.</p>
+                <p>Fields marked * are required.</p>
             </div>
         </section>
 
+        <section>
+            <!-- Inline CSS -->
+            <h2 style="border-bottom:3px solid #20c9f3; padding-bottom:6px;">
+                Job Application Form
+            </h2>
 
-        <!-- the form -->
-        <section aria-labelledby="form-heading">
-            <!-- inline css -->
-            <h2 id="form-heading" style="border-bottom: 3px solid #00b3a6; padding-bottom: 6px;">Job Application Form</h2>
             <div class="inner">
-                <form id="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+                <form action="https://mercury.swin.edu.au/it000000/formtest.php"
+                      method="post">
 
-                    <!-- job ref, 5 chars -->
                     <fieldset>
-                        <legend>1. Job Information</legend>
-                        <div class="fields-grid">
-                            <p class="field">
-                                <label for="jobref">Job Reference Number *</label>
-                                <input type="text" id="jobref" name="jobref" required
-                                       pattern="[A-Za-z0-9]{5}" maxlength="5"
-                                       placeholder="e.g. FE001" aria-describedby="jobref-help"
-                                       title="Exactly 5 letters or numbers, for example FE001">
-                            </p>
-                            <p class="form-help field-wide" id="jobref-help">Use FE001 or UX002 from the Jobs page.</p>
+                        <legend>Job Information</legend>
+                        <div class="field">
+                            <label for="jobref">Job Reference Number *</label>
+                            <input type="text" id="jobref" name="jobref"
+                                   pattern="[A-Za-z0-9]{5}" maxlength="5"
+                                   title="Exactly five letters or numbers" required>
                         </div>
                     </fieldset>
 
-
-
-                    <!-- name + dob -->
                     <fieldset>
-                        <legend>2. Personal Information</legend>
+                        <legend>Personal Information</legend>
                         <div class="fields-grid">
-                            <p class="field">
+                            <div class="field">
                                 <label for="firstname">First Name *</label>
-                                <input type="text" id="firstname" name="firstname" required
-                                       pattern="[A-Za-z]{1,20}" maxlength="20" autocomplete="given-name"
-                                       title="Up to 20 letters only">
-                            </p>
-                            <p class="field">
+                                <input type="text" id="firstname" name="firstname"
+                                       maxlength="20" pattern="[A-Za-z]{1,20}" required>
+                            </div>
+
+                            <div class="field">
                                 <label for="lastname">Last Name *</label>
-                                <input type="text" id="lastname" name="lastname" required
-                                       pattern="[A-Za-z]{1,20}" maxlength="20" autocomplete="family-name"
-                                       title="Up to 20 letters only">
-                            </p>
-                            <p class="field field-wide">
-                                <label for="dob">Date of Birth *</label>
-                                <input type="text" id="dob" name="dob" required
+                                <input type="text" id="lastname" name="lastname"
+                                       maxlength="20" pattern="[A-Za-z]{1,20}" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="dob">Date of Birth (dd/mm/yyyy) *</label>
+                                <input type="text" id="dob" name="dob"
+                                       placeholder="dd/mm/yyyy" maxlength="10"
                                        pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
-                                       placeholder="dd/mm/yyyy" inputmode="numeric" maxlength="10"
-                                       title="Use the format dd/mm/yyyy, for example 05/09/2004">
-                            </p>
+                                       required>
+                            </div>
                         </div>
 
-                        <!-- gender radios -->
                         <fieldset>
                             <legend>Gender *</legend>
                             <div class="choice-grid">
-                                <p><input type="radio" id="male" name="gender" value="male" required> <label for="male">Male</label></p>
-                                <p><input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label></p>
-                                <p><input type="radio" id="other" name="gender" value="other"> <label for="other">Other</label></p>
-                                <p><input type="radio" id="prefer" name="gender" value="prefer_not_to_say"> <label for="prefer">Prefer not to say</label></p>
+                                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                                <label><input type="radio" name="gender" value="Female"> Female</label>
+                                <label><input type="radio" name="gender" value="Other"> Other</label>
+                                <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
                             </div>
                         </fieldset>
                     </fieldset>
 
-                    <!-- address stuff -->
                     <fieldset>
-                        <legend>3. Address Information</legend>
+                        <legend>Address</legend>
                         <div class="fields-grid">
-                            <p class="field field-wide">
+                            <div class="field">
                                 <label for="street">Street Address *</label>
-                                <input type="text" id="street" name="street" required maxlength="40" autocomplete="address-line1">
-                            </p>
-                            <p class="field">
+                                <input type="text" id="street" name="street"
+                                       maxlength="40" required>
+                            </div>
+
+                            <div class="field">
                                 <label for="suburb">Suburb/Town *</label>
-                                <input type="text" id="suburb" name="suburb" required maxlength="40" autocomplete="address-level2">
-                            </p>
-                            <p class="field">
+                                <input type="text" id="suburb" name="suburb"
+                                       maxlength="40" required>
+                            </div>
+
+                            <div class="field">
                                 <label for="state">State *</label>
                                 <select id="state" name="state" required>
-                                    <option value="">Please select</option>
-                                    <option value="VIC">VIC</option>
-                                    <option value="NSW">NSW</option>
-                                    <option value="QLD">QLD</option>
-                                    <option value="NT">NT</option>
-                                    <option value="WA">WA</option>
-                                    <option value="SA">SA</option>
-                                    <option value="TAS">TAS</option>
-                                    <option value="ACT">ACT</option>
+                                    <option value="">Select state</option>
+                                    <option>VIC</option><option>NSW</option>
+                                    <option>QLD</option><option>NT</option>
+                                    <option>WA</option><option>SA</option>
+                                    <option>TAS</option><option>ACT</option>
                                 </select>
-                            </p>
-                            <p class="field">
-                                <label for="postcode">Postcode *</label>
-                                <input type="text" id="postcode" name="postcode" required
-                                       pattern="[0-9]{4}" maxlength="4" inputmode="numeric" autocomplete="postal-code"
-                                       title="Exactly 4 digits">
-                            </p>
-                        </div>
-                    </fieldset>
-
-
-
-                    <!-- contact, phone 8-12 -->
-                    <fieldset>
-                        <legend>4. Contact Information</legend>
-                        <div class="fields-grid">
-                            <p class="field">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required autocomplete="email"
-                                       placeholder="name@example.com">
-                            </p>
-                            <p class="field">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required
-                                       pattern="[0-9]{8,12}" maxlength="12" inputmode="numeric" autocomplete="tel"
-                                       title="8 to 12 digits, no spaces">
-                            </p>
-                        </div>
-                    </fieldset>
-
-
-
-                    <!-- skills -->
-                    <fieldset>
-                        <legend>5. Skills and Experience</legend>
-
-                        <fieldset>
-                            <legend>Skill List (select all that apply)</legend>
-                            <div class="choice-grid">
-                                <p><input type="checkbox" id="html" name="skills[]" value="HTML5"> <label for="html">HTML5</label></p>
-                                <p><input type="checkbox" id="css" name="skills[]" value="CSS3"> <label for="css">CSS3</label></p>
-                                <p><input type="checkbox" id="accessibility" name="skills[]" value="Web Accessibility"> <label for="accessibility">Web Accessibility</label></p>
-                                <p><input type="checkbox" id="healthcare" name="skills[]" value="Healthcare Technology"> <label for="healthcare">Healthcare Technology</label></p>
-                                <p><input type="checkbox" id="design" name="skills[]" value="UI/UX Design"> <label for="design">UI/UX Design</label></p>
                             </div>
-                        </fieldset>
 
-                        <p class="field">
+                            <div class="field">
+                                <label for="postcode">Postcode *</label>
+                                <input type="text" id="postcode" name="postcode"
+                                       pattern="[0-9]{4}" maxlength="4" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Contact Details</legend>
+                        <div class="fields-grid">
+                            <div class="field">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone"
+                                       pattern="[0-9]{8,12}" maxlength="12" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Skills</legend>
+                        <p>Select the skills you have:</p>
+
+                        <div class="choice-grid">
+                            <label><input type="checkbox" name="skills[]" value="HTML5"> HTML5</label>
+                            <label><input type="checkbox" name="skills[]" value="CSS3"> CSS3</label>
+                            <label><input type="checkbox" name="skills[]" value="Accessibility"> Accessibility</label>
+                            <label><input type="checkbox" name="skills[]" value="Healthcare"> Healthcare Technology</label>
+                            <label><input type="checkbox" name="skills[]" value="UX Design"> UX Design</label>
+                        </div>
+
+                        <div class="field">
                             <label for="otherskills">Other Skills (optional)</label>
-                            <textarea id="otherskills" name="otherskills" rows="5" cols="40"
-                                      placeholder="List any other skills or experience."></textarea>
-                        </p>
+                            <textarea id="otherskills" name="otherskills" rows="4"></textarea>
+                        </div>
                     </fieldset>
 
                     <p class="form-actions">
                         <input type="submit" value="Submit Application">
-                        <input type="reset" value="Clear Form" style="border: 1px solid #b9cdd6;">
+                        <input type="reset" value="Clear Form">
                     </p>
                 </form>
             </div>
         </section>
-
     </main>
 
-
-
-    <!-- footer stuff -->
     <footer>
-        <p class="country">
-            Synapse acknowledges the Traditional Custodians of the lands on which we work
-            and pays respect to Elders past and present.
-            <a href="jobs.html#inclusion-heading">Read our inclusion commitment</a>.
+        <p>Synapse acknowledges the Traditional Custodians of the lands
+           on which we work and pays respect to Elders past and present.</p>
+
+        <p>
+            <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
+            <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
+            <a href="mailto:info@synapse-health.com">Email</a>
         </p>
-        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog" target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
-        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
-        <p>Email: <a href="mailto:info@synapse-health.com">info@synapse-health.com</a></p>
-        <p>&copy; 2026 Synapse Digital Health. A project by Swinburne University students.</p>
-        <p><small>Acknowledgement: ChatGPT and Claude were used as supporting tools for code review and styling. The student team reviewed and tested all work.</small></p>
+
+        <p>&copy; 2026 Synapse Digital Health</p>
+        <small>ChatGPT and Claude were used as supporting tools for code review
+               and styling. The student team reviewed and tested all work.</small>
     </footer>
 </body>
 </html>

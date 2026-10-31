@@ -3,53 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Front-End Web Developer and UX Designer job opportunities at Synapse Digital Health.">
-    <meta name="keywords" content="Synapse, digital health, careers, front-end developer, UX designer">
-    <meta name="author" content="The Synapse Team">
-    <title>Job Vacancies | Synapse Digital Health</title>
-
-    <!-- main css -->
+    <title>Jobs | Synapse Digital Health</title>
     <link rel="stylesheet" href="styles.css">
 
-
-
-    <!-- page css -->
+    <!-- Internal CSS -->
     <style>
-        /* 2 col details */
-        .jobs-page .job-details {
-            display: grid;
-            grid-template-columns: minmax(130px, 190px) 1fr;
-            gap: 6px 16px;
-        }
-
-        .jobs-page .job-details dd {
-            margin: 0;
-        }
-
-        @media (max-width: 480px) {
-            .jobs-page .job-details {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* aside heading line */
-        #inclusion-heading {
-            color: #00665e;
-            border-bottom: 2px solid #00b3a6;
-            padding-bottom: 4px;
-        }
+        .job-ref { color: #075481; font-weight: bold; }
+        #inclusion-heading { border-bottom: 2px solid #20c9f3; }
     </style>
 </head>
 
 <body class="jobs-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- header + nav -->
     <header>
-        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="64" height="64">
+        <img src="images/synapse-logo.png" alt="Synapse Digital Health logo"
+             class="brand-logo" width="110" height="100">
+
         <div class="header-title">
             <h1>Careers at Synapse</h1>
             <p class="tagline">Healthcare that fits in your pocket.</p>
         </div>
+
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -61,155 +36,135 @@
     </header>
 
     <main id="main-content">
-        <!-- intro + aside -->
-        <section class="intro" aria-labelledby="vacancies-heading">
-            <h2 id="vacancies-heading">Job Vacancies</h2>
+
+        <section>
+            <h2>Job Vacancies</h2>
             <div class="inner">
+
+                <!-- Right-floating aside -->
                 <aside aria-labelledby="inclusion-heading">
                     <h3 id="inclusion-heading">Our Commitment to Inclusion</h3>
-                    <p>
-                        Synapse acknowledges the Traditional Custodians of the lands where we
-                        work and pays respect to Elders past and present.
-                    </p>
-                    <p>
-                        We encourage applications from <strong>Aboriginal and Torres Strait
-                        Islander peoples</strong>. Health services work best when the people
-                        who build them reflect the communities they serve, so we offer
-                        culturally safe workplaces and flexible leave for cultural and
-                        community obligations.
-                    </p>
+
+                    <p>Synapse acknowledges the Traditional Custodians of
+                       the lands where we work and pays respect to Elders
+                       past and present.</p>
+
+                    <p>We encourage applications from Aboriginal and Torres
+                       Strait Islander peoples and support culturally safe,
+                       inclusive workplaces.</p>
                 </aside>
 
                 <h3>Why Work With Us?</h3>
-                <p>
-                    Synapse builds online patient platforms, appointment booking systems and
-                    health information websites. Our team works in a hybrid setup from our
-                    Melbourne office, with mentoring, paid training and flexible hours.
+                <p>Synapse builds patient platforms, appointment systems
+                   and health information websites. Our Melbourne team
+                   supports hybrid work, mentoring and training.</p>
+
+                <!-- Inline CSS -->
+                <p style="border-left:4px solid #20c9f3; padding:10px;">
+                    <strong>Applications close on 30 November 2026.</strong>
                 </p>
 
-                <!-- inline css, due date -->
-                <p style="border-left: 4px solid #00b3a6; padding: 10px 14px; background-color: #eef7f6;">
-                    <strong>Two positions available. Applications close on 30 November 2026.</strong>
-                </p>
-
-                <p style="font-weight: bold; color: #0a5c55;">Current opportunities:</p>
                 <ul>
-                    <li><a href="#frontend-heading">Front-End Web Developer (FE001)</a></li>
-                    <li><a href="#ux-heading">UX Designer – Patient Experience (UX002)</a></li>
+                    <li><a href="#frontend">Front-End Web Developer (FE001)</a></li>
+                    <li><a href="#ux">UX Designer – Patient Experience (UX002)</a></li>
                 </ul>
             </div>
         </section>
 
-        <!-- job 1 - front end -->
-        <section aria-labelledby="frontend-heading">
-            <h2 id="frontend-heading">Front-End Web Developer</h2>
+        <!-- First position -->
+        <section id="frontend">
+            <h2>Front-End Web Developer</h2>
             <div class="inner">
-                <p>
-                    Develop and maintain responsive, accessible pages for patient booking and
-                    health information platforms using HTML5 and CSS3.
-                </p>
+                <p>Develop responsive and accessible pages for patient
+                   booking and healthcare information platforms.</p>
 
-                <dl class="job-details">
-                    <dt>Reference number</dt>
-                    <dd class="job-ref">FE001</dd>
-                    <dt>Salary</dt>
-                    <dd>$85,000 – $100,000 per year plus superannuation</dd>
-                    <dt>Reports to</dt>
-                    <dd>Head of Digital Engineering</dd>
-                    <dt>Location</dt>
-                    <dd>Melbourne VIC (hybrid)</dd>
-                    <dt>Employment type</dt>
-                    <dd>Full-time</dd>
+                <dl>
+                    <dt>Reference number</dt><dd class="job-ref">FE001</dd>
+                    <dt>Salary</dt><dd>$85,000–$100,000 plus superannuation</dd>
+                    <dt>Reports to</dt><dd>Head of Digital Engineering</dd>
+                    <dt>Location</dt><dd>Melbourne VIC (hybrid)</dd>
+                    <dt>Employment</dt><dd>Full-time</dd>
                 </dl>
 
                 <h3>Key Responsibilities</h3>
                 <ol>
-                    <li>Build responsive web pages from approved designs.</li>
-                    <li>Test pages using keyboard navigation and screen readers.</li>
-                    <li>Validate HTML and CSS and fix accessibility issues.</li>
-                    <li>Follow secure coding practices to protect patient privacy.</li>
+                    <li>Build responsive web pages.</li>
+                    <li>Test keyboard and screen-reader accessibility.</li>
+                    <li>Validate HTML and CSS.</li>
+                    <li>Follow secure coding practices.</li>
                 </ol>
 
                 <h3>Essential Requirements</h3>
                 <ul>
-                    <li>Strong knowledge of HTML5 and CSS3.</li>
-                    <li>Understanding of web accessibility principles (WCAG 2.1).</li>
-                    <li>Experience using Git and GitHub.</li>
+                    <li>Strong HTML5 and CSS3 knowledge.</li>
+                    <li>Understanding of web accessibility.</li>
+                    <li>Experience with Git and GitHub.</li>
                 </ul>
 
                 <h3>Preferable Requirements</h3>
                 <ul>
-                    <li>Experience working in healthcare technology.</li>
-                    <li>Familiarity with Jira and Agile sprints.</li>
+                    <li>Healthcare technology experience.</li>
+                    <li>Familiarity with Jira and Agile.</li>
                 </ul>
 
-                <p><a class="button-link" href="apply.html">Apply for FE001</a></p>
+                <a class="button-link" href="apply.html">Apply for FE001</a>
             </div>
         </section>
 
-
-        <!-- job 2 - ux -->
-        <section aria-labelledby="ux-heading">
-            <h2 id="ux-heading">UX Designer – Patient Experience</h2>
+        <!-- Second position -->
+        <section id="ux">
+            <h2>UX Designer – Patient Experience</h2>
             <div class="inner">
-                <p>
-                    Design clear and inclusive experiences for patients booking appointments
-                    and accessing health information online.
-                </p>
+                <p>Design accessible experiences for patients booking
+                   appointments and accessing health information.</p>
 
-                <dl class="job-details">
-                    <dt>Reference number</dt>
-                    <dd class="job-ref">UX002</dd>
-                    <dt>Salary</dt>
-                    <dd>$90,000 – $105,000 per year plus superannuation</dd>
-                    <dt>Reports to</dt>
-                    <dd>Design Lead, Patient Platforms</dd>
-                    <dt>Location</dt>
-                    <dd>Melbourne VIC (hybrid)</dd>
-                    <dt>Employment type</dt>
-                    <dd>Full-time</dd>
+                <dl>
+                    <dt>Reference number</dt><dd class="job-ref">UX002</dd>
+                    <dt>Salary</dt><dd>$90,000–$105,000 plus superannuation</dd>
+                    <dt>Reports to</dt><dd>Design Lead, Patient Platforms</dd>
+                    <dt>Location</dt><dd>Melbourne VIC (hybrid)</dd>
+                    <dt>Employment</dt><dd>Full-time</dd>
                 </dl>
 
                 <h3>Key Responsibilities</h3>
                 <ol>
-                    <li>Research patient needs through interviews and usability testing.</li>
-                    <li>Create wireframes and prototypes for new features.</li>
-                    <li>Write clear labels and helpful error messages.</li>
-                    <li>Check designs for colour contrast and readability.</li>
+                    <li>Research patient needs.</li>
+                    <li>Create wireframes and prototypes.</li>
+                    <li>Conduct usability testing.</li>
+                    <li>Check colour contrast and readability.</li>
                 </ol>
 
                 <h3>Essential Requirements</h3>
                 <ul>
-                    <li>Experience with prototyping tools such as Figma.</li>
-                    <li>Understanding of the Web Content Accessibility Guidelines (WCAG).</li>
-                    <li>Experience with user research and usability testing.</li>
+                    <li>Experience with Figma.</li>
+                    <li>Understanding of accessibility guidelines.</li>
+                    <li>Experience with user research.</li>
                 </ul>
 
                 <h3>Preferable Requirements</h3>
                 <ul>
-                    <li>Background in healthcare or digital health platforms.</li>
-                    <li>Experience working with front-end developers in Agile teams.</li>
+                    <li>Healthcare design experience.</li>
+                    <li>Experience working with Agile teams.</li>
                 </ul>
 
-                <p><a class="button-link" href="apply.html">Apply for UX002</a></p>
+                <a class="button-link" href="apply.html">Apply for UX002</a>
             </div>
         </section>
-
     </main>
 
-
-    <!-- footer stuff -->
     <footer>
-        <p class="country">
-            Synapse acknowledges the Traditional Custodians of the lands on which we work
-            and pays respect to Elders past and present.
-            <a href="jobs.html#inclusion-heading">Read our inclusion commitment</a>.
+        <p>Synapse acknowledges the Traditional Custodians of the lands
+           on which we work and pays respect to Elders past and present.</p>
+
+        <p>
+            <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
+            <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
+            <a href="mailto:info@synapse-health.com">Email</a>
         </p>
-        <p><a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog" target="_blank" rel="noopener noreferrer">Our Jira Project</a></p>
-        <p><a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project" target="_blank" rel="noopener noreferrer">Synapse GitHub Repository</a></p>
-        <p>Email: <a href="mailto:info@synapse-health.com">info@synapse-health.com</a></p>
-        <p>&copy; 2026 Synapse Digital Health. A project by Swinburne University students.</p>
-        <p><small>Acknowledgement: ChatGPT and Claude were used as supporting tools for code review and styling. The student team reviewed and tested all work.</small></p>
+
+        <p>&copy; 2026 Synapse Digital Health</p>
+        <small>ChatGPT and Claude were used as supporting tools for code review
+               and styling. The student team reviewed and tested all work.</small>
     </footer>
 </body>
 </html>
