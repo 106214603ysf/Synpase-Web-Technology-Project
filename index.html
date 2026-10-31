@@ -19,12 +19,12 @@
 
         .home-page .brand-logo {
             display: block;
-            margin: 0 auto 0.75rem;
+            margin: 0;
         }
 
         .home-page .tagline {
-            margin: 0 0 1rem;
-            color: #ffffff;
+            margin: 4px 0 0;
+            color: #ff9fc5;
         }
 
         .home-page .intro-layout {
@@ -35,7 +35,12 @@
         }
 
         .home-page .intro-layout figure {
-            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 100%;
             text-align: center;
         }
 
@@ -55,7 +60,7 @@
             flex: 1 1 240px;
             min-width: 0;
             padding: 0.8rem;
-            border: 1px solid #b7d3ce;
+            border: 1px solid #8b3659;
             border-radius: 8px;
             font: inherit;
         }
@@ -96,12 +101,15 @@
 
 <body class="home-page">
     <!-- Company identity and site navigation -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
-        <!-- Logo image will be added when the group finalizes it. -->
-        <img class="brand-logo" src="images/logo.svg"
+        <!-- Synapse logo -->
+        <img class="brand-logo" src="images/synapse-logo.png"
              alt="Synapse Digital Health logo" width="64" height="64">
-        <h1>Synapse Digital Health</h1>
-        <p class="tagline">Healthcare that fits in your pocket.</p>
+        <div class="header-title">
+            <h1>Synapse Digital Health</h1>
+            <p class="tagline">Healthcare that fits in your pocket.</p>
+        </div>
 
         <nav aria-label="Main navigation">
             <ul>
@@ -113,12 +121,13 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Introduction to Synapse and its services -->
-        <section aria-labelledby="intro-heading">
+        <section class="hero" aria-labelledby="intro-heading">
             <div class="intro-layout">
                 <div>
-                    <h2 id="intro-heading">Build the tools patients use every day</h2>
+                    <p class="eyebrow">✦ DIGITAL HEALTH, REIMAGINED</p>
+                    <h2 id="intro-heading">Build the tools patients use <span class="accent">every day.</span></h2>
                     <p>
                         Synapse is a private healthcare technology company.
                         We develop online patient platforms, appointment booking
@@ -128,24 +137,28 @@
                         We are expanding our digital services team. Join us to make
                         healthcare easier to find, book and understand.
                     </p>
-                    <!-- Inline CSS: highlights flexible working arrangements. -->
-                    <p style="border-left: 4px solid #08745e; padding-left: 12px; margin-top: 1rem;">
+                    <!-- Inline CSS: highlight for flexible working arrangements. -->
+                    <p style="border-left: 4px solid #ff176b; padding-left: 12px; margin-top: 1rem;">
                         Our roles support <strong>flexible and remote work</strong>.
                     </p>
                 </div>
 
                 <figure>
-                    <!-- Replace this image path when the illustration is added. -->
-                    <img src="images/hero.svg"
-                         alt="Illustration of a phone, appointment calendar and health chart"
-                         width="480" height="300">
-                    <figcaption>Digital tools supporting patients and healthcare teams.</figcaption>
+                    <!-- Synapse logo -->
+                    <img class="hero-logo" src="images/synapse-logo.png"
+                         alt="Synapse Digital Health neon-pink logo"
+                         width="340" height="340">
+                    <figcaption>Synapse Digital Health — technology designed around people.</figcaption>
                 </figure>
             </div>
         </section>
 
-        <!-- Job keyword form: navigates to the vacancies page. -->
-        <section aria-labelledby="search-heading">
+        <div class="feature-strip" aria-label="Our services">
+            <span>✦ Patient Platforms</span><span>✦ Appointment Booking</span><span>✦ Accessible Design</span>
+        </div>
+
+        <!-- Job search: navigates to vacancies; no keyword filtering. -->
+        <section class="search-section" aria-labelledby="search-heading">
             <h2 id="search-heading">Find a job</h2>
             <p>
                 Explore our current vacancies. You can enter a job keyword
@@ -163,7 +176,7 @@
         </section>
 
         <!-- Vacancy summary table demonstrates rowspan and colspan. -->
-        <section aria-labelledby="vacancies-heading">
+        <section class="vacancies-section" aria-labelledby="vacancies-heading">
             <h2 id="vacancies-heading">Current vacancies</h2>
 
             <div class="table-scroll" role="region" aria-label="Current vacancies table" tabindex="0">

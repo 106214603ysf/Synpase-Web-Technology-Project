@@ -1,39 +1,15 @@
-/*
-=================================================
-DIGITAL HEALTH & WELLNESS WEBSITE
-GLOBAL STYLESHEET
-
-Group 1 - Web Technology Project
-Global CSS: Amani Aly, Youssof Mohamed Hussein, Mohammed Abrar Salahuddin, Abdullah Maithalouni
-=================================================
-*/
-
-
-/* ==============================================
-   1. FONTS AND GLOBAL COLOUR VARIABLES
-============================================== */
-
-@font-face {
-    font-family: 'Google Sans';
-    src: url('fonts/google-sans.woff2') format('woff2');
-}
+/* Synapse Digital Health - External Stylesheet */
 
 :root {
-    --primary-blue: #123b5d;
-    --secondary-blue: #1c6285;
-    --primary-green: #08745e;
-    --light-green: #e8f7f4;
-    --light-blue: #eaf3fc;
-    --background: #f4f9fb;
-    --white: #ffffff;
-    --text-dark: #243b4a;
-    --border-colour: #d9e8e5;
+    --bg: #080207;
+    --card: #170b15;
+    --pink: #ff176b;
+    --light-pink: #ff9fc5;
+    --text: #fff4f8;
+    --border: #69304b;
 }
 
-
-/* ==============================================
-   2. RESET AND BOX MODEL
-============================================== */
+/* General */
 
 * {
     box-sizing: border-box;
@@ -45,651 +21,661 @@ html {
 
 body {
     margin: 0;
-    padding: 0;
-
+    min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-
-    color: var(--text-dark);
-
-    background: linear-gradient(
-        135deg,
-        #f4f9fb,
-        #e8f7f4,
-        #edf5fc
-    );
-
+    font-size: 16px;
     line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
 }
 
-
-/* ==============================================
-   3. WEBSITE HEADER
-============================================== */
-
-body > header {
-    background: linear-gradient(
-        to right,
-        var(--primary-blue),
-        var(--primary-green)
-    );
-
-    color: var(--white);
-
-    padding: 2rem 5%;
-
-    text-align: center;
-
-    border-bottom: 4px solid #27a98a;
-}
-
-/* Website title */
-
-body > header h1 {
-    color: var(--white);
-
-    font-size: 2rem;
-
-    margin: 0 0 1.25rem;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* ==============================================
-   4. NAVIGATION
-============================================== */
-
-/* Supports navigation with or without a list */
-
-body > header nav,
-nav ul {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 1rem;
-}
-
-nav ul {
-    list-style: none;
-
-    margin: 0;
-    padding: 0;
-}
-
-/* Navigation links */
-
-nav a {
-    display: inline-block;
-
-    color: var(--white);
-
-    text-decoration: none;
-
-    font-size: 1rem;
-    font-weight: bold;
-
-    padding: 0.65rem 1.2rem;
-
-    border-radius: 8px;
-
-    transition: background-color 0.3s ease;
-}
-
-/* Navigation hover */
-
-nav a:hover {
-    background-color: #16856f;
-}
-
-/* Active navigation link */
-
-nav a[aria-current="page"] {
-    background-color: var(--white);
-    color: var(--primary-blue);
-}
-
-
-/* ==============================================
-   5. MAIN CONTENT
-============================================== */
-
-main {
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: 2.5rem auto;
-
-    min-height: 55vh;
-}
-
-
-/* ==============================================
-   6. TYPOGRAPHY AND TABLES
-============================================== */
-
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
     line-height: 1.3;
 }
 
-h1 {
-    font-size: 2rem;
-}
-
 h2 {
-    font-size: 1.7rem;
-    color: var(--primary-blue);
+    color: var(--light-pink);
 }
 
 h3 {
-    font-size: 1.3rem;
-    color: var(--primary-green);
-    margin-top: 0;
+    color: #ffb8d4;
 }
 
-h4 {
-    margin: 1.5rem 0 0.5rem;
-
-    padding-left: 0.75rem;
-
-    color: var(--primary-blue);
-
-    border-left: 5px solid var(--primary-green);
-}
-
-p {
-    font-size: 1rem;
+p, li, dd {
     line-height: 1.7;
 }
 
-/* Section headings */
-
-main > h2,
-main > section > h2 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-
-    padding-bottom: 0.8rem;
-
-    border-bottom: 3px solid var(--primary-green);
+a {
+    color: var(--light-pink);
 }
 
-/* General tables */
-
-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    margin: 2rem 0;
-
-    border: 1px solid var(--border-colour);
+a:hover {
+    color: white;
 }
-
-caption {
-    font-size: 1.3rem;
-    font-weight: 700;
-
-    color: var(--primary-blue);
-
-    margin-bottom: 0.8rem;
-}
-
-th {
-    background-color: var(--primary-blue);
-
-    color: var(--white);
-
-    text-align: left;
-
-    padding: 0.7rem 1rem;
-
-    border: 1px solid var(--border-colour);
-}
-
-td {
-    padding: 0.7rem 1rem;
-
-    border: 1px solid var(--border-colour);
-}
-
-/* Figure captions */
-
-figcaption {
-    text-align: center;
-
-    font-style: italic;
-
-    margin-top: 5px;
-}
-
-
-/* ==============================================
-   7. LINKS
-============================================== */
-
-main a {
-    color: var(--primary-green);
-
-    font-weight: bold;
-}
-
-main a:hover {
-    color: var(--primary-blue);
-}
-
-
-/* ==============================================
-   8. GENERAL CONTENT SECTIONS
-============================================== */
-
-main > section {
-    background-color: var(--white);
-
-    padding: 2rem;
-
-    margin-bottom: 2rem;
-
-    border-radius: 12px;
-
-    border: 1px solid var(--border-colour);
-
-    border-top: 6px solid var(--primary-green);
-
-    box-shadow: 0 4px 15px rgba(18, 59, 93, 0.06);
-
-    overflow: hidden;
-}
-
-
-/* ==============================================
-   9. IMAGES
-============================================== */
 
 img {
     max-width: 100%;
     height: auto;
 }
 
+/* Header */
 
-/* ==============================================
-   10. BUTTONS
-============================================== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 5%;
+    text-align: left;
+    background: #100711;
+    border-bottom: 2px solid var(--pink);
+}
+
+header .brand-logo {
+    display: block;
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+header .header-title {
+    margin-right: auto;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.8rem;
+}
+
+header .tagline {
+    display: block;
+    margin: 5px 0 0;
+    color: var(--light-pink);
+    font-size: 0.9rem;
+}
+
+/* Navigation */
+
+header nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 9px 16px;
+    color: white;
+    background: #28101f;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    background: var(--pink);
+    color: white;
+}
+
+/* Main Content */
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+main > section {
+    margin-bottom: 25px;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+main h2 {
+    font-size: 2rem;
+}
+
+main h3 {
+    font-size: 1.5rem;
+}
+
+main h4 {
+    font-size: 1.2rem;
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+section section {
+    margin: 20px 0;
+}
+
+/* Buttons */
 
 button,
 input[type="submit"] {
-    display: inline-block;
-
-    background-color: var(--primary-green);
-
-    color: var(--white);
-
+    padding: 12px 20px;
     border: none;
-
     border-radius: 8px;
-
-    padding: 0.8rem 1.5rem;
-
-    font-size: 1rem;
+    background: var(--pink);
+    color: white;
+    font: inherit;
     font-weight: bold;
-
     cursor: pointer;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.2s ease;
 }
-
-/* Button hover */
 
 button:hover,
 input[type="submit"]:hover {
-    background-color: #065846;
-
-    transform: translateY(-2px);
+    background: #d90055;
 }
 
+input[type="reset"] {
+    padding: 12px 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #321525;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
 
-/* ==============================================
-   11. ACCESSIBILITY
-============================================== */
+/* Forms */
 
-/* Visible keyboard focus */
+input,
+select,
+textarea {
+    font: inherit;
+    accent-color: var(--pink);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 11px;
+    color: white;
+    background: #100911;
+    border: 1px solid #98506d;
+    border-radius: 7px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #d4a6ba;
+}
+
+label {
+    color: var(--text);
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+legend {
+    padding: 0 8px;
+    color: var(--light-pink);
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+caption {
+    padding: 10px;
+    color: var(--light-pink);
+    font-weight: bold;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: #40172b;
+    color: white;
+}
+
+td {
+    background: #21101d;
+}
+
+tbody tr:hover td {
+    background: #451b32;
+}
+
+/* Images */
+
+figure {
+    margin: 20px auto;
+}
+
+figcaption {
+    padding: 10px;
+    color: #e1c1d0;
+    text-align: center;
+}
+
+/* Footer */
+
+footer {
+    padding: 25px 20px;
+    background: #100711;
+    border-top: 2px solid var(--pink);
+    text-align: center;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: var(--light-pink);
+}
+
+/* Home Page */
+
+.home-page .hero {
+    padding: 55px 40px;
+    text-align: left;
+    background:
+        linear-gradient(
+            rgba(8, 2, 7, 0.35),
+            rgba(8, 2, 7, 0.85)
+        ),
+        url("pink-waves.svg") center / cover no-repeat,
+        #25091b;
+}
+
+.home-page .hero .intro-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 35px;
+}
+
+.home-page .hero .intro-layout > div {
+    min-width: 0;
+    text-align: left;
+}
+
+.home-page .hero h2 {
+    color: white;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.home-page .accent {
+    color: var(--pink);
+}
+
+.home-page .eyebrow {
+    color: var(--light-pink);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.home-page .hero p {
+    max-width: 700px;
+    margin: 15px 0;
+}
+
+.home-page .hero figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-page .hero-logo {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.home-page .hero figcaption {
+    max-width: 400px;
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+.home-page .feature-strip {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--light-pink);
+}
+
+.home-page .search-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.home-page .search-row input {
+    flex: 1;
+    min-width: 0;
+}
+
+.home-page .table-scroll {
+    overflow-x: auto;
+}
+
+/* Jobs Page */
+
+.jobs-page aside {
+    float: right;
+    width: 25%;
+    margin: 0 0 20px 20px;
+    padding: 15px;
+    background: #28101f;
+    border: 2px solid var(--pink);
+    border-radius: 10px;
+}
+
+.jobs-page aside h3 {
+    margin-top: 0;
+}
+
+.jobs-page .intro::after,
+.jobs-page main > section::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.jobs-page dt {
+    color: var(--light-pink);
+    font-weight: bold;
+}
+
+.jobs-page dd {
+    margin-bottom: 12px;
+}
+
+.jobs-page .job-ref {
+    color: var(--light-pink);
+    font-weight: bold;
+}
+
+.jobs-page .apply-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--pink);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.jobs-page .apply-link:hover {
+    background: #d90055;
+}
+
+/* Apply Page */
+
+.apply-page #application-form {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.apply-page #application-form fieldset {
+    background: #1c0e19;
+    border-left: 4px solid var(--pink);
+}
+
+.apply-page #application-form .fields-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.apply-page #application-form .choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.apply-page #application-form .field {
+    min-width: 0;
+}
+
+.apply-page #application-form .field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.apply-page #application-form input[type="radio"],
+.apply-page #application-form input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.apply-page #application-form .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* About Page */
+
+.about-page .student-id {
+    color: var(--light-pink);
+    font-weight: bold;
+}
+
+.about-page figure {
+    padding: 15px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+}
+
+.about-page .team-photo {
+    max-width: 700px;
+    margin: auto;
+}
+
+.about-page .team-photo img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-page .fun-facts th {
+    background: #40172b;
+}
+
+.about-page .fun-facts td {
+    background: #21101d;
+}
+
+.about-page .fun-facts tbody tr:hover td {
+    background: #451b32;
+}
+
+/* Accessibility */
+
+.skip-link {
+    position: absolute;
+    top: -70px;
+    left: 10px;
+    z-index: 100;
+    padding: 10px 15px;
+    background: var(--pink);
+    color: white;
+    border-radius: 6px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #e5a800;
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #ffb8d4;
     outline-offset: 3px;
 }
 
-/* Respect reduced-motion preferences */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    button,
-    input[type="submit"],
-    nav a {
-        transition: none;
-    }
-
-    button:hover,
-    input[type="submit"]:hover {
-        transform: none;
-    }
-}
-
-
-/* ==============================================
-   12. FOOTER
-============================================== */
-
-body > footer {
-    background-color: var(--primary-blue);
-
-    color: var(--white);
-
-    text-align: center;
-
-    padding: 2rem 5%;
-
-    margin-top: 3rem;
-}
-
-/* Footer paragraphs */
-
-body > footer p {
-    margin: 0.5rem 0;
-
-    font-size: 0.95rem;
-}
-
-/* Footer links */
-
-body > footer a {
-    color: #b8f2df;
-
-    text-decoration: underline;
-}
-
-body > footer a:hover {
-    color: var(--white);
-}
-
-
-/* ==============================================
-   13. HOME PAGE
-   Rubric: CSS background graphic
-============================================== */
-
-/* Background graphic for the home page */
-
-.home-page .hero {
-    background-image: linear-gradient(
-        135deg,
-        var(--light-blue),
-        var(--light-green)
-    );
-}
-
-
-/* ==============================================
-   14. JOBS PAGE
-   Rubric: Aside floated right at 25%
-============================================== */
-
-.jobs-page aside {
-    float: right;
-
-    width: 25%;
-
-    margin: 0 0 1rem 1rem;
-
-    padding: 1rem;
-
-    border: 2px solid var(--primary-green);
-
-    border-radius: 8px;
-
-    background-color: var(--light-green);
-}
-
-/* Prevent floated content affecting later sections */
-
-.jobs-page main > section::after {
-    content: "";
-
-    display: block;
-
-    clear: both;
-}
-
-
-/* ==============================================
-   15. APPLY PAGE
-   Rubric: Form layout using Flexbox or Grid
-============================================== */
-
-/* Flexible form field layout */
-
-.apply-page form {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 1rem;
-}
-
-/* Form fields */
-
-.apply-page input,
-.apply-page select,
-.apply-page textarea {
-    max-width: 100%;
-}
-
-/* Keep labels readable */
-
-.apply-page label {
-    display: inline-block;
-
-    margin-bottom: 0.3rem;
-}
-
-
-/* ==============================================
-   16. ABOUT PAGE
-   Rubric: Student IDs, figure and table
-============================================== */
-
-/* Student ID styling */
-
-.about-page .student-id {
-    color: var(--primary-blue);
-
-    font-weight: bold;
-}
-
-/* Bordered team figure */
-
-.about-page figure {
-    border: 2px solid var(--border-colour);
-
-    border-radius: 8px;
-
-    padding: 1rem;
-
-    margin: 1rem auto;
-}
-
-/* About page table */
-
-.about-page table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    border: 1px solid #d9e8e5;
-}
-
-/* Table headings using hexadecimal colours */
-
-.about-page th {
-    background-color: #123b5d;
-
-    color: #ffffff;
-
-    padding: 0.8rem;
-
-    border: 1px solid #d9e8e5;
-}
-
-/* Table cells */
-
-.about-page td {
-    padding: 0.8rem;
-
-    border: 1px solid #d9e8e5;
-}
-
-/* Required table hover effect */
-
-.about-page tbody tr:hover {
-    background-color: #e8f7f4;
-}
-
-
-/* ==============================================
-   17. RESPONSIVE DESIGN
-============================================== */
-
-/* Tablet screens */
-
-@media only screen and (max-width: 768px) {
-
-    body > header {
-        padding: 1.5rem 3%;
-    }
-
-    body > header h1 {
-        font-size: 1.6rem;
-    }
-
-    body > header nav,
-    nav ul {
-        gap: 0.5rem;
-    }
-
-    nav a {
-        padding: 0.6rem 0.8rem;
-
-        font-size: 0.9rem;
+/* Responsive Design */
+
+@media (max-width: 850px) {
+    .jobs-page aside {
+        float: none;
+        width: 100%;
+        margin: 15px 0;
     }
 
     main {
-        width: 95%;
-
-        margin: 1.5rem auto;
+        padding: 20px 15px;
     }
-
-    main > section {
-        padding: 1.25rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    /* Jobs aside adapts to smaller screens */
-
-    .jobs-page aside {
-        float: none;
-
-        width: 100%;
-
-        margin: 1rem 0;
-    }
-
 }
 
-
-/* Mobile screens */
-
-@media only screen and (max-width: 480px) {
-
-    body > header h1 {
-        font-size: 1.4rem;
-    }
-
-    body > header nav,
-    nav ul {
+@media (max-width: 750px) {
+    header {
         flex-direction: column;
-
-        gap: 0.5rem;
-    }
-
-    nav a {
-        width: 100%;
-
         text-align: center;
     }
 
-    main {
-        width: 95%;
+    header .brand-logo {
+        margin: 0 auto;
+    }
 
-        margin: 1rem auto;
+    header .header-title {
+        margin: 0;
+    }
+
+    header nav {
+        margin: 0;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    .home-page .hero .intro-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .home-page .hero,
+    .home-page .hero .intro-layout > div {
+        text-align: center;
+    }
+
+    .home-page .hero p {
+        margin: 15px auto;
+    }
+
+    .home-page .hero figure {
+        margin: 0 auto;
+    }
+
+    .home-page .hero-logo {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
     }
 
     main > section {
-        padding: 1rem;
-
-        border-radius: 10px;
+        padding: 18px;
     }
 
-    body > footer {
-        padding: 1.5rem 5%;
+    .home-page .hero {
+        padding: 30px 18px;
     }
 
-    h2 {
-        font-size: 1.4rem;
+    .home-page .search-row {
+        flex-direction: column;
     }
 
-    button,
-    input[type="submit"] {
-        display: block;
-
-        width: 100%;
-
-        margin: 0 0 0.8rem 0;
-
-        padding: 0.9rem;
+    .apply-page #application-form .fields-grid,
+    .apply-page #application-form .choice-grid {
+        grid-template-columns: 1fr;
     }
 
-    /* Allow wide tables to scroll */
+    .home-page .feature-strip {
+        gap: 12px;
+    }
 
     table {
         display: block;
-
-        max-width: 100%;
-
         overflow-x: auto;
     }
+}
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }

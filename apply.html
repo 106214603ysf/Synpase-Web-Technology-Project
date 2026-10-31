@@ -26,14 +26,14 @@
         min-width: 0;
         margin: 0;
         padding: 1.5rem;
-        border: 1px solid #c9dedb;
-        border-left: 4px solid #08745e;
+        border: 1px solid var(--border-colour, #E8E5FF);
+        border-left: 4px solid var(--primary-green, #ff176b);
         border-radius: 10px;
     }
 
     #application-form legend {
         font-weight: bold;
-        color: #123b5d;
+        color: var(--primary-blue, #ffb4cf);
         padding: 0 0.5rem;
         font-size: 1.1rem;
     }
@@ -59,7 +59,7 @@
         min-width: 0;
         padding: 0.8rem;
         margin-top: 0.4rem;
-        border: 1px solid #9bbfba;
+        border: 1px solid var(--border-colour, #E8E5FF);
         border-radius: 6px;
         font: inherit;
     }
@@ -71,7 +71,7 @@
     #application-form fieldset fieldset {
         margin-top: 1rem;
         padding: 1rem;
-        border: 1px solid #c9dedb;
+        border: 1px solid var(--border-colour, #E8E5FF);
         border-radius: 8px;
     }
 
@@ -94,7 +94,7 @@
 
     #application-form input[type="reset"] {
         padding: 0.8rem 1.5rem;
-        border: 1px solid #9bbfba;
+        border: 1px solid var(--border-colour, #E8E5FF);
         border-radius: 8px;
         cursor: pointer;
     }
@@ -104,15 +104,22 @@
     }
 
     @media (max-width: 650px) {
-    }
-    #application-form > fieldset {
-        padding: 1rem;
+        #application-form .fields-grid,
+        #application-form .choice-grid {
+            grid-template-columns: 1fr;
+        }
+
+        #application-form > fieldset {
+            padding: 1rem;
+        }
     }
     
   </style>
  </head>
  <body class="apply-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
+        <img class="brand-logo" src="images/synapse-logo.png" alt="Synapse Digital Health logo" width="85" height="85">
    <h1>
     Apply at Synapse Digital Health
    </h1>
@@ -141,7 +148,7 @@
     </ul>
    </nav>
   </header>
-  <main>
+  <main id="main-content">
    <section aria-labelledby="join-heading" class="apply-intro">
     <h2 id="join-heading">
      Join Our Team
@@ -161,8 +168,8 @@
     </p>
    </section>
    <section aria-labelledby="form-heading">
-    <!-- Inline CSS: Green underline for the form heading -->
-    <h2 id="form-heading" style="border-bottom: 3px solid #08745e;">
+    <!-- Inline CSS: pink underline for the form heading -->
+    <h2 id="form-heading" style="border-bottom: 3px solid var(--primary-green, #ff176b);">
      Job Application Form
     </h2>
     <form action="https://mercury.swin.edu.au/it000000/formtest.php" id="application-form" method="post">
@@ -206,7 +213,7 @@
         <label for="dob">
          Date of Birth: *
         </label>
-        <input aria-describedby="dob-help" id="dob" inputmode="numeric" maxlength="10" name="dob" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" placeholder="dd/mm/yyyy" required="" title="Enter dd/mm/yyyy, for example 05/09/2004." type="text"/>
+        <input aria-describedby="dob-help" id="dob" inputmode="numeric" maxlength="10" name="dob" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" placeholder="dd/mm/yyyy" required="" title="Enter a date in dd/mm/yyyy format, for example 05/09/2004." type="text"/>
        </p>
       </div>
       <fieldset>
@@ -406,4 +413,3 @@
   </footer>
  </body>
 </html>
-
