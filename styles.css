@@ -133,7 +133,7 @@ main > section,
 .inner {
     display: flow-root;
     padding: 22px;
-    background: linear-gradient(140deg, #ffffff, #e4f5ff);
+    background: #E3F3FC;
     color: var(--dark-text);
     border-radius: 10px;
 }
@@ -271,7 +271,7 @@ figcaption { padding: 10px; text-align: center; color: #a9c8cf; }
 
 /* Apply */
 .apply-page fieldset {
-    background: #edf7ff;
+    background: #E3F3FC;
     color: #17344b;
     border-left: 4px solid #159dd1;
 }
