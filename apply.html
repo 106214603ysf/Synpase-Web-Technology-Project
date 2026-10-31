@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,19 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        .apply-page .field-wide { grid-column: 1 / -1; }
-        .apply-page .form-help { font-size: 0.9rem; }
-        .apply-page input:focus, .apply-page select:focus,
-        .apply-page textarea:focus { border-color: #159dd1; }
+        .apply-page .field-wide {
+            grid-column: 1 / -1;
+        }
+
+        .apply-page .form-help {
+            font-size: 0.9rem;
+        }
+
+        .apply-page input:focus,
+        .apply-page select:focus,
+        .apply-page textarea:focus {
+            border-color: #159dd1;
+        }
     </style>
 </head>
 
@@ -19,8 +29,8 @@
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
-        <img src="Images/synapse-logo.png" alt="Synapse Digital Health logo"
-             class="brand-logo" width="110" height="100">
+        <img src="Images/synapse-logo.png" alt="Synapse Digital Health logo" class="brand-logo" width="110"
+            height="100">
 
         <div class="header-title">
             <h1>Apply at Synapse</h1>
@@ -41,7 +51,7 @@
         <section>
             <h2>Apply for a Position</h2>
             <div class="inner">
-                <p>Read the <a href="jobs.html">job descriptions</a> and enter the five-character reference number.</p>
+                <p>Read the <a href="jobs.html">Job Descriptions</a> and enter the five-character reference number.</p>
                 <p class="form-help">Fields marked <span class="required-star">*</span> are required.</p>
             </div>
         </section>
@@ -55,9 +65,8 @@
                     <fieldset>
                         <legend>Job Information</legend>
                         <label for="job-ref">Job Reference Number <span class="required-star">*</span></label>
-                        <input type="text" id="job-ref" name="job_ref"
-                               pattern="[A-Za-z0-9]{5}" maxlength="5"
-                               title="Enter exactly five letters or numbers" required>
+                        <input type="text" id="job-ref" name="job_ref" pattern="[A-Za-z0-9]{5}" maxlength="5"
+                            title="Enter exactly five letters or numbers" required>
                     </fieldset>
 
                     <fieldset>
@@ -66,22 +75,21 @@
                         <div class="fields-grid">
                             <div>
                                 <label for="first-name">First Name <span class="required-star">*</span></label>
-                                <input type="text" id="first-name" name="first_name"
-                                       pattern="[A-Za-z]{1,20}" maxlength="20" required>
+                                <input type="text" id="first-name" name="first_name" pattern="[A-Za-z]{1,20}"
+                                    maxlength="20" required>
                             </div>
 
                             <div>
                                 <label for="last-name">Last Name <span class="required-star">*</span></label>
-                                <input type="text" id="last-name" name="last_name"
-                                       pattern="[A-Za-z]{1,20}" maxlength="20" required>
+                                <input type="text" id="last-name" name="last_name" pattern="[A-Za-z]{1,20}"
+                                    maxlength="20" required>
                             </div>
 
                             <div>
                                 <label for="dob">Date of Birth (dd/mm/yyyy) <span class="required-star">*</span></label>
-                                <input type="text" id="dob" name="dob"
-                                       placeholder="dd/mm/yyyy"
-                                       pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
-                                       title="Use dd/mm/yyyy" required>
+                                <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy"
+                                    pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" title="Use dd/mm/yyyy"
+                                    required>
                             </div>
 
                             <fieldset class="field-wide">
@@ -90,7 +98,8 @@
                                     <label><input type="radio" name="gender" value="Male" required> Male</label>
                                     <label><input type="radio" name="gender" value="Female"> Female</label>
                                     <label><input type="radio" name="gender" value="Other"> Other</label>
-                                    <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+                                    <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to
+                                        say</label>
                                 </div>
                             </fieldset>
                         </div>
@@ -127,9 +136,8 @@
 
                             <div>
                                 <label for="postcode">Postcode <span class="required-star">*</span></label>
-                                <input type="text" id="postcode" name="postcode"
-                                       pattern="[0-9]{4}" maxlength="4"
-                                       title="Enter exactly four digits" required>
+                                <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}" maxlength="4"
+                                    title="Enter exactly four digits" required>
                             </div>
                         </div>
                     </fieldset>
@@ -145,9 +153,8 @@
 
                             <div>
                                 <label for="phone">Phone Number <span class="required-star">*</span></label>
-                                <input type="tel" id="phone" name="phone"
-                                       pattern="[0-9]{8,12}" minlength="8" maxlength="12"
-                                       title="Enter 8 to 12 digits" required>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" minlength="8"
+                                    maxlength="12" title="Enter 8 to 12 digits" required>
                             </div>
                         </div>
                     </fieldset>
@@ -160,7 +167,8 @@
                             <label><input type="checkbox" name="skills[]" value="HTML5" required> HTML5</label>
                             <label><input type="checkbox" name="skills[]" value="CSS3"> CSS3</label>
                             <label><input type="checkbox" name="skills[]" value="Accessibility"> Accessibility</label>
-                            <label><input type="checkbox" name="skills[]" value="Healthcare Technology"> Healthcare Technology</label>
+                            <label><input type="checkbox" name="skills[]" value="Healthcare Technology"> Healthcare
+                                Technology</label>
                             <label><input type="checkbox" name="skills[]" value="UI/UX Design"> UI/UX Design</label>
                         </div>
 
@@ -180,14 +188,17 @@
     </main>
 
     <footer>
-        <p>Synapse acknowledges the Traditional Custodians of the lands on which we work and pays respect to Elders past and present.</p>
+        <p>Synapse acknowledges the Traditional Custodians of the lands on which we work and pays respect to Elders past
+            and present.</p>
         <p>
             <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
             <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
             <a href="mailto:info@synapse-health.com">Email</a>
         </p>
         <p>&copy; 2026 Synapse Digital Health</p>
-        <small>ChatGPT was used as a supporting tool for code review and styling. The student team reviewed and tested all work.</small>
+        <small>ChatGPT was used as a supporting tool for code review and styling. The student team reviewed and tested
+            all work.</small>
     </footer>
 </body>
+
 </html>
