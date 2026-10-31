@@ -276,6 +276,11 @@ figcaption { padding: 10px; text-align: center; color: #a9c8cf; }
     border-left: 4px solid #159dd1;
 }
 
+.required-star {
+    color: #d00000;
+    font-weight: bold;
+}
+
 .fields-grid,
 .choice-grid {
     display: grid;

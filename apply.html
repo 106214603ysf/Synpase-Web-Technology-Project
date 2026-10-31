@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply | Synapse Digital Health</title>
+    <meta name="description" content="Apply for jobs at Synapse Digital Health">
+    <title>Synapse Digital Health | Apply</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Internal CSS -->
     <style>
-        .apply-page .field { margin-bottom: 15px; }
-        .apply-page .field label { display: block; font-weight: bold; }
+        .apply-page .field-wide { grid-column: 1 / -1; }
+        .apply-page .form-help { font-size: 0.9rem; }
+        .apply-page input:focus, .apply-page select:focus,
+        .apply-page textarea:focus { border-color: #159dd1; }
     </style>
 </head>
 
@@ -36,117 +38,116 @@
     </header>
 
     <main id="main-content">
-
         <section>
-            <h2>Join Our Team</h2>
+            <h2>Apply for a Position</h2>
             <div class="inner">
-                <p>Read the <a href="jobs.html">job descriptions</a>
-                   and enter the five-character reference number.</p>
-                <p>Fields marked * are required.</p>
+                <p>Read the <a href="jobs.html">job descriptions</a> and enter the five-character reference number.</p>
+                <p class="form-help">Fields marked <span class="required-star">*</span> are required.</p>
             </div>
         </section>
 
         <section>
-            <!-- Inline CSS -->
-            <h2 style="border-bottom:3px solid #20c9f3; padding-bottom:6px;">
-                Job Application Form
-            </h2>
+            <h2 style="border-bottom: 2px solid #20c9f3; padding-bottom: 8px;">Job Application Form</h2>
 
             <div class="inner">
-                <form action="https://mercury.swin.edu.au/it000000/formtest.php"
-                      method="post">
+                <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
 
                     <fieldset>
                         <legend>Job Information</legend>
-                        <div class="field">
-                            <label for="jobref">Job Reference Number *</label>
-                            <input type="text" id="jobref" name="jobref"
-                                   pattern="[A-Za-z0-9]{5}" maxlength="5"
-                                   title="Exactly five letters or numbers" required>
-                        </div>
+                        <label for="job-ref">Job Reference Number <span class="required-star">*</span></label>
+                        <input type="text" id="job-ref" name="job_ref"
+                               pattern="[A-Za-z0-9]{5}" maxlength="5"
+                               title="Enter exactly five letters or numbers" required>
                     </fieldset>
 
                     <fieldset>
                         <legend>Personal Information</legend>
+
                         <div class="fields-grid">
-                            <div class="field">
-                                <label for="firstname">First Name *</label>
-                                <input type="text" id="firstname" name="firstname"
-                                       maxlength="20" pattern="[A-Za-z]{1,20}" required>
+                            <div>
+                                <label for="first-name">First Name <span class="required-star">*</span></label>
+                                <input type="text" id="first-name" name="first_name"
+                                       pattern="[A-Za-z]{1,20}" maxlength="20" required>
                             </div>
 
-                            <div class="field">
-                                <label for="lastname">Last Name *</label>
-                                <input type="text" id="lastname" name="lastname"
-                                       maxlength="20" pattern="[A-Za-z]{1,20}" required>
+                            <div>
+                                <label for="last-name">Last Name <span class="required-star">*</span></label>
+                                <input type="text" id="last-name" name="last_name"
+                                       pattern="[A-Za-z]{1,20}" maxlength="20" required>
                             </div>
 
-                            <div class="field">
-                                <label for="dob">Date of Birth (dd/mm/yyyy) *</label>
+                            <div>
+                                <label for="dob">Date of Birth (dd/mm/yyyy) <span class="required-star">*</span></label>
                                 <input type="text" id="dob" name="dob"
-                                       placeholder="dd/mm/yyyy" maxlength="10"
+                                       placeholder="dd/mm/yyyy"
                                        pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
-                                       required>
+                                       title="Use dd/mm/yyyy" required>
                             </div>
-                        </div>
 
-                        <fieldset>
-                            <legend>Gender *</legend>
-                            <div class="choice-grid">
-                                <label><input type="radio" name="gender" value="Male" required> Male</label>
-                                <label><input type="radio" name="gender" value="Female"> Female</label>
-                                <label><input type="radio" name="gender" value="Other"> Other</label>
-                                <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
-                            </div>
-                        </fieldset>
+                            <fieldset class="field-wide">
+                                <legend>Gender <span class="required-star">*</span></legend>
+                                <div class="choice-grid">
+                                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                                    <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+                                </div>
+                            </fieldset>
+                        </div>
                     </fieldset>
 
                     <fieldset>
                         <legend>Address</legend>
+
                         <div class="fields-grid">
-                            <div class="field">
-                                <label for="street">Street Address *</label>
-                                <input type="text" id="street" name="street"
-                                       maxlength="40" required>
+                            <div>
+                                <label for="street">Street Address <span class="required-star">*</span></label>
+                                <input type="text" id="street" name="street" maxlength="40" required>
                             </div>
 
-                            <div class="field">
-                                <label for="suburb">Suburb/Town *</label>
-                                <input type="text" id="suburb" name="suburb"
-                                       maxlength="40" required>
+                            <div>
+                                <label for="suburb">Suburb/Town <span class="required-star">*</span></label>
+                                <input type="text" id="suburb" name="suburb" maxlength="40" required>
                             </div>
 
-                            <div class="field">
-                                <label for="state">State *</label>
+                            <div>
+                                <label for="state">State <span class="required-star">*</span></label>
                                 <select id="state" name="state" required>
                                     <option value="">Select state</option>
-                                    <option>VIC</option><option>NSW</option>
-                                    <option>QLD</option><option>NT</option>
-                                    <option>WA</option><option>SA</option>
-                                    <option>TAS</option><option>ACT</option>
+                                    <option value="VIC">VIC</option>
+                                    <option value="NSW">NSW</option>
+                                    <option value="QLD">QLD</option>
+                                    <option value="NT">NT</option>
+                                    <option value="WA">WA</option>
+                                    <option value="SA">SA</option>
+                                    <option value="TAS">TAS</option>
+                                    <option value="ACT">ACT</option>
                                 </select>
                             </div>
 
-                            <div class="field">
-                                <label for="postcode">Postcode *</label>
+                            <div>
+                                <label for="postcode">Postcode <span class="required-star">*</span></label>
                                 <input type="text" id="postcode" name="postcode"
-                                       pattern="[0-9]{4}" maxlength="4" required>
+                                       pattern="[0-9]{4}" maxlength="4"
+                                       title="Enter exactly four digits" required>
                             </div>
                         </div>
                     </fieldset>
 
                     <fieldset>
                         <legend>Contact Details</legend>
+
                         <div class="fields-grid">
-                            <div class="field">
-                                <label for="email">Email Address *</label>
+                            <div>
+                                <label for="email">Email Address <span class="required-star">*</span></label>
                                 <input type="email" id="email" name="email" required>
                             </div>
 
-                            <div class="field">
-                                <label for="phone">Phone Number *</label>
+                            <div>
+                                <label for="phone">Phone Number <span class="required-star">*</span></label>
                                 <input type="tel" id="phone" name="phone"
-                                       pattern="[0-9]{8,12}" maxlength="12" required>
+                                       pattern="[0-9]{8,12}" minlength="8" maxlength="12"
+                                       title="Enter 8 to 12 digits" required>
                             </div>
                         </div>
                     </fieldset>
@@ -156,41 +157,37 @@
                         <p>Select the skills you have:</p>
 
                         <div class="choice-grid">
-                            <label><input type="checkbox" name="skills[]" value="HTML5"> HTML5</label>
+                            <label><input type="checkbox" name="skills[]" value="HTML5" required> HTML5</label>
                             <label><input type="checkbox" name="skills[]" value="CSS3"> CSS3</label>
                             <label><input type="checkbox" name="skills[]" value="Accessibility"> Accessibility</label>
-                            <label><input type="checkbox" name="skills[]" value="Healthcare"> Healthcare Technology</label>
-                            <label><input type="checkbox" name="skills[]" value="UX Design"> UX Design</label>
+                            <label><input type="checkbox" name="skills[]" value="Healthcare Technology"> Healthcare Technology</label>
+                            <label><input type="checkbox" name="skills[]" value="UI/UX Design"> UI/UX Design</label>
                         </div>
 
-                        <div class="field">
-                            <label for="otherskills">Other Skills (optional)</label>
-                            <textarea id="otherskills" name="otherskills" rows="4"></textarea>
-                        </div>
+                        <p>
+                            <label for="other-skills">Other Skills</label>
+                        </p>
+                        <textarea id="other-skills" name="other_skills" rows="4"></textarea>
                     </fieldset>
 
-                    <p class="form-actions">
+                    <div class="form-actions">
                         <input type="submit" value="Submit Application">
-                        <input type="reset" value="Clear Form">
-                    </p>
+                        <input type="reset" value="Reset Form" style="cursor: pointer;">
+                    </div>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Synapse acknowledges the Traditional Custodians of the lands
-           on which we work and pays respect to Elders past and present.</p>
-
+        <p>Synapse acknowledges the Traditional Custodians of the lands on which we work and pays respect to Elders past and present.</p>
         <p>
             <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
             <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
             <a href="mailto:info@synapse-health.com">Email</a>
         </p>
-
         <p>&copy; 2026 Synapse Digital Health</p>
-        <small>ChatGPT was used as a supporting tool for code review
-               and styling. The student team reviewed and tested all work.</small>
+        <small>ChatGPT was used as a supporting tool for code review and styling. The student team reviewed and tested all work.</small>
     </footer>
 </body>
 </html>
