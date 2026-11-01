@@ -48,21 +48,25 @@ body::after {
 
 body::before {
     bottom: 8%;
-    background: linear-gradient(110deg,
-            transparent 5%,
-            #053b67 35%,
-            #0874a9 65%,
-            #031d39 95%);
+    background: linear-gradient(
+        110deg,
+        transparent 5%,
+        #053b67 35%,
+        #0874a9 65%,
+        #031d39 95%
+    );
     transform: rotate(-9deg);
     opacity: 0.8;
 }
 
 body::after {
     bottom: -20%;
-    background: linear-gradient(100deg,
-            #02192d,
-            #07588c 45%,
-            #031a31 90%);
+    background: linear-gradient(
+        100deg,
+        #02192d,
+        #07588c 45%,
+        #031a31 90%
+    );
     transform: rotate(8deg);
     opacity: 0.9;
 }
@@ -94,18 +98,17 @@ h3 {
 header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding: 14px 5%;
     background: #020c16;
     border-bottom: 3px solid var(--cyan);
 }
 
-/* Larger Synapse logo */
 .brand-logo {
     display: block;
-    width: 350px;
+    width: 220px;
     height: auto;
-    flex: 0 0 350px;
+    flex: 0 0 220px;
     object-fit: contain;
 }
 
@@ -123,7 +126,6 @@ header h1 {
     color: var(--light-blue);
 }
 
-/* Navigation */
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -160,14 +162,16 @@ main {
     padding: 32px 20px;
 }
 
-main>section,
+main > section,
 .feature-strip {
     margin: 0 0 28px;
     padding: 30px;
-    background: linear-gradient(135deg,
-            #073653,
-            #092d49 60%,
-            #06476c);
+    background: linear-gradient(
+        135deg,
+        #073653,
+        #092d49 60%,
+        #06476c
+    );
     border: 1px solid var(--border);
     border-top: 3px solid var(--cyan);
     border-radius: 14px;
@@ -312,9 +316,11 @@ figcaption {
 /* Home */
 .home-page .hero {
     background:
-        radial-gradient(circle at 92% 20%,
+        radial-gradient(
+            circle at 92% 20%,
             #0b85b533,
-            transparent 43%),
+            transparent 43%
+        ),
         linear-gradient(130deg, #073653, #092d49);
 }
 
@@ -436,6 +442,14 @@ figcaption {
     border-radius: 12px;
 }
 
+/* Group photo - rounded corners only */
+.about-page figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 35px;
+}
+
 .fun-facts tbody tr:nth-child(even) td {
     background: #e5f4fc;
 }
@@ -512,7 +526,7 @@ textarea:focus-visible {
         padding: 20px 12px;
     }
 
-    main>section {
+    main > section {
         padding: 20px;
     }
 
@@ -526,9 +540,9 @@ textarea:focus-visible {
     }
 
     .brand-logo {
-        width: 250px;
+        width: 180px;
         height: auto;
-        flex-basis: 250px;
+        flex-basis: 180px;
     }
 
     .search-row,
@@ -544,11 +558,5 @@ textarea:focus-visible {
     .fields-grid,
     .choice-grid {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
     }
 }
