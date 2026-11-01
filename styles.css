@@ -1,5 +1,12 @@
-/* Synapse Digital Health - Main Stylesheet */
+/*
+filename: styles.css
+author: Synapse group (Amani Aly, Abdullah Maithalouni, Youssof Hussein, Abrar Salahuddin)
+created: October 2026
+last modified: 1 Nov 2026
+description: Shared stylesheet for index.html, jobs.html, apply.html and about.html
+*/
 
+/* ---------- Colour variables (:root) so the palette is changed in one place ---------- */
 :root {
     --dark: #020d18;
     --navy: #041a2c;
@@ -12,20 +19,28 @@
     --border: #1676a3;
 }
 
-/* General */
+/* ---------- General: universal selector, box model, base typography ---------- */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* padding and borders stay inside the set width */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* smooth jump for skip link and job anchors */
+}
+
+/* Accessibility: respect users who turn animations off in their system */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
     margin: 0;
     min-height: 100vh;
-    font: 15px/1.6 "Segoe UI", Arial, sans-serif;
+    font: 1rem/1.6 "Segoe UI", Arial, sans-serif; /* rem so text scales with user settings; sans-serif, 1.6 line height */
     color: var(--text);
+    /* Background graphic made only with CSS gradients (no image file) */
     background:
         radial-gradient(ellipse at 90% 45%, #075c96 0%, transparent 45%),
         radial-gradient(ellipse at 5% 85%, #064b79 0%, transparent 40%),
@@ -33,7 +48,7 @@ body {
     background-attachment: fixed;
 }
 
-/* Original blue wave background */
+/* Background graphic: two blue wave shapes drawn with pseudo-elements, kept behind content */
 body::before,
 body::after {
     content: "";
@@ -42,37 +57,33 @@ body::after {
     width: 120%;
     height: 45%;
     border-radius: 50%;
-    pointer-events: none;
+    pointer-events: none; /* waves never block clicks */
     z-index: -1;
 }
 
 body::before {
     bottom: 8%;
-    background: linear-gradient(
-        110deg,
-        transparent 5%,
-        #053b67 35%,
-        #0874a9 65%,
-        #031d39 95%
-    );
+    background: linear-gradient(110deg, transparent 5%, #053b67 35%, #0874a9 65%, #031d39 95%);
     transform: rotate(-9deg);
     opacity: 0.8;
 }
 
 body::after {
     bottom: -20%;
-    background: linear-gradient(
-        100deg,
-        #02192d,
-        #07588c 45%,
-        #031a31 90%
-    );
+    background: linear-gradient(100deg, #02192d, #07588c 45%, #031a31 90%);
     transform: rotate(8deg);
     opacity: 0.9;
 }
 
+/* ID selector: skip-link target and job anchors do not sit tight against the top edge */
+#main-content,
+#frontend,
+#ux {
+    scroll-margin-top: 20px;
+}
+
 a {
-    color: var(--light-blue);
+    color: var(--light-blue); /* light links for contrast on dark backgrounds */
 }
 
 a:hover {
@@ -80,7 +91,7 @@ a:hover {
 }
 
 img {
-    max-width: 100%;
+    max-width: 100%; /* flexible images for responsive design */
     height: auto;
 }
 
@@ -94,7 +105,7 @@ h3 {
     color: var(--light-blue);
 }
 
-/* Header */
+/* ---------- Header and navigation ---------- */
 header {
     display: flex;
     align-items: center;
@@ -113,7 +124,7 @@ header {
 }
 
 .header-title {
-    margin-right: auto;
+    margin-right: auto; /* pushes the nav to the right */
 }
 
 header h1 {
@@ -126,6 +137,7 @@ header h1 {
     color: var(--light-blue);
 }
 
+/* Navigation: list shown as a horizontal row of pill links */
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -149,37 +161,35 @@ nav a:hover {
     background: var(--blue);
 }
 
+/* Attribute selector: highlights the link for the current page (aria-current) */
 nav a[aria-current="page"] {
     background: linear-gradient(120deg, #20c9f3, #0788c3);
     border-color: transparent;
     color: #031827;
 }
 
-/* Main sections */
+/* ---------- Main content cards ---------- */
 main {
     max-width: 1200px;
     margin: auto;
     padding: 32px 20px;
 }
 
+/* Child selector: each top-level section is a dark card */
 main > section,
 .feature-strip {
     margin: 0 0 28px;
     padding: 30px;
-    background: linear-gradient(
-        135deg,
-        #073653,
-        #092d49 60%,
-        #06476c
-    );
+    background: linear-gradient(135deg, #073653, #092d49 60%, #06476c);
     border: 1px solid var(--border);
     border-top: 3px solid var(--cyan);
     border-radius: 14px;
     box-shadow: 0 12px 30px #00000040;
 }
 
+/* Light inner panel: dark text on light background keeps contrast high */
 .inner {
-    display: flow-root;
+    display: flow-root; /* contains the floated aside on the jobs page */
     padding: 22px;
     background: #e3f3fc;
     color: var(--dark-text);
@@ -194,7 +204,7 @@ main > section,
     color: #083d62;
 }
 
-/* Buttons */
+/* ---------- Buttons ---------- */
 button,
 input[type="submit"],
 input[type="reset"],
@@ -221,10 +231,10 @@ button:hover,
 input[type="submit"]:hover,
 .button-link:hover {
     color: white;
-    filter: brightness(1.15);
+    filter: brightness(1.15); /* hover feedback */
 }
 
-/* Forms */
+/* ---------- Forms ---------- */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -261,7 +271,7 @@ textarea {
     resize: vertical;
 }
 
-/* Tables */
+/* ---------- Tables ---------- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -281,7 +291,7 @@ td {
 }
 
 th {
-    background: #075486;
+    background: #075486; /* white text on this dark blue passes contrast */
     color: white;
 }
 
@@ -290,15 +300,16 @@ td {
     color: #17344b;
 }
 
+/* Hover effect: highlights the row being read */
 tbody tr:hover td {
     background: #ccecff;
 }
 
 .table-scroll {
-    overflow-x: auto;
+    overflow-x: auto; /* wide tables scroll sideways on small screens */
 }
 
-/* Images */
+/* ---------- Images and figures ---------- */
 figure {
     margin: 0 auto;
 }
@@ -310,22 +321,18 @@ figcaption {
 }
 
 .inner figcaption {
-    color: #54758a;
+    color: #3f5d70; /* darker so it passes 4.5:1 contrast on the light panel */
 }
 
-/* Home */
+/* ---------- Home page ---------- */
 .home-page .hero {
     background:
-        radial-gradient(
-            circle at 92% 20%,
-            #0b85b533,
-            transparent 43%
-        ),
+        radial-gradient(circle at 92% 20%, #0b85b533, transparent 43%),
         linear-gradient(130deg, #073653, #092d49);
 }
 
 .intro-layout {
-    display: grid;
+    display: grid; /* two columns: text and image */
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     gap: 35px;
@@ -361,7 +368,7 @@ figcaption {
 }
 
 .search-row {
-    display: flex;
+    display: flex; /* input and button on one line */
     gap: 12px;
 }
 
@@ -370,7 +377,8 @@ figcaption {
     min-width: 0;
 }
 
-/* Jobs */
+/* ---------- Jobs page ---------- */
+/* Aside floated right, 25% wide, with margin, padding and border (assignment requirement) */
 .jobs-page aside {
     float: right;
     width: 25%;
@@ -391,7 +399,7 @@ figcaption {
     font-weight: bold;
 }
 
-/* Apply */
+/* ---------- Apply page ---------- */
 .apply-page fieldset {
     background: #e3f3fc;
     color: #17344b;
@@ -403,6 +411,7 @@ figcaption {
     font-weight: bold;
 }
 
+/* Form layout: CSS Grid, two columns that collapse to one on mobile */
 .fields-grid,
 .choice-grid {
     display: grid;
@@ -415,12 +424,13 @@ figcaption {
 }
 
 .form-actions {
-    display: flex;
+    display: flex; /* Flexbox row for the two buttons */
     flex-wrap: wrap;
     gap: 12px;
 }
 
-/* About */
+/* ---------- About page ---------- */
+/* Styled student ID: pill badge */
 .student-id {
     display: inline-block;
     padding: 2px 10px;
@@ -435,6 +445,7 @@ figcaption {
     font-weight: bold;
 }
 
+/* Bordered figure for the group photo */
 .about-page figure {
     max-width: 560px;
     padding: 15px;
@@ -442,7 +453,6 @@ figcaption {
     border-radius: 12px;
 }
 
-/* Group photo - rounded corners only */
 .about-page figure img {
     display: block;
     width: 100%;
@@ -450,6 +460,7 @@ figcaption {
     border-radius: 35px;
 }
 
+/* Fun facts table: zebra stripes (hex colours) and a hover colour */
 .fun-facts tbody tr:nth-child(even) td {
     background: #e5f4fc;
 }
@@ -458,7 +469,7 @@ figcaption {
     background: #ccecff;
 }
 
-/* Footer */
+/* ---------- Footer ---------- */
 footer {
     padding: 30px 20px;
     background: #020c16;
@@ -471,7 +482,8 @@ footer p {
     margin: 8px 0;
 }
 
-/* Accessibility */
+/* ---------- Accessibility ---------- */
+/* Skip link: hidden off-screen until a keyboard user tabs to it */
 .skip-link {
     position: absolute;
     top: -70px;
@@ -486,6 +498,7 @@ footer p {
     top: 10px;
 }
 
+/* Visible keyboard focus (yellow ring works on the dark areas) */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -495,7 +508,13 @@ textarea:focus-visible {
     outline-offset: 3px;
 }
 
-/* Responsive layout */
+/* Dark focus ring inside light panels, because yellow is hard to see on light blue */
+.inner :focus-visible {
+    outline-color: #0b3d62;
+}
+
+/* ---------- Responsive layout ---------- */
+/* Tablet: stack header, hero and the jobs aside */
 @media (max-width: 850px) {
     header {
         flex-direction: column;
@@ -521,6 +540,7 @@ textarea:focus-visible {
     }
 }
 
+/* Phone: tighter spacing, single-column forms, stacked search */
 @media (max-width: 600px) {
     main {
         padding: 20px 12px;

@@ -1,13 +1,25 @@
 <!DOCTYPE html>
+<!--
+filename: about.html
+author: Abdullah Maithalouni
+created: October 2026
+last modified: 1 Nov 2026
+description: About page - group details (nested list), contributions and quotes (definition lists), group photo, fun facts table
+sources: Quotes chosen by each member. Group photo taken by the team. Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code review and styling suggestions; the team reviewed and tested all work.
+-->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Meet the Synapse team: group details, member contributions, quotes and fun facts.">
+    <meta name="keywords" content="Synapse, about us, team, group members, COS10026">
+    <meta name="author" content="Synapse group, COS10026">
     <title>About Us | Synapse Digital Health</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Internal CSS -->
+    <!-- Internal CSS: right-align the Arabic and Urdu quotes and colour the student IDs -->
     <style>
         .about-page .quotes dd[dir="rtl"] {
             text-align: right;
@@ -20,10 +32,12 @@
 </head>
 
 <body class="about-page">
+    <!-- Skip link: lets keyboard and screen-reader users jump past the navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <!-- Header: logo, page title, slogan and shared main navigation -->
     <header>
-        <img src="Images/synapse-logo.png" alt="Synapse Recruitment Solutions logo" class="brand-logo">
+        <img src="images/synapse-logo.png" alt="Synapse logo" class="brand-logo">
 
         <div class="header-title">
             <h1>About Synapse</h1>
@@ -42,8 +56,9 @@
 
     <main id="main-content">
 
-        <section>
-            <h2>About Our Group</h2>
+        <!-- Group details: nested list (class times sit inside the "Class times" item) -->
+        <section aria-labelledby="group-heading">
+            <h2 id="group-heading">About Our Group</h2>
             <div class="inner">
                 <ul>
                     <li>Group name: <strong>Synapse</strong></li>
@@ -57,8 +72,9 @@
             </div>
         </section>
 
-        <section>
-            <h2>Member Contributions</h2>
+        <!-- Member contributions: definition list pairs each member (term) with their work (description) -->
+        <section aria-labelledby="contributions-heading">
+            <h2 id="contributions-heading">Member Contributions</h2>
             <div class="inner">
                 <dl>
                     <dt>Amani Aly <span class="student-id">106212283</span></dt>
@@ -76,8 +92,10 @@
             </div>
         </section>
 
-        <section>
-            <h2>Member Quotes</h2>
+        <!-- Quotes: each quote is in the member's first language (lang and dir set for screen readers and
+             right-to-left text) followed by an English translation -->
+        <section aria-labelledby="quotes-heading">
+            <h2 id="quotes-heading">Member Quotes</h2>
             <div class="inner">
                 <dl class="quotes">
                     <dt>Amani Aly (Arabic)</dt>
@@ -99,14 +117,15 @@
             </div>
         </section>
 
-        <section>
-            <h2>Our Team</h2>
+        <!-- Group photo: figure + figcaption; photo must stay under 300KB. Alt text describes the photo -->
+        <section aria-labelledby="team-heading">
+            <h2 id="team-heading">Our Team</h2>
             <div class="inner">
                 <figure>
-                    <img src="Images/group-photo.jpeg" alt="The four Synapse group members together" width="500"
-                        height="333">
+                    <img src="images/group-photo.jpeg" alt="The four Synapse team members standing side by side"
+                        width="500" height="203" loading="lazy">
 
-                    <!-- Inline CSS -->
+                    <!-- Inline CSS: bold caption -->
                     <figcaption style="font-weight:bold;">
                         The Synapse Team
                     </figcaption>
@@ -114,8 +133,9 @@
             </div>
         </section>
 
-        <section class="fun-facts">
-            <h2>Fun Facts</h2>
+        <!-- Fun facts: table with caption, header row and row headers (scope) for screen readers -->
+        <section class="fun-facts" aria-labelledby="facts-heading">
+            <h2 id="facts-heading">Fun Facts</h2>
             <div class="inner">
                 <table>
                     <caption>Team member interests</caption>
@@ -148,19 +168,22 @@
         </section>
     </main>
 
+    <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
     <footer>
-        <p>Synapse acknowledges the Traditional Custodians of the lands
-            on which we work and pays respect to Elders past and present.</p>
+        <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
+            the Traditional Custodians of the lands on which our Melbourne team works,
+            and pays respect to Elders past and present.</p>
 
         <p>
             <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
             <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
+            <a href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/">Live Site</a> |
             <a href="mailto:info@synapse-health.com">Email</a>
         </p>
 
         <p>&copy; 2026 Synapse Digital Health</p>
-        <small>ChatGPT was used as a supporting tool for code review
-            and styling. The student team reviewed and tested all work.</small>
+        <small>Credits: group photo taken by the team; logo created by Abrar Salahuddin using GIMP. ChatGPT was used
+            as a supporting tool for code review and styling. The student team reviewed and tested all work.</small>
     </footer>
 </body>
 

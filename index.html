@@ -1,35 +1,50 @@
 <!DOCTYPE html>
+<!--
+filename: index.html
+author: Abrar Salahuddin
+created: October 2026
+last modified: 1 Nov 2026
+description: Home page for Synapse Digital Health (G01) - company intro, job search box and vacancies table
+sources: Hero photo "Close up of a Doctor Writing" by Gustavo Fring on Pexels (free licence): https://www.pexels.com/photo/close-up-of-a-doctor-writing-6285374/. Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code review and styling suggestions; the team reviewed and tested all work.
+-->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Careers at Synapse Digital Health">
-    <title>Synapse Digital Health | Home</title>
+    <meta name="description"
+        content="Careers at Synapse Digital Health - build patient platforms, appointment booking and health information websites.">
+    <meta name="keywords"
+        content="Synapse, digital health, careers, patient platforms, appointment booking, front-end developer, UX designer">
+    <meta name="author" content="Synapse group, COS10026">
+    <title>Home | Synapse Digital Health</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Internal CSS -->
+    <!-- Internal CSS: page-specific tweaks that only apply to the home page -->
     <style>
-        .home-page .hero img {
-            border-radius: 12px;
+        .home-page .feature-strip li {
+            letter-spacing: 0.02em;
         }
 
-        .home-page .table-scroll {
-            overflow-x: auto;
+        .home-page .search-row button {
+            white-space: nowrap;
         }
     </style>
 </head>
 
 <body class="home-page">
+    <!-- Skip link: lets keyboard and screen-reader users jump past the navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <!-- Header: logo, company name, slogan and the main navigation shared by all pages -->
     <header>
-        <img src="Images/synapse-logo.png" alt="Synapse Recruitment Solutions logo" class="brand-logo">
+        <img src="images/synapse-logo.png" alt="Synapse logo" class="brand-logo">
         <div class="header-title">
             <h1>Synapse Digital Health</h1>
             <p class="tagline">Healthcare that fits in your pocket.</p>
         </div>
 
+        <!-- aria-current marks the page the user is on -->
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html" aria-current="page">Home</a></li>
@@ -42,11 +57,11 @@
 
     <main id="main-content">
 
-        <!-- Company introduction -->
-        <section class="hero">
+        <!-- Company introduction: description, flexible-work note, call to action and hero image -->
+        <section class="hero" aria-labelledby="intro-heading">
             <div class="intro-layout">
                 <div>
-                    <h2>Build the tools patients use every day.</h2>
+                    <h2 id="intro-heading">Build the tools patients use every day.</h2>
 
                     <p>Synapse is a private healthcare technology company.
                         We develop online patient platforms, appointment booking
@@ -56,7 +71,7 @@
                         Join us to make healthcare easier to find,
                         book and understand.</p>
 
-                    <!-- Inline CSS -->
+                    <!-- Inline CSS: one-off highlight bar for the flexible work message -->
                     <p style="border-left: 4px solid #46d7e8; padding-left: 12px;">
                         Our roles support <strong>flexible and remote work</strong>.
                     </p>
@@ -64,26 +79,26 @@
                     <a class="button-link" href="jobs.html">View open roles</a>
                 </div>
 
-                <!-- Selected healthcare technology image -->
+                <!-- Hero image with caption; width/height set to stop layout shift while loading -->
                 <figure>
-                    <img src="Images/hero-photo.jpg"
-                        alt="Modern healthcare technology workspace with computers and medical equipment" width="480"
+                    <img src="images/hero-photo.jpg"
+                        alt="Healthcare worker in a mask and gloves writing beside a computer keyboard" width="480"
                         height="303">
                     <figcaption>Technology designed around patients.</figcaption>
                 </figure>
             </div>
         </section>
 
-        <!-- Company services -->
+        <!-- Services strip: short list of what Synapse builds -->
         <ul class="feature-strip" aria-label="Our services">
             <li>Patient Platforms</li>
             <li>Appointment Booking</li>
             <li>Accessible Design</li>
         </ul>
 
-        <!-- Job search -->
-        <section>
-            <h2>Find a Job</h2>
+        <!-- Job search: GET form sends the keyword to jobs.html (static site, no JavaScript) -->
+        <section aria-labelledby="search-heading">
+            <h2 id="search-heading">Find a Job</h2>
             <div class="inner">
                 <p>Enter a job keyword, then continue to the Jobs page
                     to review our open positions.</p>
@@ -98,10 +113,11 @@
             </div>
         </section>
 
-        <!-- Current vacancies -->
-        <section>
-            <h2>Current Vacancies</h2>
+        <!-- Current vacancies: table uses rowspan and colspan (merged cells) to group positions by team -->
+        <section aria-labelledby="vacancies-heading">
+            <h2 id="vacancies-heading">Current Vacancies</h2>
             <div class="inner">
+                <!-- Scroll wrapper keeps the table usable on small screens; tabindex lets keyboard users scroll it -->
                 <div class="table-scroll" role="region" aria-label="Current vacancies table" tabindex="0">
                     <table>
                         <caption>Open Positions at Synapse</caption>
@@ -144,19 +160,24 @@
 
     </main>
 
+    <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
     <footer>
-        <p>Synapse acknowledges the Traditional Custodians of the lands
-            on which we work and pays respect to Elders past and present.</p>
+        <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
+            the Traditional Custodians of the lands on which our Melbourne team works,
+            and pays respect to Elders past and present.</p>
 
         <p>
             <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
             <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
+            <a href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/">Live Site</a> |
             <a href="mailto:info@synapse-health.com">Email</a>
         </p>
 
         <p>&copy; 2026 Synapse Digital Health</p>
-        <small>ChatGPT was used as a supporting tool for code review
-            and styling. The student team reviewed and tested all work.</small>
+        <small>Credits: hero photo by <a
+                href="https://www.pexels.com/photo/close-up-of-a-doctor-writing-6285374/">Gustavo Fring on Pexels</a>;
+            logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
+            for code review and styling. The student team reviewed and tested all work.</small>
     </footer>
 </body>
 

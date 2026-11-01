@@ -1,13 +1,26 @@
 <!DOCTYPE html>
+<!--
+filename: jobs.html
+author: Youssof Hussein
+created: October 2026
+last modified: 1 Nov 2026
+description: Job descriptions (FE001 and UX002) for Synapse Digital Health, with an inclusion statement aside
+sources: Logo created by Abrar Salahuddin using GIMP. Job content written by the team. ChatGPT was used for code review and styling suggestions; the team reviewed and tested all work.
+-->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Open roles at Synapse Digital Health: Front-End Web Developer (FE001) and UX Designer (UX002).">
+    <meta name="keywords"
+        content="Synapse, jobs, front-end web developer, UX designer, healthcare technology, Melbourne">
+    <meta name="author" content="Synapse group, COS10026">
     <title>Jobs | Synapse Digital Health</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Internal CSS -->
+    <!-- Internal CSS: page-specific styles for reference numbers and the inclusion heading -->
     <style>
         .job-ref {
             color: #075481;
@@ -21,10 +34,12 @@
 </head>
 
 <body class="jobs-page">
+    <!-- Skip link: lets keyboard and screen-reader users jump past the navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <!-- Header: logo, page title, slogan and shared main navigation -->
     <header>
-        <img src="Images/synapse-logo.png" alt="Synapse Recruitment Solutions logo" class="brand-logo">
+        <img src="images/synapse-logo.png" alt="Synapse logo" class="brand-logo">
 
         <div class="header-title">
             <h1>Careers at Synapse</h1>
@@ -43,21 +58,22 @@
 
     <main id="main-content">
 
-        <section>
-            <h2>Job Vacancies</h2>
+        <!-- Overview section: why work here, closing date, links to each role, and the inclusion aside -->
+        <section aria-labelledby="vacancies-heading">
+            <h2 id="vacancies-heading">Job Vacancies</h2>
             <div class="inner">
 
-                <!-- Right-floating aside -->
+                <!-- Aside (floated right by styles.css): inclusion statement is supporting content, not a job detail -->
                 <aside aria-labelledby="inclusion-heading">
                     <h3 id="inclusion-heading">Our Commitment to Inclusion</h3>
 
-                    <p>Synapse acknowledges the Traditional Custodians of
-                        the lands where we work and pays respect to Elders
-                        past and present.</p>
+                    <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
+                        the Traditional Custodians of the lands where our Melbourne team works, and pays respect
+                        to Elders past and present.</p>
 
-                    <p>We encourage applications from Aboriginal and Torres
-                        Strait Islander peoples and support culturally safe,
-                        inclusive workplaces.</p>
+                    <p>Digital health only works when everyone can use it. We encourage applications from
+                        Aboriginal and Torres Strait Islander peoples and are committed to culturally safe,
+                        inclusive workplaces and to services that are accessible to First Nations communities.</p>
                 </aside>
 
                 <h3>Why Work With Us?</h3>
@@ -65,11 +81,12 @@
                     and health information websites. Our Melbourne team
                     supports hybrid work, mentoring and training.</p>
 
-                <!-- Inline CSS -->
+                <!-- Inline CSS: one-off highlight for the closing date -->
                 <p style="border-left:4px solid #20c9f3; padding:10px;">
                     <strong>Applications close on 30 November 2026.</strong>
                 </p>
 
+                <!-- Unordered list: jump links to each position below (order does not matter) -->
                 <ul>
                     <li><a href="#frontend">Front-End Web Developer (FE001)</a></li>
                     <li><a href="#ux">UX Designer – Patient Experience (UX002)</a></li>
@@ -77,9 +94,9 @@
             </div>
         </section>
 
-        <!-- First position -->
-        <section id="frontend">
-            <h2>Front-End Web Developer</h2>
+        <!-- First position: description list holds the key facts, ordered list holds responsibilities -->
+        <section id="frontend" aria-labelledby="frontend-heading">
+            <h2 id="frontend-heading">Front-End Web Developer</h2>
             <div class="inner">
                 <p>Develop responsive and accessible pages for patient
                     booking and healthcare information platforms.</p>
@@ -122,9 +139,9 @@
             </div>
         </section>
 
-        <!-- Second position -->
-        <section id="ux">
-            <h2>UX Designer – Patient Experience</h2>
+        <!-- Second position: same structure as the first so both roles are easy to compare -->
+        <section id="ux" aria-labelledby="ux-heading">
+            <h2 id="ux-heading">UX Designer – Patient Experience</h2>
             <div class="inner">
                 <p>Design accessible experiences for patients booking
                     appointments and accessing health information.</p>
@@ -168,19 +185,22 @@
         </section>
     </main>
 
+    <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
     <footer>
-        <p>Synapse acknowledges the Traditional Custodians of the lands
-            on which we work and pays respect to Elders past and present.</p>
+        <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
+            the Traditional Custodians of the lands on which our Melbourne team works,
+            and pays respect to Elders past and present.</p>
 
         <p>
             <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
             <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
+            <a href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/">Live Site</a> |
             <a href="mailto:info@synapse-health.com">Email</a>
         </p>
 
         <p>&copy; 2026 Synapse Digital Health</p>
-        <small>ChatGPT was used as a supporting tool for code review
-            and styling. The student team reviewed and tested all work.</small>
+        <small>Credits: logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
+            for code review and styling. The student team reviewed and tested all work.</small>
     </footer>
 </body>
 
