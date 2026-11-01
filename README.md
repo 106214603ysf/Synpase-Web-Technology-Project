@@ -6,7 +6,7 @@ Built for COS10026 Web Technology Project, Applied Web Project - Part 1 (Study P
 ## Links
 - Live site: https://106214603ysf.github.io/Synpase-Web-Technology-Project/
 - GitHub repository: https://github.com/106214603ysf/Synpase-Web-Technology-Project
-- Jira board: https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog
+- Jira board: https://Synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog
 
 ## Pages
 | File | Purpose | Built by |
@@ -28,7 +28,7 @@ apply.html
 about.html
 styles.css
 images/
-    synapse-logo.png
+    Synapse-logo.png
     hero-photo.jpg
     group-photo.jpeg
 README.md
