@@ -4,7 +4,7 @@ Static recruitment website for **Synapse Digital Health** (industry G01: Digital
 Built for COS10026 Web Technology Project, Applied Web Project - Part 1 (Study Period 3, 2026).
 
 ## Links
-- Live site: https://106214603ysf.github.io/Synpase-Web-Technology-Project/
+- Live site: href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/"
 - GitHub repository: https://github.com/106214603ysf/Synpase-Web-Technology-Project
 - Jira board: https://Synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog
 
