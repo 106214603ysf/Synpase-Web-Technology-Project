@@ -1,5 +1,6 @@
 <?php
 $page = "about";
+require_once "settings.php";
 $heading = "About Synapse";
 $credits = 'Credits: group photo taken by the team; logo created by Abrar Salahuddin using GIMP. ChatGPT was used
             as a supporting tool for code review and styling. The student team reviewed and tested all work.';
@@ -74,36 +75,25 @@ sources: Quotes chosen by each member. Group photo taken by the team. Logo creat
             <h2 id="contributions-heading">Member Contributions</h2>
             <div class="inner">
                 <dl>
-                    <dt>Amani Aly <span class="student-id">106212283</span></dt>
-                    <dd>
-                        Group Leader. Developed the Apply page, proposed the overall website
-                        design concept, created and assigned Jira tasks, monitored team progress,
-                        and reviewed everyone's work to ensure project requirements were met.
-                        Also contributed to the CSS styling.
-                    </dd>
+                        <?php
+                        $members = [];
 
-                    <dt>Abdullah Maithalouni <span class="student-id">106194323</span></dt>
-                    <dd>
-                        Communication Representative. Developed the About page, contributed
-                        significantly to the website's CSS design and styling, and reviewed
-                        other pages to maintain consistency. Also supported communication
-                        between team members.
-                    </dd>
+                        if ($conn) {
+                            $result = mysqli_query($conn, "SELECT * FROM about ORDER BY id");
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $members[] = $row;
+                            }
 
-                    <dt>Youssof Hussein <span class="student-id">106214603</span></dt>
-                    <dd>
-                        Group Coordinator. Developed the Jobs page and inclusion statement,
-                        created the GitHub repository and Jira project, coordinated group
-                        activities, and contributed to the CSS styling.
-                    </dd>
-
-                    <dt>Abrar Salahuddin <span class="student-id">106716811</span></dt>
-                    <dd>
-                        General Secretary. Developed the Home page and job search feature,
-                        designed the company logo, recorded meeting discussions and decisions,
-                        maintained meeting notes, and contributed to the CSS styling.
-                    </dd>
-                </dl>
+                            foreach ($members as $m) {
+                                echo '<dt>' . htmlspecialchars($m["member_name"]) . ' <span class="student-id">' . htmlspecialchars($m["student_id"]) . '</span></dt>';
+                                echo '<dd><strong>Project 1:</strong> ' . htmlspecialchars($m["part1_contribution"]) . '</dd>';
+                                echo '<dd><strong>Project 2:</strong> ' . htmlspecialchars($m["part2_contribution"]) . '</dd>';
+                            }
+                        } else {
+                            echo '<dt>Error</dt><dd>Member details could not be loaded.</dd>';
+                        }
+                        ?>
+                        </dl>
             </div>
         </section>
 
@@ -112,23 +102,17 @@ sources: Quotes chosen by each member. Group photo taken by the team. Logo creat
         <section aria-labelledby="quotes-heading">
             <h2 id="quotes-heading">Member Quotes</h2>
             <div class="inner">
-                <dl class="quotes">
-                    <dt>Amani Aly (Arabic)</dt>
-                    <dd lang="ar" dir="rtl">ارفع صوتك، قف بثبات، واترك أثراً.</dd>
-                    <dd><q>Be loud, stand tall, leave a mark.</q></dd>
 
-                    <dt>Abdullah Maithalouni (Arabic)</dt>
-                    <dd lang="ar" dir="rtl">تخشى الطبقة الحاكمة التعليم لأنه يجعل الطاعة مستحيلة.</dd>
-                    <dd><q>The ruling class fears education because it makes obedience impossible.</q></dd>
+            <dl class="quotes">
+                <?php
+                foreach ($members as $m) {
+                    echo '<dt>' . htmlspecialchars($m["member_name"]) . ' (' . htmlspecialchars($m["quote_language"]) . ')</dt>';
+                    echo '<dd lang="' . htmlspecialchars($m["lang_code"]) . '" dir="rtl">' . htmlspecialchars($m["quote"]) . '</dd>';
+                    echo '<dd><q>' . htmlspecialchars($m["translation"]) . '</q></dd>';
+                }
+                ?>
+                </dl>    
 
-                    <dt>Youssof Hussein (Arabic)</dt>
-                    <dd lang="ar" dir="rtl">ليس عليك أن ترى السلم كله، فقط خذ الخطوة الأولى.</dd>
-                    <dd><q>You don't have to see the whole staircase, just take the first step.</q></dd>
-
-                    <dt>Abrar Salahuddin (Urdu)</dt>
-                    <dd lang="ur" dir="rtl">جو لوگ کوشش کرتے رہتے ہیں وہ کبھی واقعی ہارتے نہیں۔</dd>
-                    <dd><q>Those who keep trying are never truly defeated.</q></dd>
-                </dl>
             </div>
         </section>
 
