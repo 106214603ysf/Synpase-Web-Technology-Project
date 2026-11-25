@@ -1,186 +1,139 @@
 <?php
-$page = "jobs";
-$heading = "Careers at Synapse";
-$credits = 'Credits: logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
-            for code review and styling. The student team reviewed and tested all work.';
-?>
-<!DOCTYPE html>
-<!--
+/*
 filename: jobs.php
 author: Youssof Hussein
 created: October 2026
-last modified: 1 Nov 2026
-description: Job descriptions (FE001 and UX002) for Synapse Digital Health, with an inclusion statement aside
+last modified: 25 Nov 2026
+description: Job listings (loaded from the jobs table) for Synapse Digital Health, with an inclusion statement aside
 sources: Logo created by Abrar Salahuddin using GIMP. Job content written by the team. ChatGPT was used for code review and styling suggestions; the team reviewed and tested all work.
--->
-<html lang="en">
+*/
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Open roles at Synapse Digital Health: Front-End Web Developer (FE001) and UX Designer (UX002).">
-    <meta name="keywords" content="Synapse, jobs, front-end web developer, UX designer, healthcare technology, Melbourne">
-    <meta name="author" content="Synapse group, COS10026">
-    <title>Jobs | Synapse Digital Health</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+require_once "settings.php";   // Abdullah's DB connection ($conn)
 
-    <!-- Internal CSS: page-specific styles for reference numbers and the inclusion heading -->
-    <style>
-        .job-ref {
-            color: #075481;
-            font-weight: bold;
-        }
-
-        #inclusion-heading {
-            border-bottom: 2px solid #20c9f3;
-        }
-        * {
-  font-family: "Inter", sans-serif;
+// Splits a multiline database field into a clean array of list items
+function lines_to_array($text) {
+    $items = preg_split('/\R/', $text);
+    return array_filter(array_map('trim', $items), 'strlen');
 }
-    </style>
-</head>
 
-<body class="jobs-page">
-    <!-- Skip link: lets keyboard and screen-reader users jump past the navigation -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+// Get all jobs
+$jobs = [];
+$result = mysqli_query($conn, "SELECT * FROM jobs ORDER BY job_ref");
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $jobs[] = $row;
+    }
+    mysqli_free_result($result);
+}
 
-    <!-- Header: logo, page title, slogan and shared main navigation -->
-    <?php include "header.inc"; ?>
+// Earliest closing date shown in the overview (if there are jobs)
+$closing = !empty($jobs) ? date("j F Y", strtotime($jobs[0]['closing_date'])) : "";
 
-    <main id="main-content">
+include "header.inc";
+?>
 
-        <!-- Overview section: why work here, closing date, links to each role, and the inclusion aside -->
-        <section aria-labelledby="vacancies-heading">
-            <h2 id="vacancies-heading">Job Vacancies</h2>
-            <div class="inner">
+<main id="main-content">
 
-                <!-- Aside (floated right by styles.css): inclusion statement is supporting content, not a job detail -->
-                <aside aria-labelledby="inclusion-heading">
-                    <h3 id="inclusion-heading">Our Commitment to Inclusion</h3>
+    <!-- Overview section -->
+    <section aria-labelledby="vacancies-heading">
+        <h2 id="vacancies-heading">Job Vacancies</h2>
+        <div class="inner">
 
-                    <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
-                        the Traditional Custodians of the lands where our Melbourne team works, and pays respect
-                        to Elders past and present.</p>
+            <aside aria-labelledby="inclusion-heading">
+                <h3 id="inclusion-heading">Our Commitment to Inclusion</h3>
 
-                    <p>Digital health only works when everyone can use it. We encourage applications from
-                        Aboriginal and Torres Strait Islander peoples and are committed to culturally safe,
-                        inclusive workplaces and to services that are accessible to First Nations communities.</p>
-                </aside>
+                <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
+                    the Traditional Custodians of the lands where our Melbourne team works, and pays respect
+                    to Elders past and present.</p>
 
-                <h3>Why Work With Us?</h3>
-                <p>Synapse builds patient platforms, appointment systems
-                    and health information websites. Our Melbourne team
-                    supports hybrid work, mentoring and training.</p>
+                <p>Digital health only works when everyone can use it. We encourage applications from
+                    Aboriginal and Torres Strait Islander peoples and are committed to culturally safe,
+                    inclusive workplaces and to services that are accessible to First Nations communities.</p>
+            </aside>
 
-                <!-- Inline CSS: one-off highlight for the closing date -->
+            <h3>Why Work With Us?</h3>
+            <p>Synapse builds patient platforms, appointment systems
+                and health information websites. Our Melbourne team
+                supports hybrid work, mentoring and training.</p>
+
+            <?php if ($closing != "") { ?>
                 <p style="border-left:4px solid #20c9f3; padding:10px;">
-                    <strong>Applications close on 30 November 2026.</strong>
+                    <strong>Applications close on <?php echo htmlspecialchars($closing); ?>.</strong>
                 </p>
+            <?php } ?>
 
-                <!-- Unordered list: jump links to each position below (order does not matter) -->
+            <?php if (!empty($jobs)) { ?>
                 <ul>
-                    <li><a href="#frontend">Front-End Web Developer (FE001)</a></li>
-                    <li><a href="#ux">UX Designer – Patient Experience (UX002)</a></li>
+                    <?php foreach ($jobs as $job) { ?>
+                        <li>
+                            <a href="#<?php echo strtolower(htmlspecialchars($job['job_ref'])); ?>">
+                                <?php echo htmlspecialchars($job['title']); ?>
+                                (<?php echo htmlspecialchars($job['job_ref']); ?>)
+                            </a>
+                        </li>
+                    <?php } ?>
                 </ul>
+            <?php } ?>
+        </div>
+    </section>
+
+    <?php if (empty($jobs)) { ?>
+        <section aria-labelledby="none-heading">
+            <h2 id="none-heading">No vacancies right now</h2>
+            <div class="inner">
+                <p>There are no open positions at the moment. Please check back soon.</p>
             </div>
         </section>
+    <?php } ?>
 
-        <!-- First position: description list holds the key facts, ordered list holds responsibilities -->
-        <section id="frontend" aria-labelledby="frontend-heading">
-            <h2 id="frontend-heading">Front-End Web Developer</h2>
+    <!-- One section per job, built from the database -->
+    <?php foreach ($jobs as $job) {
+        $ref = htmlspecialchars($job['job_ref']);
+        $id  = strtolower($ref);
+    ?>
+        <section id="<?php echo $id; ?>" aria-labelledby="<?php echo $id; ?>-heading">
+            <h2 id="<?php echo $id; ?>-heading"><?php echo htmlspecialchars($job['title']); ?></h2>
             <div class="inner">
-                <p>Develop responsive and accessible pages for patient
-                    booking and healthcare information platforms.</p>
+                <p><?php echo htmlspecialchars($job['description']); ?></p>
 
                 <dl>
                     <dt>Reference number</dt>
-                    <dd class="job-ref">FE001</dd>
+                    <dd class="job-ref"><?php echo $ref; ?></dd>
                     <dt>Salary</dt>
-                    <dd>$85,000–$100,000 plus superannuation</dd>
+                    <dd>$<?php echo number_format($job['salary_min']); ?>–$<?php echo number_format($job['salary_max']); ?> plus superannuation</dd>
                     <dt>Reports to</dt>
-                    <dd>Head of Digital Engineering</dd>
+                    <dd><?php echo htmlspecialchars($job['reports_to']); ?></dd>
                     <dt>Location</dt>
-                    <dd>Melbourne VIC (hybrid)</dd>
+                    <dd><?php echo htmlspecialchars($job['location']); ?></dd>
                     <dt>Employment</dt>
-                    <dd>Full-time</dd>
+                    <dd><?php echo htmlspecialchars($job['employment']); ?></dd>
                 </dl>
 
                 <h3>Key Responsibilities</h3>
                 <ol>
-                    <li>Build responsive web pages.</li>
-                    <li>Test keyboard and screen-reader accessibility.</li>
-                    <li>Validate HTML and CSS.</li>
-                    <li>Follow secure coding practices.</li>
+                    <?php foreach (lines_to_array($job['responsibilities']) as $item) { ?>
+                        <li><?php echo htmlspecialchars($item); ?></li>
+                    <?php } ?>
                 </ol>
 
                 <h3>Essential Requirements</h3>
                 <ul>
-                    <li>Strong HTML5 and CSS3 knowledge.</li>
-                    <li>Understanding of web accessibility.</li>
-                    <li>Experience with Git and GitHub.</li>
+                    <?php foreach (lines_to_array($job['essential']) as $item) { ?>
+                        <li><?php echo htmlspecialchars($item); ?></li>
+                    <?php } ?>
                 </ul>
 
                 <h3>Preferable Requirements</h3>
                 <ul>
-                    <li>Healthcare technology experience.</li>
-                    <li>Familiarity with Jira and Agile.</li>
+                    <?php foreach (lines_to_array($job['preferable']) as $item) { ?>
+                        <li><?php echo htmlspecialchars($item); ?></li>
+                    <?php } ?>
                 </ul>
 
-                <a class="button-link" href="apply.php?job=FE001#form-heading">Apply for FE001</a>
+                <a class="button-link" href="apply.php?job=<?php echo urlencode($job['job_ref']); ?>#form-heading">Apply for <?php echo $ref; ?></a>
             </div>
         </section>
+    <?php } ?>
+</main>
 
-        <!-- Second position: same structure as the first so both roles are easy to compare -->
-        <section id="ux" aria-labelledby="ux-heading">
-            <h2 id="ux-heading">UX Designer – Patient Experience</h2>
-            <div class="inner">
-                <p>Design accessible experiences for patients booking
-                    appointments and accessing health information.</p>
-
-                <dl>
-                    <dt>Reference number</dt>
-                    <dd class="job-ref">UX002</dd>
-                    <dt>Salary</dt>
-                    <dd>$90,000–$105,000 plus superannuation</dd>
-                    <dt>Reports to</dt>
-                    <dd>Design Lead, Patient Platforms</dd>
-                    <dt>Location</dt>
-                    <dd>Melbourne VIC (hybrid)</dd>
-                    <dt>Employment</dt>
-                    <dd>Full-time</dd>
-                </dl>
-
-                <h3>Key Responsibilities</h3>
-                <ol>
-                    <li>Research patient needs.</li>
-                    <li>Create wireframes and prototypes.</li>
-                    <li>Conduct usability testing.</li>
-                    <li>Check colour contrast and readability.</li>
-                </ol>
-
-                <h3>Essential Requirements</h3>
-                <ul>
-                    <li>Experience with Figma.</li>
-                    <li>Understanding of accessibility guidelines.</li>
-                    <li>Experience with user research.</li>
-                </ul>
-
-                <h3>Preferable Requirements</h3>
-                <ul>
-                    <li>Healthcare design experience.</li>
-                    <li>Experience working with Agile teams.</li>
-                </ul>
-
-                <a class="button-link" href="apply.php?job=UX002#form-heading">Apply for UX002</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
-    <?php include "footer.inc"; ?>
-</body>
-
-</html>
+<?php include "footer.inc"; ?>
