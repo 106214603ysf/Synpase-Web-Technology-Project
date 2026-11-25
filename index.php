@@ -1,6 +1,14 @@
+<?php
+$page = "home";
+$heading = "Synapse Digital Health";
+$credits = 'Credits: hero photo by <a
+                href="https://www.pexels.com/photo/close-up-of-a-doctor-writing-6285374/">Gustavo Fring on Pexels</a>;
+            logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
+            for code review and styling. The student team reviewed and tested all work.';
+?>
 <!DOCTYPE html>
 <!--
-filename: index.html
+filename: index.php
 author: Abrar Salahuddin
 created: October 2026
 last modified: 1 Nov 2026
@@ -43,23 +51,7 @@ sources: Hero photo "Close up of a Doctor Writing" by Gustavo Fring on Pexels (f
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Header: logo, company name, slogan and the main navigation shared by all pages -->
-    <header>
-        <img src="images/Synapse-logo.png" alt="Synapse logo" class="brand-logo">
-        <div class="header-title">
-            <h1>Synapse Digital Health</h1>
-            <p class="tagline">Healthcare that fits in your pocket.</p>
-        </div>
-
-        <!-- aria-current marks the page the user is on -->
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="apply.html">Apply</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "header.inc"; ?>
 
     <main id="main-content">
 
@@ -82,7 +74,7 @@ sources: Hero photo "Close up of a Doctor Writing" by Gustavo Fring on Pexels (f
                         Our roles support <strong>flexible and remote work</strong>.
                     </p>
 
-                    <a class="button-link" href="jobs.html#vacancies-heading">View open roles</a>
+                    <a class="button-link" href="jobs.php#vacancies-heading">View open roles</a>
                 </div>
 
                 <!-- Hero image with caption; width/height set to stop layout shift while loading -->
@@ -102,14 +94,14 @@ sources: Hero photo "Close up of a Doctor Writing" by Gustavo Fring on Pexels (f
             <li>Accessible Design</li>
         </ul>
 
-        <!-- Job search: GET form sends the keyword to jobs.html (static site, no JavaScript) -->
+        <!-- Job search: GET form sends the keyword to jobs.php (static site, no JavaScript) -->
         <section aria-labelledby="search-heading">
             <h2 id="search-heading">Find a Job</h2>
             <div class="inner">
                 <p>Enter a job keyword, then continue to the Jobs page
                     to review our open positions.</p>
 
-                <form action="jobs.html" method="get" role="search">
+                <form action="jobs.php" method="get" role="search">
                     <label for="job-search">Job title or keyword</label>
                     <div class="search-row">
                         <input type="search" id="job-search" name="q" placeholder="For example: developer" required>
@@ -159,32 +151,15 @@ sources: Hero photo "Close up of a Doctor Writing" by Gustavo Fring on Pexels (f
                         </tfoot>
                     </table>
                 </div>
-                <p>Read the full descriptions for the <a href="jobs.html#frontend">Front-End Web Developer</a>
-                    and <a href="jobs.html#ux">UX Designer</a> roles and use the reference number when applying.</p>
+                <p>Read the full descriptions for the <a href="jobs.php#frontend">Front-End Web Developer</a>
+                    and <a href="jobs.php#ux">UX Designer</a> roles and use the reference number when applying.</p>
             </div>
         </section>
 
     </main>
 
     <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
-    <footer>
-        <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
-            the Traditional Custodians of the lands on which our Melbourne team works,
-            and pays respect to Elders past and present.</p>
-
-        <p>
-            <a href="https://Synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
-            <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
-            <a href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/index.html">Live Site</a> |
-            <a href="mailto:info@Synapse-health.com">Email</a>
-        </p>
-
-        <p>&copy; 2026 Synapse Digital Health</p>
-        <small>Credits: hero photo by <a
-                href="https://www.pexels.com/photo/close-up-of-a-doctor-writing-6285374/">Gustavo Fring on Pexels</a>;
-            logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
-            for code review and styling. The student team reviewed and tested all work.</small>
-    </footer>
+    <?php include "footer.inc"; ?>
 </body>
 
 </html>

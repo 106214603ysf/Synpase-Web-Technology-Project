@@ -1,6 +1,12 @@
+<?php
+$page = "about";
+$heading = "About Synapse";
+$credits = 'Credits: group photo taken by the team; logo created by Abrar Salahuddin using GIMP. ChatGPT was used
+            as a supporting tool for code review and styling. The student team reviewed and tested all work.';
+?>
 <!DOCTYPE html>
 <!--
-filename: about.html
+filename: about.php
 author: Abdullah Maithalouni
 created: October 2026
 last modified: 1 Nov 2026
@@ -43,23 +49,7 @@ sources: Quotes chosen by each member. Group photo taken by the team. Logo creat
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Header: logo, page title, slogan and shared main navigation -->
-    <header>
-        <img src="images/Synapse-logo.png" alt="Synapse logo" class="brand-logo">
-
-        <div class="header-title">
-            <h1>About Synapse</h1>
-            <p class="tagline">Healthcare that fits in your pocket.</p>
-        </div>
-
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="apply.html">Apply</a></li>
-                <li><a href="about.html" aria-current="page">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "header.inc"; ?>
 
     <main id="main-content">
 
@@ -194,22 +184,7 @@ sources: Quotes chosen by each member. Group photo taken by the team. Logo creat
     </main>
 
     <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
-    <footer>
-        <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
-            the Traditional Custodians of the lands on which our Melbourne team works,
-            and pays respect to Elders past and present.</p>
-
-        <p>
-            <a href="https://Synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
-            <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
-            <a href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/index.html">Live Site</a> |
-            <a href="mailto:info@Synapse-health.com">Email</a>
-        </p>
-
-        <p>&copy; 2026 Synapse Digital Health</p>
-        <small>Credits: group photo taken by the team; logo created by Abrar Salahuddin using GIMP. ChatGPT was used
-            as a supporting tool for code review and styling. The student team reviewed and tested all work.</small>
-    </footer>
+    <?php include "footer.inc"; ?>
 </body>
 
 </html>

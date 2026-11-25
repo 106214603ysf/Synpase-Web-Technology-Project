@@ -1,6 +1,12 @@
+<?php
+$page = "apply";
+$heading = "Apply at Synapse";
+$credits = 'Credits: logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
+            for code review and styling. The student team reviewed and tested all work.';
+?>
 <!DOCTYPE html>
 <!--
-filename: apply.html
+filename: apply.php
 author: Amani Aly
 created: October 2026
 last modified: 1 Nov 2026
@@ -47,30 +53,14 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Header: logo, page title, slogan and shared main navigation -->
-    <header>
-        <img src="images/synapse-logo.png" alt="Synapse logo" class="brand-logo">
-
-        <div class="header-title">
-            <h1>Apply at Synapse</h1>
-            <p class="tagline">Healthcare that fits in your pocket.</p>
-        </div>
-
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="apply.html" aria-current="page">Apply</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "header.inc"; ?>
 
     <main id="main-content">
         <!-- Instructions: tells applicants where to find the reference number and what * means -->
         <section aria-labelledby="apply-heading">
             <h2 id="apply-heading">Apply for a Position</h2>
             <div class="inner">
-                <p>Read the <a href="jobs.html">Job Descriptions</a> and enter the five-character reference number
+                <p>Read the <a href="jobs.php">Job Descriptions</a> and enter the five-character reference number
                     (for example FE001 or UX002).</p>
                 <!-- The star is decoration; the required attribute already tells screen readers -->
                 <p class="form-help">Fields marked <span class="required-star" aria-hidden="true">*</span> are
@@ -239,22 +229,7 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
     </main>
 
     <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
-    <footer>
-        <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
-            the Traditional Custodians of the lands on which our Melbourne team works,
-            and pays respect to Elders past and present.</p>
-
-        <p>
-            <a href="https://synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
-            <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
-            <a href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/index.html">Live Site</a> |
-            <a href="mailto:info@synapse-health.com">Email</a>
-        </p>
-
-        <p>&copy; 2026 Synapse Digital Health</p>
-        <small>Credits: logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
-            for code review and styling. The student team reviewed and tested all work.</small>
-    </footer>
+    <?php include "footer.inc"; ?>
 </body>
 
 </html>

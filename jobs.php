@@ -1,6 +1,12 @@
+<?php
+$page = "jobs";
+$heading = "Careers at Synapse";
+$credits = 'Credits: logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
+            for code review and styling. The student team reviewed and tested all work.';
+?>
 <!DOCTYPE html>
 <!--
-filename: jobs.html
+filename: jobs.php
 author: Youssof Hussein
 created: October 2026
 last modified: 1 Nov 2026
@@ -42,23 +48,7 @@ sources: Logo created by Abrar Salahuddin using GIMP. Job content written by the
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Header: logo, page title, slogan and shared main navigation -->
-    <header>
-        <img src="images/Synapse-logo.png" alt="Synapse logo" class="brand-logo">
-
-        <div class="header-title">
-            <h1>Careers at Synapse</h1>
-            <p class="tagline">Healthcare that fits in your pocket.</p>
-        </div>
-
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html" aria-current="page">Jobs</a></li>
-                <li><a href="apply.html">Apply</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "header.inc"; ?>
 
     <main id="main-content">
 
@@ -139,7 +129,7 @@ sources: Logo created by Abrar Salahuddin using GIMP. Job content written by the
                     <li>Familiarity with Jira and Agile.</li>
                 </ul>
 
-                <a class="button-link" href="apply.html?job=FE001#form-heading">Apply for FE001</a>
+                <a class="button-link" href="apply.php?job=FE001#form-heading">Apply for FE001</a>
             </div>
         </section>
 
@@ -184,28 +174,13 @@ sources: Logo created by Abrar Salahuddin using GIMP. Job content written by the
                     <li>Experience working with Agile teams.</li>
                 </ul>
 
-                <a class="button-link" href="apply.html?job=UX002#form-heading">Apply for UX002</a>
+                <a class="button-link" href="apply.php?job=UX002#form-heading">Apply for UX002</a>
             </div>
         </section>
     </main>
 
     <!-- Footer: Acknowledgement of Country, project links (Jira, GitHub, live site, email) and credits -->
-    <footer>
-        <p>Synapse acknowledges the Wurundjeri Woi Wurrung and Bunurong peoples of the Kulin Nation,
-            the Traditional Custodians of the lands on which our Melbourne team works,
-            and pays respect to Elders past and present.</p>
-
-        <p>
-            <a href="https://Synapse2026.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog">Jira</a> |
-            <a href="https://github.com/106214603ysf/Synpase-Web-Technology-Project">GitHub Repository</a> |
-            <a href="https://106214603ysf.github.io/Synpase-Web-Technology-Project/">Live Site</a> |
-            <a href="mailto:info@Synapse-health.com">Email</a>
-        </p>
-
-        <p>&copy; 2026 Synapse Digital Health</p>
-        <small>Credits: logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
-            for code review and styling. The student team reviewed and tested all work.</small>
-    </footer>
+    <?php include "footer.inc"; ?>
 </body>
 
 </html>
