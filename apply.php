@@ -2,16 +2,25 @@
 $page = "apply";
 $heading = "Apply at Synapse";
 $credits = 'Credits: logo created by Abrar Salahuddin using GIMP. ChatGPT was used as a supporting tool
-            for code review and styling. The student team reviewed and tested all work.';
+            for code review and styling. Claude was used to help convert the form to PHP. The student team reviewed and tested all work.';
+
+// The "Apply for FE001" buttons on jobs.php open apply.php?job=FE001.
+// This puts that reference into the Job Reference box. htmlspecialchars makes the value safe to print.
+$job_ref = "";
+if (isset($_GET["job"])) {
+    $job_ref = htmlspecialchars(trim($_GET["job"]));
+}
 ?>
 <!DOCTYPE html>
 <!--
 filename: apply.php
 author: Amani Aly
 created: October 2026
-last modified: 1 Nov 2026
-description: Job application form for Synapse Digital Health - HTML5 validation, POST to formtest.php, Grid layout
-sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code review and styling suggestions; the team reviewed and tested all work.
+last modified: November 2026
+description: Job application form for Synapse Digital Health. Posts to process_eoi.php. Browser validation is
+             turned off (novalidate) because all validation is done on the server in process_eoi.php.
+sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code review and styling suggestions;
+         Claude was used to help convert the form to PHP. The team reviewed and tested all work.
 -->
 <html lang="en">
 
@@ -62,7 +71,7 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
             <div class="inner">
                 <p>Read the <a href="jobs.php">Job Descriptions</a> and enter the five-character reference number
                     (for example FE001 or UX002).</p>
-                <!-- The star is decoration; the required attribute already tells screen readers -->
+                <!-- The star is decoration; aria-required tells screen readers which fields are required -->
                 <p class="form-help">Fields marked <span class="required-star" aria-hidden="true">*</span> are
                     required.</p>
             </div>
@@ -74,16 +83,17 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
             </h2>
 
             <div class="inner">
-                <!-- Form posts to the unit's test script; every field has a label and HTML5 validation (no JavaScript) -->
-                <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+                <!-- Form posts to process_eoi.php. novalidate turns off all browser validation,
+                     so every check is done on the server. aria-required is for screen readers only
+                     and does not stop the form being sent. -->
+                <form action="process_eoi.php" method="post" novalidate>
 
                     <fieldset>
                         <legend>Job Information</legend>
                         <label for="job-ref">Job Reference Number <span class="required-star"
                                 aria-hidden="true">*</span></label>
-                        <!-- Pattern: exactly 5 letters or digits, matching references such as FE001 -->
-                        <input type="text" id="job-ref" name="job_ref" pattern="[A-Za-z0-9]{5}" maxlength="5"
-                            title="Enter exactly five letters or numbers" required>
+                        <input type="text" id="job-ref" name="job_ref" value="<?php echo $job_ref; ?>"
+                            aria-required="true">
                     </fieldset>
 
                     <fieldset>
@@ -94,34 +104,28 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
                             <div>
                                 <label for="first-name">First Name <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <!-- Pattern: letters only, maximum 20 -->
-                                <input type="text" id="first-name" name="first_name" pattern="[A-Za-z]{1,20}"
-                                    maxlength="20" title="Letters only, maximum 20 characters" autocomplete="given-name"
-                                    required>
+                                <input type="text" id="first-name" name="first_name" autocomplete="given-name"
+                                    aria-required="true">
                             </div>
 
                             <div>
                                 <label for="last-name">Last Name <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <input type="text" id="last-name" name="last_name" pattern="[A-Za-z ]{1,20}"
-                                    maxlength="20" title="Letters only, maximum 20 characters"
-                                    autocomplete="family-name" required>
+                                <input type="text" id="last-name" name="last_name" autocomplete="family-name"
+                                    aria-required="true">
                             </div>
 
                             <div>
                                 <label for="dob">Date of Birth (dd/mm/yyyy) <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <!-- Pattern: dd/mm/yyyy (day 01-31, month 01-12, four-digit year) -->
-                                <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy"
-                                    pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" title="Use dd/mm/yyyy"
-                                    required>
+                                <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" aria-required="true">
                             </div>
 
                             <!-- Radio buttons grouped with fieldset + legend so screen readers announce the question -->
                             <fieldset class="field-wide">
                                 <legend>Gender <span class="required-star" aria-hidden="true">*</span></legend>
                                 <div class="choice-grid">
-                                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                                    <label><input type="radio" name="gender" value="Male"> Male</label>
                                     <label><input type="radio" name="gender" value="Female"> Female</label>
                                     <label><input type="radio" name="gender" value="Other"> Other</label>
                                     <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to
@@ -138,20 +142,20 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
                             <div>
                                 <label for="street">Street Address <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <input type="text" id="street" name="street" maxlength="40" autocomplete="address-line1"
-                                    required>
+                                <input type="text" id="street" name="street" autocomplete="address-line1"
+                                    aria-required="true">
                             </div>
 
                             <div>
                                 <label for="suburb">Suburb/Town <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <input type="text" id="suburb" name="suburb" maxlength="40"
-                                    autocomplete="address-level2" required>
+                                <input type="text" id="suburb" name="suburb" autocomplete="address-level2"
+                                    aria-required="true">
                             </div>
 
                             <div>
                                 <label for="state">State <span class="required-star" aria-hidden="true">*</span></label>
-                                <select id="state" name="state" required>
+                                <select id="state" name="state" aria-required="true">
                                     <option value="">Select state</option>
                                     <option value="VIC">VIC</option>
                                     <option value="NSW">NSW</option>
@@ -167,9 +171,8 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
                             <div>
                                 <label for="postcode">Postcode <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <!-- Pattern: exactly 4 digits -->
-                                <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}" maxlength="4"
-                                    title="Enter exactly four digits" autocomplete="postal-code" required>
+                                <input type="text" id="postcode" name="postcode" autocomplete="postal-code"
+                                    aria-required="true">
                             </div>
                         </div>
                     </fieldset>
@@ -181,30 +184,26 @@ sources: Logo created by Abrar Salahuddin using GIMP. ChatGPT was used for code 
                             <div>
                                 <label for="email">Email Address <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <!-- type="email" gives built-in format checking -->
-                                <input type="email" id="email" name="email" autocomplete="email" required>
+                                <input type="email" id="email" name="email" autocomplete="email" aria-required="true">
                             </div>
 
                             <div>
                                 <label for="phone">Phone Number <span class="required-star"
                                         aria-hidden="true">*</span></label>
-                                <!-- Pattern: 8 to 12 digits -->
-                                <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" minlength="8"
-                                    maxlength="12" title="Enter 8 to 12 digits" autocomplete="tel" required>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" aria-required="true">
                             </div>
                         </div>
                     </fieldset>
 
                     <fieldset>
                         <legend>Skills</legend>
-                        <p>Select the skills you have (Accessibility is required because both roles list it as
-                            essential):</p>
+                        <p>Select the skills you have (at least one):</p>
 
-                        <!-- HTML-only forms cannot require "at least one" box, so required is on the skill both jobs need -->
+                        <!-- skills[] sends every ticked box to PHP as a list -->
                         <div class="choice-grid">
                             <label><input type="checkbox" name="skills[]" value="HTML5"> HTML5</label>
                             <label><input type="checkbox" name="skills[]" value="CSS3"> CSS3</label>
-                            <label><input type="checkbox" name="skills[]" value="Accessibility" required>
+                            <label><input type="checkbox" name="skills[]" value="Accessibility">
                                 Accessibility</label>
                             <label><input type="checkbox" name="skills[]" value="Healthcare Technology"> Healthcare
                                 Technology</label>
